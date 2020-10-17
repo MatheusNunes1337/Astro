@@ -1,8 +1,9 @@
 import React from 'react';
+import Home from './pages/dashboard/home'
 
 function App() {
   return (
-    <h1>Oi</h1>
+    <Home />
   );
 }
 
