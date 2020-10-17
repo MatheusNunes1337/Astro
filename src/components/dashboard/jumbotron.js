@@ -1,11 +1,30 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react'
 import '../../assets/css/dashboard.css';
 
 
 export default function Jumbotron() {
+	let [greeting, setGreeting] = useState('');
+	const date = new Date()
+	let hours;
+
+	useEffect(() => {
+    const interval = setInterval(() => {
+      let hours = date.getHours()
+      console.log(hours)
+      if(hours >= 12 && hours <= 18) {
+      	setGreeting(greeting = 'Boa tarde')
+      } else if ( hours >= 19 && hours <= 5) {
+      		setGreeting(greeting = 'Boa noite')
+      } else {
+      	setGreeting(greeting = 'Bom dia')
+      }
+    }, 1000);
+    return () => clearInterval(interval);
+  	}, [])
+
   return (
     <div className="jumbotron">
-	    <h1>Boa noite, Matheus. Bem vindo de volta!</h1>
+	    <h1>{greeting}, Matheus. Bem vindo de volta!</h1>
         <p>Pelotas, 07 de outubro de 2020</p>
 	</div>
   );

@@ -1,4 +1,4 @@
-@import 'fonts.css'
+@import 'fonts.css';
 
 :root {
   --bg-color: #dddddd;
@@ -14,21 +14,22 @@
 	box-sizing: border-box;
 }
 
-body {
+
+
+#root {
     display: flex;
     background-color: var(--bg-color);
     flex-wrap: wrap;
     padding: 0;
-    margin: 0;
-    z-index: 1;
+    margin: 0; 
 }
 
 h1, h2, h3, h4, h5, h6 {
-	font-family: 'Montserrat-Bold';
+	font-family: 'Montserrat', sans-serif;
 }
 
 p, a {
-	font-family: 'Roboto';
+	font-family: 'Roboto', sans-serif;
 }
 
 /*aside */
@@ -66,12 +67,11 @@ aside nav ul li a {
 
 /*main*/
 
-main {
-	background-color: #efefef;
+div.main {
 	flex-grow: 1;
 }
 
-main.header {
+div.main .header {
     background-color: #ffffff;
     width: 100%;
     height: 7vh;
@@ -81,7 +81,7 @@ main.header {
 }
 
 .header p {
-	margin-left: 5vw;
+    margin-left: 5vw;
 }
 
 .header button.logout {
@@ -90,11 +90,11 @@ main.header {
     padding: 8px;
     margin-right: 5vw;
     color: #ffffff;
-    height: 50%;
+    height: 70%;
     width: 70px;
 }
 
- main.jumbotron {
+ div.main .jumbotron {
     background-color: #ffffff;
     width: 90%;
     height: auto;
@@ -103,7 +103,7 @@ main.header {
     
 }
 
-main .jumbotron h1 {
+div.main .jumbotron h1 {
     font-weight: 200;
     margin-top: 20px;
     padding: 0px 20px;
@@ -111,17 +111,69 @@ main .jumbotron h1 {
     font-size: var(--font-size-1);
 }
 
-main .jumbotron p {
+div.main .jumbotron p {
     font-size: clamp(16px, 3.2vw, 1.7rem);
     font-weight: 400;
     margin: 20px 0px;
     padding: 0px 20px;
 }
 
-main .content {
+div.main .content {
     background-color: #ffffff;
     width: 90%;
     height: auto;
     margin: 35px auto;
     padding: 20px 0px;
 }
+
+@media only screen and (max-width: 768px) {
+
+    aside {
+        width: 100vw;
+        min-height: auto;
+        height: auto;
+        position: relative;
+    } 
+
+    aside picture {
+        width: 30%;
+    }
+
+    div.main {
+        width: 100vw;
+    }
+
+    div.main .header {
+        display: none;
+    }
+
+    div.main .content {
+        width: 90%;
+    }
+
+    form input, form textarea {
+        width: 95%;
+        margin: 20px auto 15px auto;
+    }
+
+    .form-group p {
+        width: 95%;
+        padding: 0px;
+        margin: 0px auto;
+    }
+
+    form button {
+        width: 95%;
+        margin: 0 auto;
+        font-size: 
+    }
+
+    div.popup {
+        width: 50%;
+        margin: auto;
+    }
+
+}
+
+
+

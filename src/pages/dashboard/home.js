@@ -11,9 +11,13 @@ export default function Home() {
   return (
   	<React.Fragment>
 	    <Aside />
-	    <main>
-	    	
-	    </main>
+	    <div className="main">
+	    	<Header />
+	    	<Jumbotron />
+	    	<div className="content">
+	    		<p>oi</p>
+	    	</div>
+	    </div>
     </React.Fragment>
   );
 }
