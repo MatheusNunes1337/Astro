@@ -1,5 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { FaUserGraduate, FaSchool, FaQuestionCircle,  } from 'react-icons/fa'
+import { ImNewspaper } from 'react-icons/im'
+
 import '../../assets/css/dashboard.css';
 
 
@@ -11,12 +14,10 @@ export default function Aside() {
         </picture>
         <nav>
             <ul>
-                <li><a href="#">saushuash</a></li>
-                <li><a href="#">saushuash</a></li>
-                <li><a href="#">saushuash</a></li>
-                <li><a href="#">saushuash</a></li>
-                <li><a href="#">saushuash</a></li>
-                <li><a href="#">saushuash</a></li>
+                <li><ImNewspaper className="nav-icon"/><Link to="/dashboard" className="link" style={{ textDecoration: 'none' }}>Postagens</Link></li>
+                <li><FaQuestionCircle className="nav-icon"/><Link to="/ambiente/bedroom1" className="link" style={{ textDecoration: 'none' }}>Perguntas</Link></li>
+                <li><FaUserGraduate className="nav-icon"/><Link to="/ambiente/bedroom1" className="link" style={{ textDecoration: 'none' }}>Alunos</Link></li>
+                <li><FaSchool className="nav-icon"/><Link to="/ambiente/bedroom1" className="link" style={{ textDecoration: 'none' }}>Instituições</Link></li>
             </ul>
             <button>Logout</button>
         </nav>
