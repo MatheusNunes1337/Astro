@@ -15,7 +15,7 @@ export default function Home() {
 	    	<Header />
 	    	<Jumbotron />
 	    	<div className="content">
-	    		<p>oi</p>
+	    		<p>Página inicial</p>
 	    	</div>
 	    </div>
     </React.Fragment>

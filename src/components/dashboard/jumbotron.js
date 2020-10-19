@@ -10,7 +10,6 @@ export default function Jumbotron() {
 	useEffect(() => {
     const interval = setInterval(() => {
       let hours = date.getHours()
-      console.log(hours)
       if(hours >= 12 && hours <= 18) {
       	setGreeting(greeting = 'Boa tarde')
       } else if ( hours >= 19 && hours <= 5) {
@@ -25,7 +24,6 @@ export default function Jumbotron() {
   return (
     <div className="jumbotron">
 	    <h1>{greeting}, Matheus. Bem vindo de volta!</h1>
-        <p>Pelotas, 07 de outubro de 2020</p>
 	</div>
   );
 }

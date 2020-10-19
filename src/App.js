@@ -1,9 +1,25 @@
 import React from 'react';
+import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+
+//pages
 import Home from './pages/dashboard/home'
+import Create from './pages/dashboard/create'
 
 function App() {
   return (
-    <Home />
+    <Router> 
+  	 	<Switch>
+  	 		<Route path="/dashboard/create/instituicao">
+  	 			<Create />
+  	 		</Route>
+  	 		<Route path="/dashboard/create/question">
+  	 			<Create />
+  	 		</Route>
+  	 		<Route path="/dashboard/">
+  	 			<Home />
+  	 		</Route>
+  	 	</Switch>	
+  	 </Router>
   );
 }
 
