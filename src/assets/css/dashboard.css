@@ -155,7 +155,7 @@ div.content form div p {
     padding: 0px 20px;
 }
 
-div.content form input, form textarea {
+div.content form input, form textarea, .chacha {
     display: block;
     border: 1px solid #dddddd;
     background: #dddddd;
