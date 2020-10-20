@@ -27,7 +27,7 @@ export default function Instituicao() {
               <p>E-mail do responsavel</p>
               <input type="email" name="email_resp"/>
           </div>
-          <button type="submit">Enviar</button>
+          <button type="submit">Criar</button>
       </form>
   );
 }

@@ -8,14 +8,20 @@ import '../../assets/css/dashboard.css';
 
 
 export default function Question() {
-	 let [options, setOptions] = useState('')
+	 let [options, setOptions] = useState([])
   
 
 
-  function setOption() {
+  function addOption() {
     let option = document.getElementById('options_field').value;
-    console.log(option)
+    console.log('option:' ,option)
+    setOptions(options => [...options, option])
   }
+
+  function resetOptions() {
+      setOptions([])
+  }
+
 
   return (
       <form name="question">
@@ -24,19 +30,25 @@ export default function Question() {
               <input type="text" name="question"/>
           </div>
           <div className="form-group">
-              <p>Cidade</p>
+              <p>Categoria</p>
               <input type="text" name="category"/>
           </div>
           <div className="form-group">
-              <p>Opcões</p>
+              <p>Opções</p>
               <input type="text" name="option" id="options_field"/>
+              <button type="button" className="optionsBtn" onClick={addOption}>oi</button>
+              <button type="button" className="optionsBtn" onClick={resetOptions}>reset</button>
+          </div>
+          <div className="question_options">
+              {options.map((option, i) =>
+                <span className="option" key={i}>{ option }</span>
+              )}
           </div>
           <div className="form-group">
               <p>Resposta</p>
               <input type="text" name="answer"/>
           </div> 
           <button type="submit">Criar</button>
-          <button type="button" onClick={setOption}>Adicionar</button>
       </form> 
   );
 }
