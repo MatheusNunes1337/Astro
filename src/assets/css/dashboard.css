@@ -155,17 +155,21 @@ div.content form div p {
     padding: 0px 20px;
 }
 
-div.content form input, form textarea, .chacha {
+div.content form input, form textarea, div.wysiwyg_field {
     display: block;
     border: 1px solid #dddddd;
     background: #dddddd;
     width: 80%;
     margin: 7px 20px 18px 20px;
+}
+
+div.content form input, form textarea {
     text-indent: 15px;
     font-size: clamp(14px, 2vw, 1rem);
     outline: none;
     transition: all 0.30s ease-in-out;
 }
+
 
 div.content form input {
     height: 35px; 
@@ -219,7 +223,7 @@ form input[type="text"]:focus, textarea:focus {
         width: 90%;
     }
 
-    div.content form input, form textarea {
+    div.content form input, form textarea, div.wysiwyg_field {
         width: 95%;
         margin: 10px auto 20px auto;
     }

@@ -8,6 +8,7 @@ import Jumbotron from '../../components/dashboard/jumbotron'
 //formulários de criação
 import Question from '../../components/dashboard/formQuestion'
 import Instituicao from '../../components/dashboard/formInstituicao'
+import Postagem from '../../components/dashboard/formPost'
 
 
 export default function Create() {
@@ -24,6 +25,10 @@ export default function Create() {
 		}
 		case 'instituicao': {
 			formulario = <Instituicao />
+			break
+		}
+		case 'postagem': {
+			formulario = <Postagem />
 			break
 		}
 		default: 

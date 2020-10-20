@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import CKEditor from 'ckeditor4-react'
+
+import api from '../../services/api'
 import '../../assets/css/dashboard.css';
+
+
 
 
 export default function Question() {
@@ -30,12 +34,7 @@ export default function Question() {
           <div className="form-group">
               <p>Resposta</p>
               <input type="text" name="answer"/>
-          </div>
-          <div className="form-group">
-          <CKEditor className="chacha"
-               data="<p>Hello from CKEditor 4!</p>"
-            />
-          </div>  
+          </div> 
           <button type="submit">Criar</button>
           <button type="button" onClick={setOption}>Adicionar</button>
       </form> 
