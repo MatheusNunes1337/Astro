@@ -27,7 +27,7 @@ export default function Create() {
 			formulario = <Instituicao />
 			break
 		}
-		case 'postagem': {
+		case 'post': {
 			formulario = <Postagem />
 			break
 		}

@@ -16,7 +16,7 @@ function App() {
   	 		<Route path="/dashboard/create/question">
   	 			<Create />
   	 		</Route>
-         <Route path="/dashboard/create/postagem">
+         <Route path="/dashboard/create/post">
            <Create />
          </Route>
          <Route path="/login">

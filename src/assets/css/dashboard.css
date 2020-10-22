@@ -167,11 +167,11 @@ div.main .header {
 .header button.logout {
     background-color: var(--secundary-color);
     border: none;
-    padding: 8px;
+    padding: 8px 14px;
     margin-right: 5vw;
     color: #ffffff;
     height: 60%; /*70%*/
-    width: 4vw; /*70px*/
+    width: auto; /*70px*/
     display: inline-flex;
     align-items: center;
 }

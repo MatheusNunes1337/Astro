@@ -8,6 +8,29 @@ import { MdAddCircle, MdDelete } from "react-icons/md"
         
 export default function Question() {
 	 let [options, setOptions] = useState([])
+   let [question, setQuestion] = useState('')
+   let [category, setCategory] = useState('')
+   let [answer, setAnswer] = useState('')
+
+  async function handleQuestion(e) {
+    e.preventDefault()
+
+    const data = {
+      question,
+      category,
+      options,
+      answer
+    }
+    console.log(data)
+    /*
+    try {
+      const response = await api.post('auth/login', data)
+      console.log(response.data)
+    } catch(err) {
+      alert(err)
+    }
+    */
+  }
   
 
 
@@ -23,14 +46,14 @@ export default function Question() {
 
 
   return (
-      <form name="question">
+      <form name="question" onSubmit={handleQuestion}>
           <div className="form-group">
               <p>Pergunta</p>
-              <input type="text" name="question"/>
+              <input type="text" name="question" onChange={e => setQuestion(e.target.value)}/>
           </div>
           <div className="form-group">
               <p>Categoria</p>
-              <input type="text" name="category"/>
+              <input type="text" name="category" onChange={e => setCategory(e.target.value)}/>
           </div>
           <div className="form-group">
               <p>Opções</p>
@@ -45,7 +68,7 @@ export default function Question() {
           </div>
           <div className="form-group">
               <p>Resposta</p>
-              <input type="text" name="answer"/>
+              <input type="text" name="answer" onChange={e => setAnswer(e.target.value)}/>
           </div> 
           <button type="submit">Criar</button>
       </form> 
