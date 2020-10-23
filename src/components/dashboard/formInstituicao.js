@@ -5,7 +5,7 @@ import '../../assets/css/dashboard.css';
 import api from '../../services/api'
 
 
-export default function Instituicao() {
+export default function Instituicao(props) {
 
   let [name, setName] = useState('')
    let [city, setCity] = useState('')

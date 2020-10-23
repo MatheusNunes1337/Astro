@@ -1,9 +1,9 @@
 @import 'fonts.css';
 
 :root {
-  --bg-color: #dddddd;
-  --primary-color: rgb(0,14,28);
-  --secundary-color: rgb(255,84,78);
+  --bg-color: #e5e4e4;
+  --primary-color: #000000;
+  --secundary-color: #360940;
   --font-size-1: clamp(18px, 4vw, 2rem);
   --font-size-2: clamp(14px, 2vw, 1rem);
 }
@@ -47,7 +47,7 @@ div.login-bg {
 }
 
  #adm_form {
-    background-color: #ffffff;
+    background-color: #FEFEFE;
     width: 22%;
     height: auto;
     margin: auto;
@@ -125,11 +125,11 @@ aside nav ul li:hover, aside nav ul li .link:active {
 
 aside nav ul li .link {
     text-decoration: none;
-    color: #ffffff;
+    color: #FEFEFE;
 }
 
 aside nav ul li .nav-icon {
-    color: #ffffff;
+    color: #FEFEFE;
     font-size: var(--font-size-2);
     margin-right: 10px;
 }
@@ -141,7 +141,7 @@ aside button {
     font-size: var(--font-size-2);
     border: none;
     display: none;
-    color: #ffffff;
+    color: #FEFEFE;
     background-color: var(--secundary-color);
 }
 
@@ -152,7 +152,7 @@ div.main {
 }
 
 div.main .header {
-    background-color: #ffffff;
+    background-color: #FEFEFE;
     width: 100%;
     height: 7vh;
     display: flex;
@@ -169,7 +169,7 @@ div.main .header {
     border: none;
     padding: 8px 14px;
     margin-right: 5vw;
-    color: #ffffff;
+    color: #FEFEFE;
     height: 60%; /*70%*/
     width: auto; /*70px*/
     display: inline-flex;
@@ -177,7 +177,7 @@ div.main .header {
 }
 
  div.main .jumbotron {
-    background-color: #ffffff;
+    background-color: #FEFEFE;
     width: 90%;
     height: auto;
     margin: 35px auto 15px auto;
@@ -204,7 +204,7 @@ div.main .jumbotron p {
 */
 
 div.main .content {
-    background-color: #ffffff;
+    background-color: #FEFEFE;
     width: 90%;
     height: auto;
     margin: 35px auto;
@@ -222,8 +222,8 @@ div.content form input, form textarea, div.wysiwyg_field, div.question_options {
 
 form input, div.wysiwyg_field {
     display: block;
-    border: 1px solid #dddddd;
-    background: #dddddd;
+    border: 2px solid var(--bg-color);
+    background: #FEFEFE;
 }
 
 form input {
@@ -247,7 +247,7 @@ div.content form button[type="submit"] {
     border: none;
     font-size: clamp(14px, 2vw, 1rem);
     background-color: rgb(0, 14, 28);
-    color: white;
+    color: #FEFEFE;
 }
 
 form input:focus, textarea:focus {

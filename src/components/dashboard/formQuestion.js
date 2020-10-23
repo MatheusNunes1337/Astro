@@ -6,11 +6,28 @@ import '../../assets/css/dashboard.css';
 import { MdAddCircle, MdDelete } from "react-icons/md"
 
         
-export default function Question() {
+export default function Question(props) {
 	 let [options, setOptions] = useState([])
    let [question, setQuestion] = useState('')
    let [category, setCategory] = useState('')
    let [answer, setAnswer] = useState('')
+
+   if(props.isToUpdate) {
+       console.log('você está na página de update question')
+       console.log('id da questão', props.questionId)
+       /*
+       try {
+        const id = props.questionId 
+        const response = await api.get(`question/q=${id}`)
+        console.log(response.data)
+        
+        } catch(err) {
+            alert(err)
+        }
+       */ 
+   } else {
+     console.log('kendrick lamar')
+   }
 
   async function handleQuestion(e) {
     e.preventDefault()

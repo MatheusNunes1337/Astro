@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react'
-//import CKEditor from 'ckeditor4-react'
 import { Editor } from '@tinymce/tinymce-react'
 import '../../assets/css/dashboard.css';
 
 
-export default function Postagem() {
+export default function Postagem(props) {
 	 
    let [titulo, setTitulo] = useState('')
    let [categoria, setCategoria] = useState('')
