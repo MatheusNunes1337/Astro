@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
-import CKEditor from 'ckeditor4-react'
+//import CKEditor from 'ckeditor4-react'
+import { Editor } from '@tinymce/tinymce-react'
 import '../../assets/css/dashboard.css';
 
 
@@ -48,7 +49,24 @@ export default function Postagem() {
           </div>
           <div className="form-group">
               <div className="wysiwyg_field">
-
+                  <Editor
+                       initialValue="<p>Digite o seu conteúdo aqui</p>"
+                       apiKey='0eps1wrjj72zeyaz83lyvv2si0k8dqf2vtgk0vnlq8rfnmj5'
+                       init={{
+                         height: 300,
+                         menubar: false,
+                         plugins: [
+                           'advlist autolink lists link image charmap print preview anchor',
+                           'searchreplace visualblocks code fullscreen', 'image code', 'table',
+                           'insertdatetime media table paste code help wordcount'
+                         ],
+                         toolbar:
+                           'undo redo | formatselect | link image | bold italic backcolor | \
+                           alignleft aligncenter alignright alignjustify | \
+                           bullist numlist outdent indent | removeformat | help'
+                       }}
+                       onEditorChange={(content, editor) => setConteudo(content)}
+                     />
               </div>    
           </div>  
           <button type="submit">Postar</button>
