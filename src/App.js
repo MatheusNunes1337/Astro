@@ -23,6 +23,12 @@ function App() {
 	         <Route path="/dashboard/update/question/:id">
 	           <Update />
 	         </Route>
+           <Route path="/dashboard/update/post/:id">
+             <Update />
+           </Route>
+           <Route path="/dashboard/update/instituicao/:id">
+             <Update />
+           </Route>
 	         <Route path="/login">
 	           <Login />
 	         </Route>

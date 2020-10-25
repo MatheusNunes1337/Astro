@@ -7,9 +7,9 @@ import Aside from '../../components/dashboard/aside'
 import Jumbotron from '../../components/dashboard/jumbotron'
 
 //formulários de criação
-import Question from '../../components/dashboard/formQuestion'
-import Instituicao from '../../components/dashboard/formInstituicao'
-import Postagem from '../../components/dashboard/formPost'
+import Question from '../../components/dashboard/forms/update/formQuestion'
+import Instituicao from '../../components/dashboard/forms/update/formInstituicao'
+import Postagem from '../../components/dashboard/forms/update/formPost'
 
 
 export default function Update() {
@@ -23,15 +23,15 @@ export default function Update() {
 
 	switch(suffix) {
 		case 'question': {
-			formulario = <Question isToUpdate="true" questionId={id}/>
+			formulario = <Question questionId={id}/>
 			break
 		}
 		case 'instituicao': {
-			formulario = <Instituicao isToUpdate="true" schoolId={id}/>
+			formulario = <Instituicao schoolId={id}/>
 			break
 		}
 		case 'post': {
-			formulario = <Postagem isToUpdate="true" postId={id}/>
+			formulario = <Postagem postId={id}/>
 			break
 		}
 		default: 

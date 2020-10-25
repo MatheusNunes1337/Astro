@@ -6,9 +6,9 @@ import Aside from '../../components/dashboard/aside'
 import Jumbotron from '../../components/dashboard/jumbotron'
 
 //formulários de criação
-import Question from '../../components/dashboard/formQuestion'
-import Instituicao from '../../components/dashboard/formInstituicao'
-import Postagem from '../../components/dashboard/formPost'
+import Question from '../../components/dashboard/forms/create/formQuestion'
+import Instituicao from '../../components/dashboard/forms/create/formInstituicao'
+import Postagem from '../../components/dashboard/forms/create/formPost'
 
 
 export default function Create() {

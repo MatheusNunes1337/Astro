@@ -15,15 +15,13 @@ export default function Login() {
   		username,
   		password
   	}
-  	console.log(data)
-    /*
+ 
   	try {
   		const response = await api.post('auth/login', data)
   		console.log(response.data)
   	} catch(err) {
   		alert(err)
   	}
-    */
   }
 
   return (

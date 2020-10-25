@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
-import '../../assets/css/dashboard.css';
+import '../../../../assets/css/dashboard.css';
 
 //api
-import api from '../../services/api'
+import api from '../../../../services/api'
 
 
 export default function Instituicao(props) {
@@ -23,15 +23,14 @@ export default function Instituicao(props) {
       responsavel,
       email_resp
     }
-    console.log(data)
-    /*
-    try {
-      const response = await api.post('auth/login', data)
-      console.log(response.data)
-    } catch(err) {
-      alert(err)
-    }
-    */
+    
+    api.post('school/', data)
+   .then(response => {
+        alert(response.data.message)
+    })
+    .catch(err => {
+        console.error(err)
+    })
   }
 	
 
