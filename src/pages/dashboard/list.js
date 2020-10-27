@@ -6,9 +6,9 @@ import Aside from '../../components/dashboard/aside'
 import Jumbotron from '../../components/dashboard/jumbotron'
 
 //tabelas
-import Question from '../../components/dashboard/formQuestion'
-import Instituicao from '../../components/dashboard/formInstituicao'
-import Postagem from '../../components/dashboard/formPost'
+//import Question from '../../components/dashboard/formQuestion'
+import Instituicao from '../../components/dashboard/tabelas/school'
+//import Postagem from '../../components/dashboard/formPost'
 
 
 export default function Index() {
@@ -19,18 +19,21 @@ export default function Index() {
 	
 
 	switch(suffix) {
+		/*
 		case 'question': {
 			tabela = <Question />
 			break
 		}
-		case 'instituicao': {
+		*/
+		case 'instituicoes': {
 			tabela = <Instituicao />
 			break
-		}
+		}/*
 		case 'postagem': {
 			tabela = <Postagem />
 			break
 		}
+		*/
 		default: 
 		tabela = ''
 	}
@@ -41,9 +44,8 @@ export default function Index() {
 	    <Aside />
 	    <div className="main">
 	    	<Header />
-	    	<Jumbotron />
 	    	<div className="content">
-	    		
+	    		{tabela}
 	    	</div>
 	    </div>
     </React.Fragment>

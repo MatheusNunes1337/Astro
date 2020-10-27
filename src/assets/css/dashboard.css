@@ -32,6 +32,10 @@ p, a {
 	font-family: 'Roboto', sans-serif;
 }
 
+.link {
+    text-decoration: none;
+}
+
 /*login */
 
 div.login-bg {
@@ -124,7 +128,6 @@ aside nav ul li:hover, aside nav ul li .link:active {
 }
 
 aside nav ul li .link {
-    text-decoration: none;
     color: #FEFEFE;
 }
 
@@ -287,9 +290,41 @@ button.optionsBtn {
 
 }
 
-.optionBtn-icon {
+.optionBtn-icon, .actionBtn-icon {
     color: white;
     font-size: var(--font-size-2);
+}
+
+
+div.content .table-wrap {
+    overflow-x: auto;
+}
+
+div.content h2 {
+    font-size: clamp(18px, 3.5vw, 1.4rem);
+    margin-bottom: 25px;
+    width: 100%;
+}
+
+div.content table {
+    align-self: flex-start;
+    border-collapse: collapse;
+    width: 1120px;
+}
+
+ td, th {
+  text-align: center;
+  border: 1px solid #e5e4e4;
+  padding: 15px;
+
+}
+
+td button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    border: none;
+    padding: 8px;
+    margin-left: 5px;
 }
 
 @media only screen and (max-width: 1366px) {

@@ -14,10 +14,10 @@ export default function Aside() {
         </picture>
         <nav>
             <ul>
-                <li><ImNewspaper className="nav-icon"/><Link to="/dashboard" className="link" style={{ textDecoration: 'none' }}>Postagens</Link></li>
-                <li><FaQuestionCircle className="nav-icon"/><Link to="/ambiente/bedroom1" className="link" style={{ textDecoration: 'none' }}>Perguntas</Link></li>
-                <li><FaUserGraduate className="nav-icon"/><Link to="/ambiente/bedroom1" className="link" style={{ textDecoration: 'none' }}>Alunos</Link></li>
-                <li><FaSchool className="nav-icon"/><Link to="/ambiente/bedroom1" className="link" style={{ textDecoration: 'none' }}>Instituições</Link></li>
+                <li><ImNewspaper className="nav-icon"/><Link to="/dashboard" className="link">Postagens</Link></li>
+                <li><FaQuestionCircle className="nav-icon"/><Link to="/ambiente/bedroom1" className="link">Perguntas</Link></li>
+                <li><FaUserGraduate className="nav-icon"/><Link to="/ambiente/bedroom1" className="link">Alunos</Link></li>
+                <li><FaSchool className="nav-icon"/><Link to="/ambiente/bedroom1" className="link">Instituições</Link></li>
             </ul>
             <button>Logout</button>
         </nav>
