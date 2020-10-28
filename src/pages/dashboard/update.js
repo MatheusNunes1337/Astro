@@ -44,7 +44,6 @@ export default function Update() {
 	    <Aside />
 	    <div className="main">
 	    	<Header />
-	    	<Jumbotron />
 	    	<div className="content">
 	    		{formulario}
 	    	</div>

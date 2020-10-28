@@ -75,7 +75,7 @@ export default function Instituicao(props) {
               <p>E-mail do responsavel</p>
               <input type="email" name="email_resp" value={email_resp} onChange={e => setEmail(e.target.value)}/>
           </div>
-          <button type="submit">Criar</button>
+          <button type="submit">Atualizar</button>
       </form>
   );
 }

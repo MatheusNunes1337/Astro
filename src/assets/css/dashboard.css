@@ -138,7 +138,7 @@ aside nav ul li .nav-icon {
 }
 
 aside button {
-    padding: 10px;
+    padding: 10px 15px;
     margin-left: 25px;
     margin-top: 50px;
     font-size: var(--font-size-2);
@@ -245,11 +245,11 @@ div.content form input {
 
 div.content form button[type="submit"] {
     display: block;
-    padding: 10px 18px;
-    margin: 20px 20px 0px 20px;
+    padding: 6px 10px;
+    margin: 30px 20px 0px 20px;
     border: none;
     font-size: clamp(14px, 2vw, 1rem);
-    background-color: rgb(0, 14, 28);
+    background-color: var(--secundary-color);
     color: #FEFEFE;
 }
 
@@ -297,19 +297,19 @@ button.optionsBtn {
 
 
 div.content .table-wrap {
+    margin-top: 25px;
     overflow-x: auto;
 }
 
 div.content h2 {
     font-size: clamp(18px, 3.5vw, 1.4rem);
-    margin-bottom: 25px;
     width: 100%;
 }
 
 div.content table {
     align-self: flex-start;
     border-collapse: collapse;
-    width: 1120px;
+    width: 1100px;
 }
 
  td, th {
@@ -319,11 +319,23 @@ div.content table {
 
 }
 
+tr.student-info td:nth-child(3) {
+    max-width: 300px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+tr.student-info td:last-child {
+    width: 170px;
+}
+
 td button {
     display: inline-block;
-    background-color: var(--primary-color);
+    align-items: center;
+    background-color: var(--secundary-color);
     border: none;
-    padding: 8px;
+    padding: 6px 8px;
     margin-left: 5px;
 }
 
@@ -331,6 +343,10 @@ td button {
     #adm_form {
         width: 28%;
         height: auto;
+    }
+
+    div.content table {
+        width: 950px;
     }
 }
 

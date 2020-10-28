@@ -86,7 +86,7 @@ export default function Postagem(props) {
                      />
               </div>    
           </div>  
-          <button type="submit">Postar</button>
+          <button type="submit">Atualizar</button>
       </form> 
   );
 }

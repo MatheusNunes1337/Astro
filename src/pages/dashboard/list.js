@@ -6,8 +6,10 @@ import Aside from '../../components/dashboard/aside'
 import Jumbotron from '../../components/dashboard/jumbotron'
 
 //tabelas
-//import Question from '../../components/dashboard/formQuestion'
+import Question from '../../components/dashboard/tabelas/question'
 import Instituicao from '../../components/dashboard/tabelas/school'
+import Post from '../../components/dashboard/tabelas/post'
+import Student from '../../components/dashboard/tabelas/student'
 //import Postagem from '../../components/dashboard/formPost'
 
 
@@ -19,21 +21,22 @@ export default function Index() {
 	
 
 	switch(suffix) {
-		/*
-		case 'question': {
+		case 'questions': {
 			tabela = <Question />
 			break
 		}
-		*/
 		case 'instituicoes': {
 			tabela = <Instituicao />
 			break
-		}/*
-		case 'postagem': {
-			tabela = <Postagem />
+		}
+		case 'posts': {
+			tabela = <Post />
 			break
 		}
-		*/
+		case 'students': {
+			tabela = <Student />
+			break
+		}
 		default: 
 		tabela = ''
 	}

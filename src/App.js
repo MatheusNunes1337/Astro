@@ -33,6 +33,15 @@ function App() {
            <Route path="/dashboard/instituicoes">
              <Index />
            </Route>
+           <Route path="/dashboard/questions">
+             <Index />
+           </Route>
+           <Route path="/dashboard/posts">
+             <Index />
+           </Route>
+           <Route path="/dashboard/students">
+             <Index />
+           </Route>
 	         <Route path="/login">
 	           <Login />
 	         </Route>

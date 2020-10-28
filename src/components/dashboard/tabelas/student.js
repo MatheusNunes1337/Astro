@@ -8,16 +8,16 @@ import '../../../assets/css/dashboard.css';
 import api from '../../../services/api'
 
 
-export default function School() {
-	
-  let [instituicoes, setInstituicoes] = useState([])
+export default function Student() {
+  
+  let [students, setStudents] = useState([])
   let [message, setMessage] = useState('')
   let [table, setTable] = useState('')
 
   useEffect(() => {
-      async function getInstituicoes() {
-          const response =  await api.get('school')
-          setInstituicoes(response.data)
+      async function getStudents() {
+          const response =  await api.get('student')
+          setStudents(response.data)
           if(response.data.length !== 0) {
               setMessage(<h2>Total de registros encontrados: {response.data.length}</h2>)
               setTable(
@@ -27,24 +27,19 @@ export default function School() {
                               <tr>
                                 <th>#</th>
                                 <th>Nome</th>
-                                <th>Cidade</th>
-                                <th>Estado</th>
+                                <th>Escola</th>
                                 <th>Ações</th>
                               </tr>
                           </thead>
                           <tbody>
                               {
-                                response.data.map((instituicao, i) => 
-                                    <tr key={i}>
+                                response.data.map((student, i) => 
+                                    <tr className="student-info" key={i}>
                                       <td>{i + 1}</td>
-                                      <td>{instituicao.name}</td>
-                                      <td>{instituicao.city}</td>
-                                      <td>{instituicao.state}</td>
-                                      <td>
-                                          <Link to={'/dashboard/update/instituicao/' + instituicao._id} className="link">
-                                              <button><MdEdit className="actionBtn-icon" /></button>
-                                          </Link>  
-                                          <button value={instituicao._id} onClick={deleteSchool}><MdDelete className="actionBtn-icon"/></button>
+                                      <td>{student.name}</td>
+                                      <td>{student.school}</td>
+                                      <td> 
+                                          <button value={student._id} onClick={deleteStudent}><MdDelete className="actionBtn-icon"/></button>
                                       </td>
                                     </tr>
                                 )
@@ -54,19 +49,19 @@ export default function School() {
                   </div>
               )
           } else {
-              setMessage(<h2>Parece que ainda não há nenhuma instituição cadastrada no banco de dados.</h2>)
+              setMessage(<h2>Parece que ainda não há nenhum aluno cadastrado no banco de dados.</h2>)
               setTable('')
           }
       }
-      getInstituicoes()
+      getStudents()
     }, [])
 
 
-   function deleteSchool(e) {
+   function deleteStudent(e) {
        const id = e.currentTarget.value
        const goAhead = window.confirm('Você está prestes a deletar esse registro. Tem certeza que deseja fazer isso?')
        if(goAhead === true) {
-           api.delete(`school/${id}`)
+           api.delete(`student/${id}`)
           .then(response => {
             alert(response.data.message)
           })
