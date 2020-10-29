@@ -1,9 +1,10 @@
 import React from 'react';
 
+import '../../assets/css/global.css'
 import '../../assets/css/dashboard.css'
+
 import Header from '../../components/dashboard/header'
 import Aside from '../../components/dashboard/aside'
-import Jumbotron from '../../components/dashboard/jumbotron'
 
 //formulários de criação
 import Question from '../../components/dashboard/forms/create/formQuestion'
@@ -41,7 +42,6 @@ export default function Create() {
 	    <Aside />
 	    <div className="main">
 	    	<Header />
-	    	<Jumbotron />
 	    	<div className="content">
 	    		{formulario}
 	    	</div>

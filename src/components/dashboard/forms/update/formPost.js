@@ -3,6 +3,7 @@ import { Editor } from '@tinymce/tinymce-react'
 
 import api from '../../../../services/api'
 
+import '../../../../assets/css/global.css'
 import '../../../../assets/css/dashboard.css';
 
 

@@ -1,6 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 
 import api from '../../../../services/api'
+
+import '../../../../assets/css/global.css'
 import '../../../../assets/css/dashboard.css';
 
 import { MdAddCircle, MdDelete } from "react-icons/md"
@@ -57,8 +59,8 @@ export default function Question(props) {
           <div className="form-group">
               <p>Opções</p>
               <input type="text" name="option" id="options_field"/>
-              <button type="button" className="optionsBtn" onClick={addOption}><MdAddCircle className="optionBtn-icon"/></button>
-              <button type="button" className="optionsBtn" onClick={resetOptions}><MdDelete className="optionBtn-icon"/></button>
+              <button type="button" className="optionsBtn" onClick={addOption}><MdAddCircle className="icon optionBtn-icon"/></button>
+              <button type="button" className="optionsBtn" onClick={resetOptions}><MdDelete className="icon optionBtn-icon"/></button>
           </div>
           <div className="question_options">
               {options.map((option, i) =>

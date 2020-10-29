@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 
 import api from '../../../../services/api'
 
+import '../../../../assets/css/global.css'
 import '../../../../assets/css/dashboard.css';
 
 import { MdAddCircle, MdDelete } from "react-icons/md"

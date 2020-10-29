@@ -1,12 +1,16 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom';
 
 import api from '../services/api'
 
+import '../assets/css/global.css'
 import '../assets/css/dashboard.css'
 
 export default function Login() {
   let [username, setUsername] = useState('')
   let [password, setPassword] = useState('')
+
+  const history = useHistory()
 
   async function handleLogin(e) {
   	e.preventDefault()
@@ -18,7 +22,7 @@ export default function Login() {
  
   	try {
   		const response = await api.post('auth/login', data)
-  		console.log(response.data)
+  		history.push('/dashboard')
   	} catch(err) {
   		alert(err)
   	}

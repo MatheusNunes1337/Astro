@@ -1,4 +1,6 @@
 import React, { useState } from 'react'
+
+import '../../../../assets/css/global.css'
 import '../../../../assets/css/dashboard.css';
 
 //api

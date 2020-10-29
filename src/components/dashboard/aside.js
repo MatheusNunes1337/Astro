@@ -1,12 +1,20 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FaUserGraduate, FaSchool, FaQuestionCircle,  } from 'react-icons/fa'
 import { ImNewspaper } from 'react-icons/im'
 
+import '../../assets/css/global.css'
 import '../../assets/css/dashboard.css';
 
 
 export default function Aside() {
+
+  const history = useHistory()
+
+  function logout() {
+      history.push('/login')
+  }
+
   return (
     <aside>
        <picture>
@@ -14,12 +22,12 @@ export default function Aside() {
         </picture>
         <nav>
             <ul>
-                <li><ImNewspaper className="nav-icon"/><Link to="/dashboard" className="link">Postagens</Link></li>
-                <li><FaQuestionCircle className="nav-icon"/><Link to="/ambiente/bedroom1" className="link">Perguntas</Link></li>
-                <li><FaUserGraduate className="nav-icon"/><Link to="/ambiente/bedroom1" className="link">Alunos</Link></li>
-                <li><FaSchool className="nav-icon"/><Link to="/ambiente/bedroom1" className="link">Instituições</Link></li>
+                <li><ImNewspaper className="icon nav-icon"/><Link to="/dashboard/posts" className="link">Postagens</Link></li>
+                <li><FaQuestionCircle className="icon nav-icon"/><Link to="/dashboard/questions" className="link">Perguntas</Link></li>
+                <li><FaUserGraduate className="icon nav-icon"/><Link to="/dashboard/students" className="link">Alunos</Link></li>
+                <li><FaSchool className="icon nav-icon"/><Link to="/dashboard/instituicoes" className="link">Instituições</Link></li>
             </ul>
-            <button>Logout</button>
+            <button onClick={logout}>Logout</button>
         </nav>
     </aside>
   );

@@ -1,0 +1,33 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+  height: 7vh;
+  background-color: #FEFEFE;
+}
+
+header picture {
+  width: 10%;
+  height: 80%;
+  margin-left: 7vw;
+  background-color: var(--bg-color);
+}
+
+header .quiz-btn {
+  width: 5%;
+  height: 60%;
+  background-color: var(--bg-color);
+  margin-right: 7vw;
+}
+
+div.content {
+    flex-grow: 1;
+    height: 86vh;
+}
+
+footer {
+  width: 100vw;
+  height: 7vh;
+  background-color: #FEFEFE;
+}

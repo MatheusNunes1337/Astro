@@ -1,10 +1,11 @@
 import React from 'react';
 import { useParams } from "react-router-dom"
 
+import '../../assets/css/global.css'
 import '../../assets/css/dashboard.css'
+
 import Header from '../../components/dashboard/header'
 import Aside from '../../components/dashboard/aside'
-import Jumbotron from '../../components/dashboard/jumbotron'
 
 //formulários de criação
 import Question from '../../components/dashboard/forms/update/formQuestion'

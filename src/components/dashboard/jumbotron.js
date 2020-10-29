@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from 'react'
+
+import '../../assets/css/global.css'
 import '../../assets/css/dashboard.css';
 
 
 export default function Jumbotron() {
 	let [greeting, setGreeting] = useState('');
 	const date = new Date()
-	let hours;
 
 	useEffect(() => {
     const interval = setInterval(() => {
@@ -16,6 +17,7 @@ export default function Jumbotron() {
       		setGreeting(greeting = 'Boa noite')
       } else {
       	setGreeting(greeting = 'Bom dia')
+
       }
     }, 1000);
     return () => clearInterval(interval);

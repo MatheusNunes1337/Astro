@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react'
-import { Link } from 'react-router-dom';
-import { MdDelete, MdEdit } from "react-icons/md"
+import { MdDelete } from "react-icons/md"
 
 import '../../../assets/css/dashboard.css';
 
