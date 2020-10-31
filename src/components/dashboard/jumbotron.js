@@ -13,7 +13,7 @@ export default function Jumbotron() {
       let hours = date.getHours()
       if(hours >= 12 && hours <= 18) {
       	setGreeting(greeting = 'Boa tarde')
-      } else if ( hours >= 19 && hours <= 5) {
+      } else if ( hours >= 19 || hours <= 5) {
       		setGreeting(greeting = 'Boa noite')
       } else {
       	setGreeting(greeting = 'Bom dia')

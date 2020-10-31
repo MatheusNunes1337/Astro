@@ -11,9 +11,9 @@
 
 div.login-bg {
     display: flex;
-    background-image: url('../images/login_bg_blue.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+    background-color: var(--bg-color);  /*background-image: url('../images/login_bg_blue.jpg')*/;
+    /*background-size: cover;
+    background-repeat: no-repeat; */
     flex-wrap: wrap;
     width: 100vw;
     height: 100vh;
@@ -23,24 +23,26 @@ div.login-bg {
 
  #adm_form {
     background-color: #FEFEFE;
-    width: 22%;
+    width: 20%;
     height: auto;
     margin: auto;
+    border-radius: 5px;
 }
 
  #adm_form > p {
     color: #000000;
     margin: 50px auto 0px auto;
-    font-size: clamp(2rem, 3vw, 2.2rem);
+    font-size: clamp(1.6rem, 2.5vw, 1.9rem);
     text-align: center;
 }
 
 #adm_form input, #adm_form button {
     display: block;
     width: 85%;
-    height: 55px;
+    height: 45px;
+    border-radius: 5px;
     outline: none;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 #adm_form input {
@@ -49,16 +51,16 @@ div.login-bg {
 
 #adm_form input::placeholder {
     color: gray;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
 
 #adm_form input:first-of-type  {
-    margin-top: 80px;
+    margin-top: 60px;
 }
 
 
 #adm_form button {
-    margin: 0px auto 50px auto;
+    margin: 15px auto 50px auto;
     background: #2e88db;
     color: white;
     border: none;
@@ -185,6 +187,7 @@ div.main .content {
     height: auto;
     margin: 35px auto;
     padding: 20px;
+    display: block;
 }
 
 div.content form div p {
@@ -317,7 +320,7 @@ td button {
 
 @media only screen and (max-width: 1366px) {
     #adm_form {
-        width: 28%;
+        width: 25%;
         height: auto;
     }
 

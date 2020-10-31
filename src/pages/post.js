@@ -7,22 +7,16 @@ import Card from '../components/card'
 import '../assets/css/global.css'
 import '../assets/css/client.css'
 
-export default function Homepage() {
+export default function Post() {
 
 
   return (
   	<React.Fragment>
 	    <Header />
 	  	<div className="conteudo">
-	  		<article className="card-wrapper">
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
+	  		<article className="post-content">
+	  			<div className="previous-post"></div>
+	  			<div className="next-post"></div>
 	  		</article>
 	  	</div>
 		<Footer />

@@ -7,6 +7,7 @@ import Update from '../pages/dashboard/update'
 import Index from '../pages/dashboard/list'
 import Login from '../pages/login'
 import Homepage from '../pages/home'
+import Post from '../pages/post'
 
 export default function Routes () {
 
@@ -46,12 +47,15 @@ export default function Routes () {
 		     	<Route path="/login">
 		       		<Login />
 		     	</Route>
-		     	<Route path="/">
-		       		<Homepage />
-		     	</Route>
+		     	<Route path="/post/:id">
+		     		<Post />
+		   		</Route>
 		 		<Route path="/dashboard/">
 	 				<Home />
 	 			</Route>
+	 			<Route path="/">
+		       		<Homepage />
+		     	</Route>
   			</Switch>	
 		</Router>
 	);
