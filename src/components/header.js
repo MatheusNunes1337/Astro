@@ -11,7 +11,7 @@ export default function Header() {
   	    <picture className="logo">
           
         </picture>
-        <div className="quiz-btn"></div>
+        <button className="quiz-btn">Quiz</button>
 	  </header>
   );
 }
