@@ -12,6 +12,16 @@ button, p, .icon {
 }
 
 /*
+.link {
+    background-color: red;
+    text-decoration: none;
+    height: 100%;
+}
+*/
+
+
+
+/*
 .icon {
   font-size: 25px;
 }
@@ -22,7 +32,7 @@ header {
   align-items: center;
   justify-content: space-between;
   width: 100vw;
-  height: 9vh;
+  height: 7vh;
   background-color: var(--primary-color);
 }
 
@@ -43,6 +53,7 @@ header button.quiz-btn {
   background-color: var(--primary-color);
   color: #FEFEFE;
   margin-right: 7vw;
+  border-radius: 5px;
 }
 
 div.conteudo {
@@ -50,7 +61,7 @@ div.conteudo {
     align-items: center;
     justify-content: center;
     flex-grow: 1;
-    min-height: 82vh;
+    min-height: 86vh;
     background-color: #FEFEFE;
 }
 
@@ -111,16 +122,46 @@ article div.post-card {
     width: 280px;
     height: 150px;
     margin: 10px 0px;
-    background-color: #FEFEFE;
+    color: var(--primary-color);
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    padding: 10px 0px 0px 5px;
 }
 
+article div.post-card:hover {
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+
+div.post-card .card-icon {
+    width: 48px;
+    height: 48px;
+    margin: 10px 0px 0px 15px; 
+    background-color: lightgreen;
+}
+
+div.post-card .card-title {
+    margin: 20px 0px 10px 0px;
+    padding: 0px 15px;
+}
 
 
 footer {
   width: 100vw;
-  height: 9vh;
+  height: 7vh;
   background-color: var(--primary-color);
 }
+
+@media only screen and (max-width: 1366px) {
+    header, footer {
+      height: 9vh;
+    }
+
+    div.conteudo {
+        min-height: 82vh;
+    }
+}
+
 
 @media only screen and (max-width: 768px) {
 
@@ -140,6 +181,16 @@ footer {
 
     button.previous-post, button.next-post {
       
+    }
+
+    div.conteudo article.card-wrapper {
+        justify-content: center;
+        margin: 20px 0px;
+    }
+
+
+    div.post-card .card-title {
+      margin-top: 30px;
     }
 
 }

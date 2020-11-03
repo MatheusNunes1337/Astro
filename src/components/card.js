@@ -8,7 +8,8 @@ export default function Card() {
 
   return (
     <div className="post-card">
-  	  	<p>card</p>
+  	  	<div className="card-icon"></div>
+  	  	<p className="card-title">O título irá aqui é verdade meu caro amigo, dragon ball</p>
 	</div>
   );
 }
