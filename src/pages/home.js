@@ -25,7 +25,6 @@ export default function Homepage() {
 	  			<Card />
 	  			<Card />
 	  			<Card />
-	  			<Card />
 	  		</article>
 	  	</div>
 		<Footer />
