@@ -153,9 +153,40 @@ div.post-card .card-title {
 
 
 footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   width: 100vw;
-  height: 7vh;
+  min-height: 45vh;
+  height: auto;
   background-color: var(--primary-color);
+}
+
+footer div.about {
+    background-color: blueviolet;
+    height: 60%;
+    width: 45%;
+    margin: 45px 0px 0px 7vw;
+    margin-left: 7vw;
+}
+
+footer div.footer {
+  display: flex;
+  justify-content: space-between;
+  height: 15%;
+  width: 100%;
+}
+
+footer div.footer p.copyright {
+    margin-left: 7vw;
+    align-self: center;
+    color: #FEFEFE;
+}
+
+footer div.footer p.icon-attribution {
+  margin-right: 7vw;
+  align-self: center;
+  color: #FEFEFE;
 }
 
 @media only screen and (max-width: 1366px) {
