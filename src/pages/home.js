@@ -16,15 +16,15 @@ export default function Homepage() {
 	    <Header />
 	  	<div className="conteudo">
 	  		<article className="card-wrapper">
-	  			<Link to="/post/1" className="link"><Card /></Link>
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
-	  			<Card />
+	  			<Link to="/post/1" className="link"><Card planet="Vênus"/></Link>
+	  			<Card planet="Terra"/>
+	  			<Card planet="Vênus"/>
+	  			<Card planet="Urano"/>
+	  			<Card planet="Saturno"/>
+	  			<Card planet="Mercurio"/>
+	  			<Card planet="Marte"/>
+	  			<Card planet="Netuno"/>
+	  			<Card planet="Urano"/>
 	  		</article>
 	  	</div>
 		<Footer />
