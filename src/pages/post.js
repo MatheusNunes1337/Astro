@@ -28,7 +28,7 @@ export default function Post() {
 	  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 	  					Donec ac pulvinar nibh, quis fermentum dui. In sed dui pretium, porta nulla at, dictum est	
 	  				</p>
-	  				<h2>Start up melhor kdrama?</h2>
+	  				<h2>Mr. Sunshine?</h2>
 	  				<p>
 	  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
 	  					Donec ac pulvinar nibh, quis fermentum dui. In sed dui pretium, porta nulla at, dictum est. Ut eget lacinia enim, nec fermentum purus. Maecenas non vestibulum elit. Donec elementum placerat condimentum. 

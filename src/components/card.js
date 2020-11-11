@@ -52,7 +52,7 @@ export default function Card(props) {
   return ( 
     <div className="post-card">
   	  	<img src={planeta} className="card-icon" />
-  	  	<p className="card-title">O título irá aqui é verdade meu caro amigo, dragon ball, pois é matheus.</p>
+  	  	<p className="card-title">O título irá aqui é verdadedfdf, matheus ksis sdijd idjsddi matheus.</p>
 	</div>
   );
 }
