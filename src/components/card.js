@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useHistory } from 'react-router-dom'
 
 import '../assets/css/global.css'
 import '../assets/css/client.css'
@@ -17,6 +18,7 @@ import urano from '../assets/images/uranus.png'
 export default function Card(props) {
 	
   let planeta
+  let history = useHistory();
 
   switch (props.planet) {
   	 case 'Mercurio': 
@@ -48,11 +50,18 @@ export default function Card(props) {
   }
 
 
+  function goToPost(e) {
+      const id = e.currentTarget.id
+      history.push(`/post/${id}`);
+
+  }
+
+
 
   return ( 
-    <div className="post-card">
+    <button className="post-card" id={props.id} onClick={goToPost}>
   	  	<img src={planeta} className="card-icon" />
   	  	<p className="card-title">O título irá aqui é verdadedfdf, matheus ksis sdijd idjsddi matheus.</p>
-	</div>
+	</button>
   );
 }

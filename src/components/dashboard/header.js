@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <div className="header">
 	    <p>Painel administrativo</p>
-	    <button className="logout" onClick={logout}>logout</button>
+	    <button className="logout" onClick={logout}>Logout</button>
 	</div>
   );
 }

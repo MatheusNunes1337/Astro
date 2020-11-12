@@ -5,7 +5,7 @@ header {
   justify-content: space-between;
   width: 100vw;
   height: 7vh;
-  background-color: var(--primary-color);
+  background-color: var(--main-color);
 }
 
 header picture {
@@ -19,11 +19,13 @@ header button.quiz-btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 2.5%;
-  height: 65%;
+  /*width: 2.5%;*/
+  height: 60%;
+  padding: 0px 25px;
   border: 2px solid blueviolet;
   background-color: blueviolet;
   color: #FEFEFE;
+  font-size: var(--font-size);
   margin-right: 7vw;
 }
 
@@ -66,6 +68,7 @@ section > h1, section > p, section > h2 {
 
 section p {
   line-height: 1.6;
+  text-align: justify;
 }
 
 div.post-buttons {
@@ -82,11 +85,17 @@ button.previous-post, button.next-post {
     margin: 20px 15px;
     padding: 10px 20px;
     border: none;
-    background-color: var(--bg-color);
+    background-color: var(--secundary-color);
+    color: var(--white);
+}
+
+.icon {
+    color: var(--white);
 }
 
 button.previous-post .icon {
    margin-right: 5px;
+   color: red;
 }
 
 button.next-post .icon{
@@ -97,51 +106,55 @@ div.conteudo article.card-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
-  width: 90vw;
+  width: 86vw;
   height: auto;
 }
 
-article div.post-card {
+article button.post-card {
     width: 280px;
     height: 150px;
     margin: 10px 0px 10px 23px;
-    color: var(--primary-color);
+    background-color: var(--white);
+    color: var(--main-color);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
+    border: none;
+    outline: none;
     border-radius: 5px;
     padding: 10px 0px 0px 5px;
+    display: flex;
+    flex-direction: column;
 }
 
 
-article div.post-card:hover {
+article button.post-card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
 }
 
-div.post-card .card-icon {
+button.post-card .card-icon {
     width: 40px;
     height: 40px;
     margin: 10px 0px 0px 15px; 
 }
 
-div.post-card .card-title {
-    margin: 20px 0px 10px 0px;
+button.post-card .card-title {
+    margin: 25px 0px 10px 0px;
     padding: 0px 15px;
+    text-align: left;
+    width: auto;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: var(--font-size);
 }
 
 
 footer {
-  /*
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;*/
   width: 100vw;
   height: auto;
-  background-color: var(--primary-color);
+  background-color: var(--main-color);
 }
 
 footer div.logo {
@@ -175,9 +188,9 @@ footer div.about p.content {
 
 footer p.icon-attribution {
   width: 86%;
-  margin: 0px 0px 5px 7vw;
+  margin: 0px 0px 10px 7vw;
   padding: 20px 0px;
-  border-bottom: 2.5px solid gray;
+  /*border-bottom: 2.5px solid gray;*/
   color: gray;
   font-size: var(--font-size-2);
 }
@@ -194,6 +207,7 @@ footer div.footer {
   justify-content: space-between;
   height: 40px;
   width: 100%;
+  background-color: var(--secundary-color);
 }
 
 
@@ -201,7 +215,7 @@ footer div.footer p.copyright {
     margin-left: 7vw;
     align-self: center;
     font-size: var(--font-size-2);
-    color: gray;
+    color: var(--white);
 }
 
 
@@ -226,17 +240,22 @@ footer div.footer p.copyright {
 
 @media only screen and (max-width: 768px) {
 
+    header {
+       height: 90px;
+    }
+
     header picture {
         width: 19%;
+        height: 60%;
     }
 
     header button.quiz-btn {
         width: 15%;
+        height: 55%;
     }
 
     div.conteudo article.post-content {
         width: 90vw;
-        background-color: red;
     }
 
     button.previous-post, button.next-post {
@@ -249,15 +268,15 @@ footer div.footer p.copyright {
         width: 86vw;
     }
 
-    article div.post-card {
+    article button.post-card {
         margin: 15px 0px;
     }
 
-    div.post-card .card-title {
+    button.post-card .card-title {
       margin-top: 24px;
     }
 
-    div.post-card .card-icon {
+    button.post-card .card-icon {
       width: 45px;
       height: 45px;
     }
@@ -274,27 +293,48 @@ footer div.footer p.copyright {
 
 @media only screen and (max-width: 460px) {
 
+  
     header picture {
         margin-left: 7vw;
         width: 30%;
-        height: 60%;
+        height: 50%;
     }
 
     header button.quiz-btn {
         margin-right: 7vw;
         width: 23%;
-        height: 60%;
+        height: 45%;
+    }
+
+    div.conteudo article.post-content {
+        width: 88vw;
+    }
+
+    button.previous-post, button.next-post {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
     }
 
     div.conteudo article.card-wrapper {
-        justify-content: center;
-        margin: 20px 0px;
-        width: 86vw;
+        justify-content: space-between;
+        margin: 15px 0px;
+        width: 84vw;
+    }  
+
+     article button.post-card {
+        height: 130px;
+        margin: 15px 0px;
+        width: 47%;   
     }
 
-    article div.post-card {
-        margin: 15px 0px;
-        width: 100%;
+    article button.post-card .card-icon {
+        width: 35px;
+        height: 35px;
+    }
+
+    article button.post-card .card-title {
+        margin-top: 25px;
     }
 
     footer div.logo {

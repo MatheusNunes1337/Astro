@@ -22,11 +22,10 @@ div.login-bg {
 }
 
  #adm_form {
-    background-color: #FEFEFE;
+    background-color: var(--white);
     width: 20%;
     height: auto;
     margin: auto;
-    border-radius: 5px;
 }
 
  #adm_form > p {
@@ -39,8 +38,7 @@ div.login-bg {
 #adm_form input, #adm_form button {
     display: block;
     width: 85%;
-    height: 45px;
-    border-radius: 5px;
+    height: 50px;
     outline: none;
     font-size: 1rem;
 }
@@ -60,8 +58,8 @@ div.login-bg {
 
 
 #adm_form button {
-    margin: 15px auto 50px auto;
-    background: #2e88db;
+    margin: 25px auto 50px auto;
+    background: var(--secundary-color);
     color: white;
     border: none;
 }
@@ -70,7 +68,7 @@ div.login-bg {
 /*aside */
 
 aside {
-  background-color: var(--primary-color); 
+  background-color: var(--main-color); 
   width: 17vw;
   min-height: 100vh;
   max-height: 100vh;
@@ -80,9 +78,10 @@ aside {
 
 aside picture {
     display: block;
-    width: 100%;
+    width: 55%;
     background-color: var(--secundary-color);
-    height: 7%;
+    height: 6%;
+    margin-left: 25px;
 }
 
 aside nav {
@@ -96,16 +95,16 @@ aside nav ul li {
     padding-left: 25px;
 }
 
-aside nav ul li:hover, aside nav ul li .link:active {
-    background-color: rgba(0,0,0,.4);
+aside nav ul li:hover, aside nav ul li .link:hover {
+    color: var(--secundary-color);
 }
 
 aside nav ul li .link {
-    color: #FEFEFE;
+    color: var(--white);
 }
 
 aside nav ul li .nav-icon {
-    color: #FEFEFE;
+    color: var(--white);
     margin-right: 10px;
 }
 
@@ -113,10 +112,10 @@ aside button {
     padding: 10px 15px;
     margin-left: 25px;
     margin-top: 50px;
-    font-size: var(--font-size-2);
+    font-size: var(--font-size);
     border: none;
     display: none;
-    color: #FEFEFE;
+    color: var(--white);
     background-color: var(--secundary-color);
 }
 
@@ -127,9 +126,9 @@ div.main {
 }
 
 div.main .header {
-    background-color: #FEFEFE;
+    background-color: var(--white);
     width: 100%;
-    height: 7vh;
+    height: 6vh;
     display: flex;
     align-items: center;
     justify-content: space-between; 
@@ -142,17 +141,17 @@ div.main .header {
 .header button.logout {
     background-color: var(--secundary-color);
     border: none;
-    padding: 8px 14px;
+    font-size: var(--font-size);
+    padding: 10px 12px;
     margin-right: 4vw;
-    color: #FEFEFE;
-    height: 60%; /*70%*/
+    color: var(--white); /*70%*/
     width: auto; /*70px*/
     display: inline-flex;
     align-items: center;
 }
 
  div.main .jumbotron {
-    background-color: #FEFEFE;
+    background-color: var(--white);
     width: 90%;
     height: auto;
     margin: 35px auto 15px auto;
@@ -166,7 +165,7 @@ div.main .jumbotron h1 {
     font-weight: 200;
     padding: 0px 20px;
     font-weight: 400;
-    font-size: var(--font-size-1);
+    font-size: clamp(18px, 4vw, 2rem);
 }
 
 
@@ -182,7 +181,7 @@ div.main .jumbotron p {
 */
 
 div.main .content {
-    background-color: #FEFEFE;
+    background-color: var(--white);
     width: 90%;
     height: auto;
     margin: 35px auto;
@@ -202,7 +201,7 @@ div.content form input, form textarea, div.wysiwyg_field, div.question_options {
 form input, div.wysiwyg_field {
     display: block;
     border: 2px solid var(--bg-color);
-    background: #FEFEFE;
+    background: var(--white);
 }
 
 form input {
@@ -212,21 +211,21 @@ form input {
 }   
 
 div.content form input, form textarea {
-    font-size: clamp(14px, 2vw, 1rem);
+    font-size: var(--font-size);
 }
 
 div.content form input {
-    height: 35px; 
+    height: 42px; 
 }
 
 div.content form button[type="submit"] {
     display: block;
-    padding: 6px 10px;
+    padding: 10px 15px;
     margin: 30px 20px 0px 20px;
     border: none;
-    font-size: clamp(14px, 2vw, 1rem);
+    font-size: var(--font-size);
     background-color: var(--secundary-color);
-    color: #FEFEFE;
+    color: var(--white);
 }
 
 form input:focus, textarea:focus {
@@ -240,12 +239,13 @@ div.question_options {
 
 form span.option {
     display: inline-block;
-    width: 200px;
-    padding: 5px 10px;
+    width: 150px;
+    padding: 8px 10px;
     overflow: hidden;
     text-align: center;
     text-overflow: ellipsis;
-    background-color: var(--bg-color);
+    background-color: var(--main-color);
+    color: var(--white);
     margin: 0px 5px 5px 0px;
 }
 
@@ -267,11 +267,11 @@ button.optionsBtn {
 }
 
 .icon {
-    font-size: var(--font-size-2)
+    font-size: var(--font-size)
 }
 
 .optionBtn-icon, .actionBtn-icon {
-    color: #FEFEFE;
+    color: var(--white);
 }
 
 
@@ -347,6 +347,8 @@ td button {
 
     aside picture {
         width: 30%;
+        height: 8vh;
+        margin-top: 25px;
     }
 
     aside button {
@@ -390,11 +392,15 @@ td button {
     }
 
     button.optionsBtn:first-of-type {
-        margin: 0px 10px 0px 15px;
+        margin: 0px 10px 0px 18px;
     }
 
     form span.option {
         width: 140px;
+    }
+
+    form span.option:nth-child(2n + 1) {
+    	margin-left: 8px;
     }
 }
 
