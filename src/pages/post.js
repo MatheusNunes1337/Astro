@@ -1,18 +1,62 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState, useEffect } from 'react';
+
+import { useHistory, useParams } from 'react-router-dom'
+
+import ReactHtmlParser from 'react-html-parser';
+
+import api from '../services/api'
 
 import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr"
 
 import Header from '../components/header'
 import Footer from '../components/footer'
-import Card from '../components/card'
-
 
 import '../assets/css/global.css'
 import '../assets/css/client.css'
 
 export default function Post() {
 
+   let { id } = useParams();
+   let history = useHistory();
+
+   let [conteudo, setConteudo] = useState('')
+   let [previous, setPrevious] = useState('')
+   let [next, setNext] = useState('')
+
+   
+   useEffect(() => {
+        async function getPost() {
+            try {
+              const posts =  await api.get('post')
+              const ids = posts.data.map(post => {
+              	let { _id } = post
+              	return _id
+              })
+              console.log(ids)
+              const current_index = ids.indexOf(id)
+              if(current_index === 0) {
+              	setPrevious(ids[ids.length - 1])
+              	console.log('anterior', previous) 
+              }
+              setPrevious(ids[current_index - 1])
+              setNext(ids[current_index + 1])
+              const post =  await api.get(`post?p=${id}`)
+              setConteudo(post.data.conteudo)
+            } catch(err) {
+               console.error(err)
+            }
+        }  
+
+      getPost()
+
+    },[id])
+  
+
+  function goToPost(e) {
+      const id = e.currentTarget.id
+      history.push(`/post/${id}`);
+  }
+  
 
   return (
   	<React.Fragment>
@@ -20,41 +64,18 @@ export default function Post() {
 	  	<div className="conteudo">
 	  		<article className="post-content">
 	  			<section>
-	  				<h1>Lorem ipsum notre dame hsuah</h1>
-	  				<p>
-	  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-	  					Donec ac pulvinar nibh, quis fermentum dui. In sed dui pretium, porta nulla at, dictum est. Ut eget lacinia enim, nec fermentum purus. Maecenas non vestibulum elit. Donec elementum placerat condimentum. 
-	  					Aliquam ac nunc neque. Etiam eu lorem vel quam scelerisque mattis at non risu.
-	  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-	  					Donec ac pulvinar nibh, quis fermentum dui. In sed dui pretium, porta nulla at, dictum est	
-	  				</p>
-	  				<h2>Mr. Sunshine?</h2>
-	  				<p>
-	  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-	  					Donec ac pulvinar nibh, quis fermentum dui. In sed dui pretium, porta nulla at, dictum est. Ut eget lacinia enim, nec fermentum purus. Maecenas non vestibulum elit. Donec elementum placerat condimentum. 
-	  					Aliquam ac nunc neque. Etiam eu lorem vel quam scelerisque mattis at non risu	
-	  				</p>
-	  				<p>
-	  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-	  					Donec ac pulvinar nibh, quis fermentum dui. In sed dui pretium, porta nulla at, dictum est. Ut eget lacinia enim, nec fermentum purus. Maecenas non vestibulum elit. Donec elementum placerat condimentum. 
-	  					Aliquam ac nunc neque. Etiam eu lorem vel quam scelerisque mattis at non risu	
-	  				</p>
-	  				<p>
-	  					Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-	  					Donec ac pulvinar nibh, quis fermentum dui. In sed dui pretium, porta nulla at, dictum est. Ut eget lacinia enim, nec fermentum purus. Maecenas non vestibulum elit. Donec elementum placerat condimentum. 
-	  					Aliquam ac nunc neque. Etiam eu lorem vel quam scelerisque mattis at non risu	
-	  				</p>
+	  				{ReactHtmlParser (conteudo)}
 	  			</section>
 	  			<div className="post-buttons">
-	  				<Link to="/" className="link"><button className="previous-post">
+	  				<button className="previous-post" id={previous} onClick={goToPost}>
 	  				<GrFormPreviousLink className="icon"/>
 	  				anterior
-	  				</button></Link>
-	  				<Link to="/" className="link"><button className="next-post">
+	  				</button>
+	  				<button className="next-post" id={next} onClick={goToPost}>
 	  				 próximo
 	  				<GrFormNextLink className="icon"/>
-	  				</button></Link>
-	  			</div>
+	  				</button>
+	  			</div>	
 	  		</article>
 	  	</div>
 		<Footer />

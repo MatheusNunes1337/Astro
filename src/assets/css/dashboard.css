@@ -93,6 +93,7 @@ aside nav ul li {
     padding: 10px 0px;
     list-style: none;
     padding-left: 25px;
+    font-size: var(--font-size);
 }
 
 aside nav ul li:hover, aside nav ul li .link:hover {
@@ -220,7 +221,7 @@ div.content form input {
 
 div.content form button[type="submit"] {
     display: block;
-    padding: 10px 15px;
+    padding: 10px 20px;
     margin: 30px 20px 0px 20px;
     border: none;
     font-size: var(--font-size);
@@ -322,6 +323,18 @@ td button {
     #adm_form {
         width: 25%;
         height: auto;
+    }
+
+    aside picture {
+        height: 7%;
+    }
+
+    div.main .header {
+        height: 7vh;
+    }
+
+    .header button.logout {
+        padding: 4px 9px;
     }
 
     div.content table {
