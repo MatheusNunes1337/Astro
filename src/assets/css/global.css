@@ -3,7 +3,7 @@
 :root {
   --bg-color: #e5e4e4;
   --main-color: #000000;
-  --secundary-color: blueviolet; /*#641138;*/ /*#360940;*/
+  --secundary-color: #641138; /*#360940;*/
   --white: #FEFEFE;
   --font-size: clamp(14px, 2vw, 1rem);
 }
@@ -33,5 +33,5 @@ p, a, li {
 }
 
 input[type="text"], input[type="submit"], button {
-   border-radius: 5px;
+   border-radius: 3px;
 }

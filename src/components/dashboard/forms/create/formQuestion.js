@@ -18,6 +18,8 @@ export default function Question(props) {
   async function handleQuestion(e) {
     e.preventDefault()
 
+    const form = document.getElementById('formQuestion')
+
     const data = {
       question,
       category,
@@ -28,6 +30,7 @@ export default function Question(props) {
    api.post('question/', data)
    .then(response => {
         alert(response.data.message)
+        form.reset()
     })
     .catch(err => {
         console.error(err)
@@ -47,7 +50,7 @@ export default function Question(props) {
 
 
   return (
-      <form name="question" onSubmit={handleQuestion}>
+      <form name="question" id="formQuestion" onSubmit={handleQuestion}>
           <div className="form-group">
               <p>Pergunta</p>
               <input type="text" name="question" value={question} onChange={e => setQuestion(e.target.value)}/>

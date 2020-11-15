@@ -18,6 +18,8 @@ export default function Instituicao(props) {
   async function handleSchool(e) {
     e.preventDefault()
 
+    const form = document.getElementById('formSchool')
+
     const data = {
       name,
       city,
@@ -29,6 +31,7 @@ export default function Instituicao(props) {
     api.post('school/', data)
    .then(response => {
         alert(response.data.message)
+        form.reset()
     })
     .catch(err => {
         console.error(err)
@@ -37,7 +40,7 @@ export default function Instituicao(props) {
 	
 
   return (
-      <form name="Instituicao" onSubmit={handleSchool}>
+      <form name="instituicao" id="formSchool" onSubmit={handleSchool}>
           <div className="form-group">
               <p>Nome</p>
               <input type="text" name="name" onChange={e => setName(e.target.value)}/>

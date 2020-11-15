@@ -71,6 +71,7 @@ section p {
   text-align: justify;
 }
 
+/*
 div.post-buttons {
   display: flex;
   justify-content: space-between;
@@ -106,14 +107,27 @@ button.next-post .icon{
    margin-left: 5px;
 }
 
+*/
+
+div.conteudo {
+  display: flex;
+  flex-direction: column;
+}
+
+div.conteudo h3 {
+    width: 86vw;
+    padding-left: 23px;
+    margin-top: 40px;
+}
+
 div.conteudo article.card-wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   width: 86vw;
   height: auto;
-  margin-top: 35px;
-  margin-bottom: 35px;  
+  margin-top: 25px;
+  margin-bottom: 40px;  
 }
 
 article button.post-card {
@@ -126,7 +140,7 @@ article button.post-card {
     transition: 0.3s;
     border: none;
     outline: none;
-    border-radius: 5px;
+    border-radius: 3px;
     padding: 10px 0px 0px 5px;
     display: flex;
     flex-direction: column;
@@ -242,7 +256,7 @@ footer div.footer p.copyright {
         min-height: 82vh;
     }
 
-    div.conteudo article.card-wrapper {
+    div.conteudo article.card-wrapper, div.conteudo h3 {
         width: 90vw;
     }
 }
@@ -268,15 +282,19 @@ footer div.footer p.copyright {
         width: 90vw;
     }
 
-    button.previous-post, button.next-post {
-      
-    }
-
     div.conteudo article.card-wrapper {
         justify-content: space-between;
         margin: 20px 0px;
-        width: 86vw;
     }
+
+     div.conteudo article.card-wrapper, div.conteudo h3 {
+        width: 86vw;
+     }
+
+     div.conteudo h3 {
+        padding-left: 0px;
+     }
+
 
     article button.post-card {
         margin: 15px 0px;
@@ -320,11 +338,19 @@ footer div.footer p.copyright {
         width: 88vw;
     }
 
+    article.post-content section img {
+        width: 100%
+    }
+
+    /*
+
     button.previous-post, button.next-post {
         display: inline-flex;
         align-items: center;
         justify-content: center;
     }
+
+    */
 
     div.conteudo article.card-wrapper {
         justify-content: space-between;

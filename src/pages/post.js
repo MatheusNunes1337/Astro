@@ -20,26 +20,10 @@ export default function Post() {
    let history = useHistory();
 
    let [conteudo, setConteudo] = useState('')
-   let [previous, setPrevious] = useState('')
-   let [next, setNext] = useState('')
-
    
    useEffect(() => {
         async function getPost() {
             try {
-              const posts =  await api.get('post')
-              const ids = posts.data.map(post => {
-              	let { _id } = post
-              	return _id
-              })
-              console.log(ids)
-              const current_index = ids.indexOf(id)
-              if(current_index === 0) {
-              	setPrevious(ids[ids.length - 1])
-              	console.log('anterior', previous) 
-              }
-              setPrevious(ids[current_index - 1])
-              setNext(ids[current_index + 1])
               const post =  await api.get(`post?p=${id}`)
               setConteudo(post.data.conteudo)
             } catch(err) {
@@ -65,17 +49,7 @@ export default function Post() {
 	  		<article className="post-content">
 	  			<section>
 	  				{ReactHtmlParser (conteudo)}
-	  			</section>
-	  			<div className="post-buttons">
-	  				<button className="previous-post" id={previous} onClick={goToPost}>
-	  				<GrFormPreviousLink className="icon"/>
-	  				anterior
-	  				</button>
-	  				<button className="next-post" id={next} onClick={goToPost}>
-	  				 próximo
-	  				<GrFormNextLink className="icon"/>
-	  				</button>
-	  			</div>	
+	  			</section>	
 	  		</article>
 	  	</div>
 		<Footer />

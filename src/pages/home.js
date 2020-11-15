@@ -1,5 +1,4 @@
-import React from 'react';
-import { Link } from 'react-router-dom'
+import React, { useState } from 'react';
 
 import Header from '../components/header'
 import Footer from '../components/footer'
@@ -10,11 +9,31 @@ import '../assets/css/client.css'
 
 export default function Homepage() {
 
+  let [posts, setPosts] = useState([])	
+
+  /*
+  useEffect(() => {
+        async function getPost() {
+            try {
+              const response =  await api.get('post')
+              setPosts(response.data)
+            } catch(err) {
+               console.error(err)
+            }
+        }  
+
+      getPost()
+
+    },[id])
+
+    */	
+
 
   return (
   	<React.Fragment>
 	    <Header />
 	  	<div className="conteudo">
+	  		<h3>Publicações</h3>
 	  		<article className="card-wrapper">
 	  			<Card planet="Vênus" id={1}/>
 	  			<Card planet="Terra" id={2}/>

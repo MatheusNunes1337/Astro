@@ -242,11 +242,14 @@ form span.option {
     display: inline-block;
     width: 150px;
     padding: 8px 10px;
+    border-radius: 3px;
+    border: 2px solid var(--secundary-color);
     overflow: hidden;
     text-align: center;
+    font-weight: bold;
     text-overflow: ellipsis;
-    background-color: var(--main-color);
-    color: var(--white);
+    background-color: var(--white);
+    color: var(--secundary-color);
     margin: 0px 5px 5px 0px;
 }
 

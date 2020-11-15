@@ -52,8 +52,7 @@ export default function Card(props) {
 
   function goToPost(e) {
       const id = e.currentTarget.id
-      history.push(`/post/${id}`);
-
+      window.open(`/post/${id}`);
   }
 
 

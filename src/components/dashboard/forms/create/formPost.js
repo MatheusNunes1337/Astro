@@ -18,6 +18,8 @@ export default function Postagem(props) {
   async function handlePost(e) {
     e.preventDefault()
 
+    const form = document.getElementById('formPost')
+
     const data = {
       titulo,
       categoria,
@@ -28,6 +30,7 @@ export default function Postagem(props) {
     api.post('post/', data)
    .then(response => {
         alert(response.data.message)
+        form.reset()
     })
     .catch(err => {
         console.error(err)
@@ -36,7 +39,7 @@ export default function Postagem(props) {
   
 
   return (
-      <form name="postagem" onSubmit={handlePost}>
+      <form name="postagem" id="formPost" onSubmit={handlePost}>
           <div className="form-group">
               <p>Título</p>
               <input type="text" name="titulo" onChange={e => setTitulo(e.target.value)}/>
