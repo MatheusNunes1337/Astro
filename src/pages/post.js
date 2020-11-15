@@ -6,8 +6,6 @@ import ReactHtmlParser from 'react-html-parser';
 
 import api from '../services/api'
 
-import { GrFormPreviousLink, GrFormNextLink } from "react-icons/gr"
-
 import Header from '../components/header'
 import Footer from '../components/footer'
 

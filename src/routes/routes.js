@@ -4,10 +4,11 @@ import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
 import Home from '../pages/dashboard/home'
 import Create from '../pages/dashboard/create'
 import Update from '../pages/dashboard/update'
-import Index from '../pages/dashboard/list'
+import List from '../pages/dashboard/list'
 import Login from '../pages/login'
 import Homepage from '../pages/home'
 import Post from '../pages/post'
+import Index from '../pages/index'
 
 export default function Routes () {
 
@@ -33,13 +34,13 @@ export default function Routes () {
 		     		<Update />
 		   		</Route>
 		   		<Route path="/dashboard/instituicoes">
-		     		<Index />
+		     		<List />
 		   		</Route>
 		   		<Route path="/dashboard/questions">
-		     		<Index />
+		     		<List />
 		   		</Route>
 		   		<Route path="/dashboard/posts">
-		     		<Index />
+		     		<List />
 		   		</Route>
 		   		<Route path="/dashboard/students">
 		     		<Index />
@@ -53,8 +54,11 @@ export default function Routes () {
 		 		<Route path="/dashboard/">
 	 				<Home />
 	 			</Route>
-	 			<Route path="/">
+	 			<Route path="/home">
 		       		<Homepage />
+		     	</Route>
+		     	<Route path="/">
+		       		<Index />
 		     	</Route>
   			</Switch>	
 		</Router>

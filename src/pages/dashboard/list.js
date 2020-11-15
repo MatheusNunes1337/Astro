@@ -14,7 +14,7 @@ import Student from '../../components/dashboard/tabelas/student'
 //import Postagem from '../../components/dashboard/formPost'
 
 
-export default function Index() {
+export default function List() {
 
 	
 	let tabela
