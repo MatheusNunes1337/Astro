@@ -60,7 +60,7 @@ div.quiz-wrapper {
    height: auto;
 }
 
-p.quiz-question {
+p.quiz-question, form.quiz-form p:first-of-type {
    font-size: clamp(24px, 4vw, 2rem);
    color: var(--white);
 }
@@ -90,8 +90,43 @@ p.aux {
 p.acertos {
     margin-top: 110px;
     font-size: clamp(20px, 3.7vw, 1.6rem);
-    color: white;
+    color: var(--white);
 }
+
+form.quiz-form {
+    width: 30%;
+    height: auto;
+}
+
+
+form.quiz-form p:first-of-type {
+    margin-bottom: 35px;
+    font-size: clamp(20px, 3.5vw, 1.7rem);
+}
+
+form.quiz-form input, form.quiz-form select {
+  display: block;
+  margin-bottom: 20px;
+  width: 100%;
+  border: none;
+  padding: 12px 5px;
+  font-size: clamp(18px, 3.3vw, 1.3rem); 
+}
+
+form.quiz-form button {
+    padding: 12px 10px;
+    border: none;
+    font-size: clamp(18px, 3.3vw, 1.3rem);
+    color: var(--white);
+    background-color: var(--main-color);
+}
+
+form.quiz-form p.field-name {
+  margin-bottom: 10px;
+  font-size: clamp(18px, 3.3vw, 1.3rem);
+  color: var(--white);
+}
+
 
 
 /*home page */
@@ -374,6 +409,18 @@ footer div.footer p.copyright {
         text-align: center;
     }
 
+    form.quiz-form {
+        width: 80%;
+    }
+
+     {
+        padding: 10px 5px;
+    }
+
+    form.quiz-form button {
+        padding: 10px; 
+    }
+
 
     header {
        height: 75px;
@@ -497,3 +544,15 @@ footer div.footer p.copyright {
     }
 
 }
+
+/*
+<p className="aux">Temporizador</p>
+<div className="quiz-wrapper">
+  <p className="quiz-question">1. Qual é o maior planeta do sistema solar?</p>
+  <button className="quiz-option">A. Marte</button>
+  <button className="quiz-option">B. Júpiter</button>
+  <button className="quiz-option">C. Saturno</button>
+  <button className="quiz-option">D. Vênus</button>
+</div>
+<p className="acertos">Acertos: 02</p>
+*/
