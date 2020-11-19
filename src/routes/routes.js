@@ -8,8 +8,10 @@ import List from '../pages/dashboard/list'
 import Login from '../pages/login'
 import Homepage from '../pages/home'
 import Post from '../pages/post'
-import Quiz from '../pages/quiz'
 import Index from '../pages/index'
+import Quiz from '../pages/quiz/quiz'
+import Auth from '../pages/quiz/auth'
+import QuizResult from '../pages/quiz/result'
 
 export default function Routes () {
 
@@ -57,6 +59,12 @@ export default function Routes () {
 	 			</Route>
 	 			<Route path="/home">
 		       		<Homepage />
+		     	</Route>
+		     	<Route path="/quiz/auth">
+		       		<Auth />
+		     	</Route>
+		     	<Route path="/quiz/result">
+		       		<QuizResult />
 		     	</Route>
 		     	<Route path="/quiz">
 		       		<Quiz />

@@ -55,17 +55,17 @@ div.quiz-bg {
   background-color: var(--secundary-color);
 }
 
-div.quiz-wrapper {
+div.quiz-wrapper, div.result-wrapper {
    width: 45%;
    height: auto;
 }
 
-p.quiz-question, form.quiz-form p:first-of-type {
+p.quiz-question, form.quiz-form p:first-of-type, p.result {
    font-size: clamp(24px, 4vw, 2rem);
    color: var(--white);
 }
 
-button.quiz-option {
+button.quiz-option, div.result-wrapper button {
     border: none;
     width: 100%;
     margin: 5px 0px;
@@ -75,6 +75,7 @@ button.quiz-option {
     color: var(--white);
     background-color: var(--main-color);
 }
+
 
 button.quiz-option:first-of-type {
     margin-top: 45px;
@@ -125,6 +126,26 @@ form.quiz-form p.field-name {
   margin-bottom: 10px;
   font-size: clamp(18px, 3.3vw, 1.3rem);
   color: var(--white);
+}
+
+div.result-wrapper p {
+  text-align: center;
+  margin-bottom: 45px;
+}
+
+div.buttons-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: auto;
+    justify-content: center;
+}
+
+
+div.result-wrapper button {
+  text-align: center;
+  margin: 5px auto;
+  width: 45%;
 }
 
 
@@ -401,7 +422,7 @@ footer div.footer p.copyright {
 
 @media only screen and (max-width: 768px) {
 
-    div.quiz-wrapper {
+    div.quiz-wrapper, div.result-wrapper {
         width: 85%;
     }
 
@@ -413,13 +434,15 @@ footer div.footer p.copyright {
         width: 80%;
     }
 
-     {
-        padding: 10px 5px;
-    }
-
     form.quiz-form button {
         padding: 10px; 
     }
+
+    div.result-wrapper button {
+       width: 65%;
+    }
+
+
 
 
     header {
@@ -544,15 +567,3 @@ footer div.footer p.copyright {
     }
 
 }
-
-/*
-<p className="aux">Temporizador</p>
-<div className="quiz-wrapper">
-  <p className="quiz-question">1. Qual é o maior planeta do sistema solar?</p>
-  <button className="quiz-option">A. Marte</button>
-  <button className="quiz-option">B. Júpiter</button>
-  <button className="quiz-option">C. Saturno</button>
-  <button className="quiz-option">D. Vênus</button>
-</div>
-<p className="acertos">Acertos: 02</p>
-*/
