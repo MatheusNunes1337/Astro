@@ -52,7 +52,8 @@ div.quiz-bg {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background-color: var(--secundary-color);
+  background: rgb(35,30,36);
+  background: linear-gradient(90deg, rgba(35,30,36,1) 0%, rgba(30,9,33,1) 35%, rgba(30,9,33,1) 100%);
 }
 
 div.quiz-wrapper, div.result-wrapper {
@@ -61,7 +62,7 @@ div.quiz-wrapper, div.result-wrapper {
 }
 
 p.quiz-question, form.quiz-form p:first-of-type, p.result {
-   font-size: clamp(24px, 4vw, 2rem);
+   font-size: clamp(22px, 3.6vw, 1.6rem);  /*clamp(24px, 4vw, 2rem)*/;
    color: var(--white);
 }
 
@@ -71,7 +72,7 @@ button.quiz-option, div.result-wrapper button {
     margin: 5px 0px;
     padding: 15px;
     text-align: left;
-    font-size: clamp(20px, 3.7vw, 1.6rem);
+    font-size: clamp(20px, 3.2vw, 1.3rem); /*clamp(20px, 3.7vw, 1.6rem);*/
     color: var(--white);
     background-color: var(--main-color);
 }
@@ -82,7 +83,7 @@ button.quiz-option:first-of-type {
 }
 
 p.aux {
-     font-size: clamp(20px, 3.7vw, 1.6rem);
+     font-size: clamp(20px, 3.2vw, 1.3rem);
      margin-bottom: 110px;
      color: var(--white);
 
@@ -90,7 +91,7 @@ p.aux {
 
 p.acertos {
     margin-top: 110px;
-    font-size: clamp(20px, 3.7vw, 1.6rem);
+    font-size: clamp(20px, 3.2vw, 1.3rem);
     color: var(--white);
 }
 
@@ -102,7 +103,7 @@ form.quiz-form {
 
 form.quiz-form p:first-of-type {
     margin-bottom: 35px;
-    font-size: clamp(20px, 3.5vw, 1.7rem);
+    font-size: clamp(20px, 3.2vw, 1.5rem) /*clamp(20px, 3.5vw, 1.7rem);*/
 }
 
 form.quiz-form input, form.quiz-form select {
@@ -111,11 +112,11 @@ form.quiz-form input, form.quiz-form select {
   width: 100%;
   border: none;
   padding: 12px 5px;
-  font-size: clamp(18px, 3.3vw, 1.3rem); 
+  font-size: clamp(16px, 2.8vw, 1rem); 
 }
 
 form.quiz-form button {
-    padding: 12px 10px;
+    padding: 7px 10px; /*12px 10px*/;
     border: none;
     font-size: clamp(18px, 3.3vw, 1.3rem);
     color: var(--white);
@@ -398,6 +399,14 @@ footer div.footer p.copyright {
         width: 40%;
     }
 
+    button.quiz-option, div.result-wrapper button {
+        padding: 10px;
+    }
+
+    form.quiz-form {
+        width: 40%;
+    }
+
     header {
       height: 9vh;
     }
@@ -407,7 +416,7 @@ footer div.footer p.copyright {
     }
 
     header button.quiz-btn {
-        width: 7.5%;
+        padding: 5px 30px;
     }
 
     div.conteudo {
@@ -455,7 +464,6 @@ footer div.footer p.copyright {
     }
 
     header button.quiz-btn {
-        width: 15%;
         height: 55%;
     }
 

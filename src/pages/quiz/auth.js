@@ -25,13 +25,11 @@ export default function Auth() {
  
     try {
       /*const response = await api.post('student', data)*/
-      history.push('quiz/question')
+      history.push('/quiz/result')
     } catch(err) {
       alert(err)
     }
   }
-
-  alert('estou na página de auth')  
 
   return (
     <div className="quiz-bg">
