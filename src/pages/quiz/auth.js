@@ -1,6 +1,8 @@
-import React, {useState} from 'react';
+import React, {useState, useEffect} from 'react';
 
 import { useHistory } from 'react-router-dom'
+
+import api from '../../services/api'
 
 import '../../assets/css/global.css'
 import '../../assets/css/client.css'
@@ -8,11 +10,33 @@ import '../../assets/css/client.css'
 
 export default function Auth() {
 
+  let [escolas, setEscolas] = useState([])
   let [nome, setNome] = useState('')
   let [idade, setIdade] = useState('')
   let [escola, setEscola] = useState('')
 
+  /*
+  {
+    escolas.map((escola, i) => {
+        <option value={escola.name} key={i}>escola.name</option>
+    })
+  }
+   */
+
   const history = useHistory()
+
+  useEffect(() => {
+      async function getEscolas() {
+          try {
+            const response =  await api.get('school')
+            setEscolas(response.data)
+          } catch(err) {
+             console.error(err)
+          }
+      }  
+
+      getEscolas()
+   }, [])
 
   async function handleForm(e) {
     e.preventDefault()
@@ -24,12 +48,12 @@ export default function Auth() {
     }
  
     try {
-      /*const response = await api.post('student', data)*/
+      const response = await api.post('student', data)
       history.push('/quiz/result')
     } catch(err) {
       alert(err)
     }
-  }
+  } 
 
   return (
     <div className="quiz-bg">
@@ -41,10 +65,7 @@ export default function Auth() {
             <input type="text" name="idade" onChange={e => setIdade(e.target.value)}/>
             <p className="field-name">Escola:</p>
             <select name="escola" onChange={e => setEscola(e.target.value)}>
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="mercedes">Mercedes</option>
-                <option value="audi">Audi</option>
+            
             </select>
             <button onClick={handleForm}>Continuar</button>
         </form>
