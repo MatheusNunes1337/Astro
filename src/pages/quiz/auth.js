@@ -33,8 +33,7 @@ export default function Auth() {
           } catch(err) {
              console.error(err)
           }
-      }  
-
+      }
       getEscolas()
    }, [])
 
@@ -65,7 +64,11 @@ export default function Auth() {
             <input type="text" name="idade" onChange={e => setIdade(e.target.value)}/>
             <p className="field-name">Escola:</p>
             <select name="escola" onChange={e => setEscola(e.target.value)}>
-            
+              {
+                escolas.map((escola, i) => 
+                  <option value={escola.name} key={i}>{escola.name}</option>
+                )
+              }
             </select>
             <button onClick={handleForm}>Continuar</button>
         </form>

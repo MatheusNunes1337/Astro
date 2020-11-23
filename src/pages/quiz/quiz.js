@@ -28,8 +28,16 @@ export default function Quiz() {
    
     },[])
 
-  function answer(e) {
+ async function answer(e) {
      if(index !== questions.length - 1) {
+       const answer = e.currentTarget.value;
+        try {
+          await api.post(`question/${questions[index]._id}`, {
+             answer: answer  
+          })
+        } catch(err) {
+            alert(err)
+        }  
         setIndex(index + 1);
      } else {
        history.push('quiz/result')
@@ -40,13 +48,13 @@ export default function Quiz() {
     <div className="quiz-bg">
         <p className="aux">Pergunta {index + 1}</p>
         <div className="quiz-wrapper">
-          <p className="quiz-question">questions[index].question</p>
-          <button className="quiz-option" onClick={answer}>questions[index].options[0]</button>
-          <button className="quiz-option" onClick={answer}>questions[index].options[1]</button>
-          <button className="quiz-option" onClick={answer}>questions[index].options[2]</button>
-          <button className="quiz-option" onClick={answer}>questions[index].options[3]</button>
+          <p className="quiz-question">{questions[index].question}</p>
+          <button className="quiz-option" value={questions[index].options[0]} onClick={answer}>{questions[index].options[0]}</button>
+          <button className="quiz-option" value={questions[index].options[1]} onClick={answer}>{questions[index].options[1]}</button>
+          <button className="quiz-option" value={questions[index].options[2]} onClick={answer}>{questions[index].options[2]}</button>
+          <button className="quiz-option" value={questions[index].options[3]} onClick={answer}>{questions[index].options[3]}</button>
         </div>
-        <p className="acertos">Categoria: {questions[index].category}</p>
+        <p className="acertos">Categoria:{questions[index].question}</p>
     </div>
   );
 	

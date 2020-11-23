@@ -116,7 +116,7 @@ form.quiz-form input, form.quiz-form select {
 }
 
 form.quiz-form button {
-    padding: 7px 10px; /*12px 10px*/;
+    padding: 12px 10px; /*12px 10px*/;
     border: none;
     font-size: clamp(18px, 3.3vw, 1.3rem);
     color: var(--white);
@@ -174,8 +174,7 @@ header button.quiz-btn {
   align-items: center;
   justify-content: center;
   /*width: 2.5%;*/
-  height: 60%;
-  padding: 0px 25px;
+  padding: 10px 25px;
   border: 2px solid var(--secundary-color);
   background-color: var(--secundary-color);
   color: var(--white);
@@ -272,6 +271,7 @@ div.conteudo h3 {
     width: 86vw;
     padding-left: 23px;
     margin-top: 40px;
+    font-size: clamp(20px, 3vw, 1.5rem);
 }
 
 div.conteudo article.card-wrapper {
@@ -333,7 +333,7 @@ footer {
 
 footer div.logo {
    background-color: var(--secundary-color);
-   width: 9%;
+   width: 7%;
    height: 50px;
    margin: 25px 0px 25px 7vw;
    
@@ -360,17 +360,21 @@ footer div.about p.content {
 
 
 
-footer p.icon-attribution {
+footer p.icon-attribution, footer p.img-attribution {
   width: 86%;
-  margin: 0px 0px 10px 7vw;
-  padding: 20px 0px;
+  margin: 0px 0px 0px 7vw;
+  padding: 10px 0px;
   /*border-bottom: 2.5px solid gray;*/
   color: gray;
   font-size: var(--font-size-2);
 }
 
-footer p.icon-attribution a {
-  color: var(--secundary-color);
+footer p.img-attribution {
+    margin-bottom: 25px;
+}
+
+footer a {
+  color: var(--white);
   text-decoration: none;
   margin-right: 5px;
 }
@@ -426,6 +430,10 @@ footer div.footer p.copyright {
     div.conteudo article.card-wrapper, div.conteudo h3 {
         width: 90vw;
     }
+
+    footer div.logo {
+        width: 9%;
+    }
 }
 
 
@@ -452,19 +460,17 @@ footer div.footer p.copyright {
     }
 
 
-
-
     header {
        height: 75px;
     }
 
     header picture {
-        width: 19%;
+        width: 15%;
         height: 60%;
     }
 
     header button.quiz-btn {
-        height: 55%;
+        padding: 10px 25px;
     }
 
     div.conteudo article.post-content {
@@ -499,7 +505,7 @@ footer div.footer p.copyright {
     }
 
     footer div.logo {
-        width: 18%;
+        width: 16%;
         height: 50px;
     }
 
@@ -519,15 +525,8 @@ footer div.footer p.copyright {
     }
 
     header picture {
-        margin-left: 7vw;
-        width: 30%;
-        height: 50%;
-    }
-
-    header button.quiz-btn {
-        margin-right: 7vw;
-        width: 23%;
-        height: 45%;
+        width: 25%;
+        height: 60%;
     }
 
     div.conteudo article.post-content {
@@ -570,7 +569,7 @@ footer div.footer p.copyright {
     }
 
     footer div.logo {
-        width: 30%;
+        width: 26%;
         height: 45px;
     }
 

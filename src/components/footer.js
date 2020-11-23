@@ -21,6 +21,8 @@ export default function Footer() {
     	<p className="icon-attribution">Icons made by <a href="https://www.flaticon.com/authors/monkik">monkik</a>
         from <a href="https://www.flaticon.com">flaticon.com</a>
         </p>
+        <p className="img-attribution">Martian Vectors by <a href="https://www.vecteezy.com/free-vector/martian">Vecteezy</a>
+        </p>
     	<div className="footer">
     		<p className="copyright">&copy; 2020 Astro</p>
     	</div>
