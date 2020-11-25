@@ -19,6 +19,7 @@ export default function Quiz() {
         async function getQuestions() {
             try {
               const response =  await api.get('question')
+              console.log(response.data)
               setQuestions(response.data)
             } catch(err) {
                alert(err)

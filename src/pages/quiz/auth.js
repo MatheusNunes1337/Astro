@@ -11,18 +11,11 @@ import '../../assets/css/client.css'
 export default function Auth() {
 
   let [escolas, setEscolas] = useState([])
-  let [nome, setNome] = useState('')
-  let [idade, setIdade] = useState('')
-  let [escola, setEscola] = useState('')
+  let [name, setName] = useState('')
+  let [age, setAge] = useState('')
+  let [school, setSchool] = useState('')
 
-  /*
-  {
-    escolas.map((escola, i) => {
-        <option value={escola.name} key={i}>escola.name</option>
-    })
-  }
-   */
-
+ 
   const history = useHistory()
 
   useEffect(() => {
@@ -41,14 +34,16 @@ export default function Auth() {
     e.preventDefault()
 
     const data = {
-      nome,
-      idade, 
-      escola
+      name,
+      age, 
+      school
     }
+
+    console.log(data)
  
     try {
       const response = await api.post('student', data)
-      history.push('/quiz/result')
+      history.push('/quiz')
     } catch(err) {
       alert(err)
     }
@@ -59,11 +54,11 @@ export default function Auth() {
         <form className="quiz-form" onSubmit={handleForm}>
             <p>Para fazer o quiz, você precisa informar os seus dados logo abaixo</p>
             <p className="field-name">Nome:</p>
-            <input type="text" name="nome" onChange={e => setNome(e.target.value)}/>
+            <input type="text" name="name" onChange={e => setName(e.target.value)}/>
             <p className="field-name">Idade:</p>
-            <input type="text" name="idade" onChange={e => setIdade(e.target.value)}/>
+            <input type="text" name="age" onChange={e => setAge(e.target.value)}/>
             <p className="field-name">Escola:</p>
-            <select name="escola" onChange={e => setEscola(e.target.value)}>
+            <select name="school" onChange={e => setSchool(e.target.value)}>
               {
                 escolas.map((escola, i) => 
                   <option value={escola.name} key={i}>{escola.name}</option>

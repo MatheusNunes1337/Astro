@@ -111,9 +111,10 @@ form.quiz-form input, form.quiz-form select {
   margin-bottom: 20px;
   width: 100%;
   border: none;
-  padding: 12px 5px;
+  padding: 12px 0px;
   font-size: clamp(16px, 2.8vw, 1rem); 
 }
+
 
 form.quiz-form button {
     padding: 12px 10px; /*12px 10px*/;
