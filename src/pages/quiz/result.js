@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 
 import '../../assets/css/global.css'
 import '../../assets/css/client.css'
@@ -9,24 +9,23 @@ import api from '../../services/api'
 
 
 export default function QuizResult() {
+  let [acertos, setAcertos] = useState(null)
 
   let history = useHistory();
 
-  /*
   useEffect(() => {
       async function getStudent() {
           try {
             const response =  await api.get('student')
-            setEscolas(response.data)
+            console.log(response.data)
+            setAcertos(response.data.acertos)
           } catch(err) {
              console.error(err)
           }
       }  
-
       getStudent()
    }, [])
 
-   */
  
 
   async function downloadMaterial() {
@@ -53,7 +52,7 @@ export default function QuizResult() {
   return (
   	<div className="quiz-bg">
 	    <div className="result-wrapper">
-	      <p className="result">Você acertou 09 das 14 questões.</p>
+	      <p className="result">Você acertou 12 das 14 questões.</p>
 	      <div className="buttons-wrapper">
 		      <button onClick={downloadMaterial}>Baixar o material</button>
 		      <button onClick={tryAgain}>Tentar novamente</button>

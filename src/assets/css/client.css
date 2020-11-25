@@ -57,13 +57,14 @@ div.quiz-bg {
 }
 
 div.quiz-wrapper, div.result-wrapper {
-   width: 45%;
+   width: 38%;
    height: auto;
 }
 
 p.quiz-question, form.quiz-form p:first-of-type, p.result {
    font-size: clamp(22px, 3.6vw, 1.6rem);  /*clamp(24px, 4vw, 2rem)*/;
    color: var(--white);
+   text-align: center;
 }
 
 button.quiz-option, div.result-wrapper button {
@@ -82,7 +83,7 @@ button.quiz-option:first-of-type {
     margin-top: 45px;
 }
 
-p.aux {
+p.question-number {
      font-size: clamp(20px, 3.2vw, 1.3rem);
      margin-bottom: 110px;
      color: var(--white);
@@ -112,6 +113,7 @@ form.quiz-form input, form.quiz-form select {
   width: 100%;
   border: none;
   padding: 12px 0px;
+  text-indent: 7px;
   font-size: clamp(16px, 2.8vw, 1rem); 
 }
 

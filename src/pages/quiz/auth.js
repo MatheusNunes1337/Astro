@@ -61,7 +61,7 @@ export default function Auth() {
             <select name="school" onChange={e => setSchool(e.target.value)}>
               {
                 escolas.map((escola, i) => 
-                  <option value={escola.name} key={i}>{escola.name}</option>
+                  <option value={escola._id} key={i}>{escola.name}</option>
                 )
               }
             </select>

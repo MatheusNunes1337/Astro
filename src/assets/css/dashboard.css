@@ -11,9 +11,8 @@
 
 div.login-bg {
     display: flex;
-    background-color: var(--bg-color);  /*background-image: url('../images/login_bg_blue.jpg')*/;
-    /*background-size: cover;
-    background-repeat: no-repeat; */
+    background: rgb(35,30,36);
+    background: linear-gradient(90deg, rgba(35,30,36,1) 0%, rgba(30,9,33,1) 35%, rgba(30,9,33,1) 100%);
     flex-wrap: wrap;
     width: 100vw;
     height: 100vh;
@@ -205,12 +204,6 @@ form input, div.wysiwyg_field {
     background: var(--white);
 }
 
-form input {
-    text-indent: 15px;
-    outline: none;
-    transition: all 0.30s ease-in-out;
-}   
-
 div.content form input, form textarea {
     font-size: var(--font-size);
 }
@@ -229,10 +222,6 @@ div.content form button[type="submit"] {
     color: var(--white);
 }
 
-form input:focus, textarea:focus {
-    box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-    border: 1px solid rgba(81, 203, 238, 1)
-}
 
 div.question_options {
     height: auto;

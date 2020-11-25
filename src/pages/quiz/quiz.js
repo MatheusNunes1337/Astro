@@ -10,24 +10,37 @@ import '../../assets/css/client.css'
 
 export default function Quiz() {
 
-   let [questions, setQuestions] = useState([])
+   let [questions, setQuestions] = useState(null)
    let [index, setIndex] = useState(0)
+   let [acertos, setAcertos] = useState(null)
 
    let history = useHistory();
    
    useEffect(() => {
         async function getQuestions() {
             try {
-              const response =  await api.get('question')
-              console.log(response.data)
+              const response = await api.get('question')
               setQuestions(response.data)
+              console.log(questions)
             } catch(err) {
                alert(err)
             }
         }  
-      getQuestions()
-   
+      getQuestions()   
     },[])
+
+   useEffect(() => {
+        async function getStudent() {
+            try {
+              const response = await api.get('student/find')
+              setAcertos(response.data.acertos)
+            } catch(err) {
+               alert(err)
+            }
+        }  
+      getStudent()   
+    },[index])
+
 
  async function answer(e) {
      if(index !== questions.length - 1) {
@@ -38,25 +51,33 @@ export default function Quiz() {
           })
         } catch(err) {
             alert(err)
-        }  
+        } 
         setIndex(index + 1);
      } else {
-       history.push('quiz/result')
+       history.push('/quiz/result')
      }
   }
 
-  return (
-    <div className="quiz-bg">
-        <p className="aux">Pergunta {index + 1}</p>
-        <div className="quiz-wrapper">
-          <p className="quiz-question">{questions[index].question}</p>
-          <button className="quiz-option" value={questions[index].options[0]} onClick={answer}>{questions[index].options[0]}</button>
-          <button className="quiz-option" value={questions[index].options[1]} onClick={answer}>{questions[index].options[1]}</button>
-          <button className="quiz-option" value={questions[index].options[2]} onClick={answer}>{questions[index].options[2]}</button>
-          <button className="quiz-option" value={questions[index].options[3]} onClick={answer}>{questions[index].options[3]}</button>
+  if(questions && acertos) {
+
+      return (
+        
+        <div className="quiz-bg">
+            <p className="question-number">Pergunta {index + 1}</p>
+            <div className="quiz-wrapper">
+              <p className="quiz-question">{questions[index].question}</p>
+              <button className="quiz-option" value={questions[index].options[0]} onClick={answer}>{questions[index].options[0]}</button>
+              <button className="quiz-option" value={questions[index].options[1]} onClick={answer}>{questions[index].options[1]}</button>
+              <button className="quiz-option" value={questions[index].options[2]} onClick={answer}>{questions[index].options[2]}</button>
+              <button className="quiz-option" value={questions[index].options[3]} onClick={answer}>{questions[index].options[3]}</button>
+            </div>
+            <p className="acertos">Acertos: {acertos}</p>
         </div>
-        <p className="acertos">Categoria:{questions[index].question}</p>
-    </div>
-  );
-	
+      );
+  } else {
+     return (
+       <p>carregando...</p>
+     )
+  } 
+  	
 }
