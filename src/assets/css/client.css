@@ -104,7 +104,8 @@ form.quiz-form {
 
 form.quiz-form p:first-of-type {
     margin-bottom: 35px;
-    font-size: clamp(20px, 3.2vw, 1.5rem) /*clamp(20px, 3.5vw, 1.7rem);*/
+    font-size: clamp(20px, 3.2vw, 1.5rem);/*clamp(20px, 3.5vw, 1.7rem);*/
+    text-align: left;
 }
 
 form.quiz-form input, form.quiz-form select {

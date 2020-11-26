@@ -13,6 +13,8 @@ export default function Postagem(props) {
    let [categoria, setCategoria] = useState('')
    let [planeta, setPlaneta] = useState('')
    let [conteudo, setConteudo] = useState('')
+
+   const token = localStorage.getItem("aToken")
    
    useEffect(() => {
         async function getPost() {
@@ -41,7 +43,9 @@ export default function Postagem(props) {
       conteudo,
     }
     
-    api.put(`post/${props.postId}`, data)
+    api.put(`post/${props.postId}`, data, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
     .then(response => {
         alert(response.data.message)
     })

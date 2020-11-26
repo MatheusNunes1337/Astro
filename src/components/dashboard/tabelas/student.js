@@ -13,6 +13,8 @@ export default function Student() {
   let [message, setMessage] = useState('')
   let [table, setTable] = useState('')
 
+  const token = localStorage.getItem("aToken")
+
   useEffect(() => {
       async function getStudents() {
           const response =  await api.get('student')
@@ -60,7 +62,9 @@ export default function Student() {
        const id = e.currentTarget.value
        const goAhead = window.confirm('Você está prestes a deletar esse registro. Tem certeza que deseja fazer isso?')
        if(goAhead === true) {
-           api.delete(`student/${id}`)
+           api.delete(`student/${id}`, {
+             headers: { Authorization: `Bearer ${token}` }
+           })
           .then(response => {
             alert(response.data.message)
           })

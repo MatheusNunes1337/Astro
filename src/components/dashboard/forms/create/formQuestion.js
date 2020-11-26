@@ -14,6 +14,7 @@ export default function Question(props) {
    let [category, setCategory] = useState('')
    let [answer, setAnswer] = useState('')
 
+   const token = localStorage.getItem("sToken")
    
   async function handleQuestion(e) {
     e.preventDefault()
@@ -27,7 +28,9 @@ export default function Question(props) {
       answer
     }
 
-   api.post('question/', data)
+   api.post('question/', data, {
+     headers: { Authorization: `Bearer ${token}` }
+   })
    .then(response => {
         alert(response.data.message)
         form.reset()

@@ -22,6 +22,7 @@ export default function Login() {
  
   	try {
   		const response = await api.post('auth/login', data)
+      localStorage.setItem('aToken', response.data)
   		history.push('/dashboard')
   	} catch(err) {
   		alert(err)

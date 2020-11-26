@@ -38,11 +38,11 @@ export default function Auth() {
       age, 
       school
     }
-
-    console.log(data)
  
+    console.log(data)
     try {
       const response = await api.post('student', data)
+      localStorage.setItem('sToken', response.data)
       history.push('/quiz')
     } catch(err) {
       alert(err)

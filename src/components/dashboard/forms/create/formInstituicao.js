@@ -15,6 +15,8 @@ export default function Instituicao(props) {
    let [responsavel, setResponsavel] = useState('')
    let [email_resp, setEmail] = useState('')
 
+   const token = localStorage.getItem("aToken")
+
   async function handleSchool(e) {
     e.preventDefault()
 
@@ -28,7 +30,9 @@ export default function Instituicao(props) {
       email_resp
     }
     
-    api.post('school/', data)
+    api.post('school/', data, {
+      headers: { Authorization: `Bearer ${token}` }
+    })
    .then(response => {
         alert(response.data.message)
         form.reset()

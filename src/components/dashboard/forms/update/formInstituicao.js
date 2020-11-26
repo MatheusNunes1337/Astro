@@ -9,11 +9,13 @@ import api from '../../../../services/api'
 
 export default function Instituicao(props) {
 
-  let [name, setName] = useState('')
+   let [name, setName] = useState('')
    let [city, setCity] = useState('')
    let [state, setState] = useState('')
    let [responsavel, setResponsavel] = useState('')
    let [email_resp, setEmail] = useState('')
+
+   const token = localStorage.getItem("aToken")
 
    useEffect(() => {
         async function getSchool() {
@@ -45,7 +47,9 @@ export default function Instituicao(props) {
       email_resp
     }
     
-    api.put(`school/${props.schoolId}`, data)
+    api.put(`school/${props.schoolId}`, data, {
+       headers: { Authorization: `Bearer ${token}` }
+    })
     .then(response => {
         alert(response.data.message)
     })

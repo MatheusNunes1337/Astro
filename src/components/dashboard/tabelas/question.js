@@ -14,6 +14,8 @@ export default function Question() {
   let [message, setMessage] = useState('')
   let [table, setTable] = useState('')
 
+  const token = localStorage.getItem("aToken")
+
   useEffect(() => {
       async function getQuestions() {
           const response =  await api.get('question')
@@ -66,7 +68,9 @@ export default function Question() {
        const id = e.currentTarget.value
        const goAhead = window.confirm('Você está prestes a deletar esse registro. Tem certeza que deseja fazer isso?')
        if(goAhead === true) {
-           api.delete(`question/${id}`)
+           api.delete(`question/${id}`, {
+             headers: { Authorization: `Bearer ${token}` }
+           })
           .then(response => {
             alert(response.data.message)
           })

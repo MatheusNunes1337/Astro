@@ -14,6 +14,8 @@ export default function Post() {
   let [message, setMessage] = useState('')
   let [table, setTable] = useState('')
 
+  const token = localStorage.getItem("aToken")
+
   useEffect(() => {
       async function getPosts() {
           const response =  await api.get('post')
@@ -64,7 +66,9 @@ export default function Post() {
        const id = e.currentTarget.value
        const goAhead = window.confirm('Você está prestes a deletar esse registro. Tem certeza que deseja fazer isso?')
        if(goAhead === true) {
-           api.delete(`post/${id}`)
+           api.delete(`post/${id}`, {
+             headers: { Authorization: `Bearer ${token}` }
+           })
           .then(response => {
             alert(response.data.message)
           })

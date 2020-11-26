@@ -14,6 +14,8 @@ export default function Quiz() {
    let [index, setIndex] = useState(0)
    let [acertos, setAcertos] = useState(null)
 
+   const token = localStorage.getItem("sToken")
+
    let history = useHistory();
    
    useEffect(() => {
@@ -21,7 +23,6 @@ export default function Quiz() {
             try {
               const response = await api.get('question')
               setQuestions(response.data)
-              console.log(questions)
             } catch(err) {
                alert(err)
             }
@@ -32,7 +33,9 @@ export default function Quiz() {
    useEffect(() => {
         async function getStudent() {
             try {
-              const response = await api.get('student/find')
+              const response = await api.get('student/find', {
+                headers: { Authorization: `Bearer ${token}` }
+              })
               setAcertos(response.data.acertos)
             } catch(err) {
                alert(err)
@@ -45,20 +48,22 @@ export default function Quiz() {
  async function answer(e) {
      if(index !== questions.length - 1) {
        const answer = e.currentTarget.value;
+       const data = { answer }
         try {
-          await api.post(`question/${questions[index]._id}`, {
-             answer: answer  
+          await api.post(`question/${questions[index]._id}`, 
+            data, {
+             headers: { Authorization: `Bearer ${token}` }  
           })
+          setIndex(index + 1);
         } catch(err) {
             alert(err)
         } 
-        setIndex(index + 1);
      } else {
        history.push('/quiz/result')
      }
   }
 
-  if(questions && acertos) {
+  if(questions && acertos >= 0) {
 
       return (
         

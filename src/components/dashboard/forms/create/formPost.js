@@ -14,6 +14,7 @@ export default function Postagem(props) {
    let [planeta, setPlaneta] = useState('')
    let [conteudo, setConteudo] = useState('')
    
+   const token = localStorage.getItem("sToken")
 
   async function handlePost(e) {
     e.preventDefault()
@@ -27,7 +28,9 @@ export default function Postagem(props) {
       conteudo,
     }
 
-    api.post('post/', data)
+    api.post('post/', data, {
+       headers: { Authorization: `Bearer ${token}` }
+    })
    .then(response => {
         alert(response.data.message)
         form.reset()

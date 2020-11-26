@@ -14,6 +14,8 @@ export default function Question(props) {
    let [category, setCategory] = useState('')
    let [answer, setAnswer] = useState('')
 
+   const token = localStorage.getItem("aToken")
+
     useEffect(() => {
         async function getQuestion() {
             try {
@@ -43,7 +45,9 @@ export default function Question(props) {
       answer
     }
 
-    api.put(`question/${props.questionId}`, data)
+    api.put(`question/${props.questionId}`, data, {
+       headers: { Authorization: `Bearer ${token}` }
+    })
     .then(response => {
         alert(response.data.message)
     })
@@ -54,7 +58,6 @@ export default function Question(props) {
 
   function addOption() {
     let option = document.getElementById('options_field').value;
-    console.log('option:' ,option)
     setOptions(options => [...options, option])
   }
 
