@@ -46,7 +46,7 @@ export default function Routes () {
 		     		<List />
 		   		</Route>
 		   		<Route path="/dashboard/students">
-		     		<Index />
+		     		<List />
 		   		</Route>
 		     	<Route path="/login">
 		       		<Login />

@@ -58,30 +58,35 @@ export default function Instituicao(props) {
      })
   }
 	
-
-  return (
-      <form name="Instituicao" onSubmit={handleSchool}>
-          <div className="form-group">
-              <p>Nome</p>
-              <input type="text" name="name" value={name} onChange={e => setName(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <p>Cidade</p>
-              <input type="text" name="city" value={city} onChange={e => setCity(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <p>Estado</p>
-              <input type="text" name="state" value={state} onChange={e => setState(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <p>Responsavel</p>
-              <input type="text" name="responsavel" value={responsavel} onChange={e => setResponsavel(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <p>E-mail do responsavel</p>
-              <input type="email" name="email_resp" value={email_resp} onChange={e => setEmail(e.target.value)}/>
-          </div>
-          <button type="submit">Atualizar</button>
-      </form>
-  );
+  if(name !== '') {
+      return (
+          <form name="Instituicao" onSubmit={handleSchool}>
+              <div className="form-group">
+                  <p>Nome</p>
+                  <input type="text" name="name" value={name} onChange={e => setName(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <p>Cidade</p>
+                  <input type="text" name="city" value={city} onChange={e => setCity(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <p>Estado</p>
+                  <input type="text" name="state" value={state} onChange={e => setState(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <p>Responsavel</p>
+                  <input type="text" name="responsavel" value={responsavel} onChange={e => setResponsavel(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <p>E-mail do responsavel</p>
+                  <input type="email" name="email_resp" value={email_resp} onChange={e => setEmail(e.target.value)}/>
+              </div>
+              <button type="submit">Atualizar</button>
+          </form>
+      );
+  } else {
+      return (
+       <p>carregando...</p>
+     )
+  }  
 }

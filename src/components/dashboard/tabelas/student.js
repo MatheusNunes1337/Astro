@@ -18,6 +18,7 @@ export default function Student() {
   useEffect(() => {
       async function getStudents() {
           const response =  await api.get('student')
+          console.log('responseee', response.data)
           setStudents(response.data)
           if(response.data.length !== 0) {
               setMessage(<h2>Total de registros encontrados: {response.data.length}</h2>)
@@ -55,7 +56,7 @@ export default function Student() {
           }
       }
       getStudents()
-    }, [])
+    }, [students])
 
 
    function deleteStudent(e) {

@@ -39,7 +39,6 @@ export default function Auth() {
       school
     }
  
-    console.log(data)
     try {
       const response = await api.post('student', data)
       localStorage.setItem('sToken', response.data)
@@ -54,9 +53,11 @@ export default function Auth() {
         <form className="quiz-form" onSubmit={handleForm}>
             <p>Para fazer o quiz, você precisa informar os seus dados logo abaixo</p>
             <p className="field-name">Nome:</p>
-            <input type="text" name="name" onChange={e => setName(e.target.value)}/>
+            <input type="text" name="name" onChange={e => setName(e.target.value)} pattern="^\w{3,12}$" 
+            required oninvalid="this.setCustomValidity('O nome deve contér de 3 a 12 caracteres')"/>
             <p className="field-name">Idade:</p>
-            <input type="text" name="age" onChange={e => setAge(e.target.value)}/>
+            <input type="text" name="age" onChange={e => setAge(e.target.value)} pattern="^[1-9]$|^[1-9][0-9]$|^(100)$" 
+            required oninvalid="this.setCustomValidity('Somente idades são aceitas')" />
             <p className="field-name">Escola:</p>
             <select name="school" onChange={e => setSchool(e.target.value)}>
               {

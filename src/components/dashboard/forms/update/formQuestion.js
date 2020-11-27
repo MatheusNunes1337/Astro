@@ -65,33 +65,38 @@ export default function Question(props) {
       setOptions([])
   }
 
-
-  return (
-      <form name="question" onSubmit={handleQuestion}>
-          <div className="form-group">
-              <p>Pergunta</p>
-              <input type="text" name="question" value={question} onChange={e => setQuestion(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <p>Categoria</p>
-              <input type="text" name="category" value={category} onChange={e => setCategory(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <p>Opções</p>
-              <input type="text" name="option" id="options_field"/>
-              <button type="button" className="optionsBtn" onClick={addOption}><MdAddCircle className="optionBtn-icon"/></button>
-              <button type="button" className="optionsBtn" onClick={resetOptions}><MdDelete className="optionBtn-icon"/></button>
-          </div>
-          <div className="question_options">
-              {options.map((option, i) =>
-                <span className="option" key={i}>{ option }</span>
-              )}
-          </div>
-          <div className="form-group">
-              <p>Resposta</p>
-              <input type="text" name="answer" value={answer} onChange={e => setAnswer(e.target.value)}/>
-          </div> 
-          <button type="submit">Atualizar</button>
-      </form> 
-  );
+  if(question !== '') {
+      return (
+          <form name="question" onSubmit={handleQuestion}>
+              <div className="form-group">
+                  <p>Pergunta</p>
+                  <input type="text" name="question" value={question} onChange={e => setQuestion(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <p>Categoria</p>
+                  <input type="text" name="category" value={category} onChange={e => setCategory(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <p>Opções</p>
+                  <input type="text" name="option" id="options_field"/>
+                  <button type="button" className="optionsBtn" onClick={addOption}><MdAddCircle className="optionBtn-icon"/></button>
+                  <button type="button" className="optionsBtn" onClick={resetOptions}><MdDelete className="optionBtn-icon"/></button>
+              </div>
+              <div className="question_options">
+                  {options.map((option, i) =>
+                    <span className="option" key={i}>{ option }</span>
+                  )}
+              </div>
+              <div className="form-group">
+                  <p>Resposta</p>
+                  <input type="text" name="answer" value={answer} onChange={e => setAnswer(e.target.value)}/>
+              </div> 
+              <button type="submit">Atualizar</button>
+          </form> 
+      );
+  } else {
+      return (
+       <p>carregando...</p>
+     )
+  }
 }

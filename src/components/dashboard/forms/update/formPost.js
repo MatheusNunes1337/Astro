@@ -54,44 +54,49 @@ export default function Postagem(props) {
      })
   }
   
-
-  return (
-      <form name="postagem" onSubmit={handlePost}>
-          <div className="form-group">
-              <p>Título</p>
-              <input type="text" name="titulo" value={titulo} onChange={e => setTitulo(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <p>Categoria</p>
-              <input type="text" name="categoria" value={categoria} onChange={e => setCategoria(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <p>Planeta</p>
-              <input type="text" name="planeta" value={planeta} onChange={e => setPlaneta(e.target.value)}/>
-          </div>
-          <div className="form-group">
-              <div className="wysiwyg_field">
-                  <Editor
-                       initialValue={conteudo}
-                       apiKey='0eps1wrjj72zeyaz83lyvv2si0k8dqf2vtgk0vnlq8rfnmj5'
-                       init={{
-                         height: 300,
-                         menubar: false,
-                         plugins: [
-                           'advlist autolink lists link image charmap print preview anchor',
-                           'searchreplace visualblocks code fullscreen', 'image code', 'table',
-                           'insertdatetime media table paste code help wordcount'
-                         ],
-                         toolbar:
-                           'undo redo | formatselect | link image | bold italic backcolor | \
-                           alignleft aligncenter alignright alignjustify | \
-                           bullist numlist outdent indent | removeformat | help'
-                       }}
-                       onEditorChange={(content, editor) => setConteudo(content)}
-                     />
-              </div>    
-          </div>  
-          <button type="submit">Atualizar</button>
-      </form> 
-  );
+  if(titulo !== '') {
+      return (
+          <form name="postagem" onSubmit={handlePost}>
+              <div className="form-group">
+                  <p>Título</p>
+                  <input type="text" name="titulo" value={titulo} onChange={e => setTitulo(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <p>Categoria</p>
+                  <input type="text" name="categoria" value={categoria} onChange={e => setCategoria(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <p>Planeta</p>
+                  <input type="text" name="planeta" value={planeta} onChange={e => setPlaneta(e.target.value)}/>
+              </div>
+              <div className="form-group">
+                  <div className="wysiwyg_field">
+                      <Editor
+                           initialValue={conteudo}
+                           apiKey='0eps1wrjj72zeyaz83lyvv2si0k8dqf2vtgk0vnlq8rfnmj5'
+                           init={{
+                             height: 300,
+                             menubar: false,
+                             plugins: [
+                               'advlist autolink lists link image charmap print preview anchor',
+                               'searchreplace visualblocks code fullscreen', 'image code', 'table',
+                               'insertdatetime media table paste code help wordcount'
+                             ],
+                             toolbar:
+                               'undo redo | formatselect | link image | bold italic backcolor | \
+                               alignleft aligncenter alignright alignjustify | \
+                               bullist numlist outdent indent | removeformat | help'
+                           }}
+                           onEditorChange={(content, editor) => setConteudo(content)}
+                         />
+                  </div>    
+              </div>  
+              <button type="submit">Atualizar</button>
+          </form> 
+      );
+  } else {
+      return (
+       <p>carregando...</p>
+     )
+  }    
 }
