@@ -61,7 +61,7 @@ export default function Question() {
           }
       }
       getQuestions()
-    }, [questions])
+    }, [])
 
 
    function deleteQuestion(e) {

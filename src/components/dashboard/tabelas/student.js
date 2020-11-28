@@ -18,7 +18,6 @@ export default function Student() {
   useEffect(() => {
       async function getStudents() {
           const response =  await api.get('student')
-          console.log('responseee', response.data)
           setStudents(response.data)
           if(response.data.length !== 0) {
               setMessage(<h2>Total de registros encontrados: {response.data.length}</h2>)
@@ -39,7 +38,7 @@ export default function Student() {
                                     <tr className="student-info" key={i}>
                                       <td>{i + 1}</td>
                                       <td>{student.name}</td>
-                                      <td>{student.school}</td>
+                                      <td>{student.school.name}</td>
                                       <td> 
                                           <button value={student._id} onClick={deleteStudent}><MdDelete className="actionBtn-icon"/></button>
                                       </td>
@@ -56,7 +55,7 @@ export default function Student() {
           }
       }
       getStudents()
-    }, [students])
+    }, [])
 
 
    function deleteStudent(e) {

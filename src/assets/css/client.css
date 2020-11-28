@@ -34,13 +34,13 @@ div.title p {
   font-size: clamp(1.3rem, 3vw, 3rem);}
 
 div.title button {
-  padding: 15px 35px;
+  padding: 17px 30px;
   color: white;
   background-color: #000000;
   border-radius: 5px;
   margin-top: 15px;
   border: none;
-  font-size: 1.1rem;
+  font-size: clamp(18px, 2vw, 1.3rem);
 }
 
 /* quiz page */
@@ -367,7 +367,7 @@ footer div.about p.content {
 footer p.icon-attribution, footer p.img-attribution {
   width: 86%;
   margin: 0px 0px 0px 7vw;
-  padding: 10px 0px;
+  padding: 4px 0px;
   /*border-bottom: 2.5px solid gray;*/
   color: gray;
   font-size: var(--font-size-2);
@@ -442,6 +442,10 @@ footer div.footer p.copyright {
 
 
 @media only screen and (max-width: 768px) {
+
+    div.title button {
+        padding: 10px 20px;
+    }
 
     div.quiz-wrapper, div.result-wrapper {
         width: 85%;

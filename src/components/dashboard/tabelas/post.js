@@ -59,7 +59,7 @@ export default function Post() {
           }
       }
       getPosts()
-    }, [posts])
+    }, [])
 
 
    function deletePost(e) {

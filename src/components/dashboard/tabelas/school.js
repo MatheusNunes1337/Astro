@@ -9,7 +9,7 @@ import api from '../../../services/api'
 
 
 export default function School() {
-	
+  
   let [instituicoes, setInstituicoes] = useState([])
   let [message, setMessage] = useState('')
   let [table, setTable] = useState('')
@@ -61,7 +61,7 @@ export default function School() {
           }
       }
       getInstituicoes()
-    }, [instituicoes])
+    }, [])
 
 
    function deleteSchool(e) {
