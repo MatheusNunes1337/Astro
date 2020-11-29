@@ -22,14 +22,14 @@ export default function Home() {
 
   function goToCreate(e) {
   	 const page = e.currentTarget.value
-      history.push(`create/${page}`);
+      history.push(`/dashboard/create/${page}`);
   }
 
   async function generateBook() {
+    console.log(token)
+    const header = { headers: { Authorization: `Bearer ${token}` }}
   	try {
-  	  await api.post('book/', {
-      	headers: { Authorization: `Bearer ${token}` }
-      })
+  	  await api.post('book/', header)
       alert('Material gerado com sucesso')
   	} catch(err) {
   		alert(err)

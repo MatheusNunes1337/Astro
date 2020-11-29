@@ -369,6 +369,10 @@ td button {
     div.content table {
         width: 950px;
     }
+
+    div.buttons button {
+        padding: 55px 40px;
+    }
 }
 
 

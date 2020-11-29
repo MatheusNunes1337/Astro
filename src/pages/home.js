@@ -1,17 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Card from '../components/card'
+
+import api from '../services/api'
 
 import '../assets/css/global.css'
 import '../assets/css/client.css'
 
 export default function Homepage() {
 
-  let [posts, setPosts] = useState([])	
+  let [posts, setPosts] = useState(null)	
 
-  /*
   useEffect(() => {
         async function getPost() {
             try {
@@ -24,30 +25,28 @@ export default function Homepage() {
 
       getPost()
 
-    },[id])
+    },[])
 
-    */	
-
-
-  return (
-  	<React.Fragment>
-	    <Header />
-	  	<div className="conteudo">
-	  		<h3>Publicações</h3>
-	  		<article className="card-wrapper">
-	  			<Card planet="Vênus" id={1}/>
-	  			<Card planet="Terra" id={2}/>
-	  			<Card planet="Urano" id={3}/>
-	  			<Card planet="Mercúrio" id={4}/>
-	  			<Card planet="Júpiter"/>
-	  			<Card planet="Netuno"/>
-	  			<Card planet="Saturno"/>
-	  			<Card planet="Urano"/>
-	  			<Card planet="Vênus"/>
-	  			<Card planet="Marte"/>
-	  		</article>
-	  	</div>
-		<Footer />
-	</React.Fragment>
-  );
+  if(posts) {
+	  return (
+	  	<React.Fragment>
+		    <Header />
+		  	<div className="conteudo">
+		  		<h3>Publicações</h3>
+		  		<article className="card-wrapper">
+		  			{
+		  				posts.map(post => {
+		  					return(<Card planet={post.planeta} id={post._id} title={post.titulo}/>)
+		  				})
+		  			}
+		  		</article>
+		  	</div>
+			<Footer />
+		</React.Fragment>
+	  );
+    } else {
+    	return(
+			<p>Carregando...</p>	  
+    	)
+    }	  
 }

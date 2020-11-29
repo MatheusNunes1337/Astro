@@ -60,7 +60,7 @@ export default function Card(props) {
   return ( 
     <button className="post-card" id={props.id} onClick={goToPost}>
   	  	<img src={planeta} className="card-icon" />
-  	  	<p className="card-title">O título irá aqui é verdadedfdf, matheus ksis sdijd idjsddi matheus.</p>
+  	  	<p className="card-title">{props.title}</p>
 	</button>
   );
 }

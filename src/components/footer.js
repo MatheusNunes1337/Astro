@@ -13,9 +13,8 @@ export default function Footer() {
     	<div className="about">
     		<h3>Sobre</h3>
     		<p className="content">
-    			A expressão Lorem ipsum em design gráfico e editoração é um texto padrão em 
-    			latim utilizado na produção gráfica para preencher os espaços de texto em 
-    			publicações para testar e ajustar aspectos visuais antes de utilizar conteúdo real
+    			O astro é uma plataforma de astronomia que provém informações sobre os planetas do sistema solar.
+                Além disso, permite que o aluno teste o seu conhecimento através de um quiz.
     		</p>
     	</div>
     	<p className="icon-attribution">Icons made by <a href="https://www.flaticon.com/authors/monkik">monkik</a>

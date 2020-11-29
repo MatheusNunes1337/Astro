@@ -14,7 +14,7 @@ export default function Postagem(props) {
    let [planeta, setPlaneta] = useState('')
    let [conteudo, setConteudo] = useState('')
    
-   const token = localStorage.getItem("sToken")
+   const token = localStorage.getItem("aToken")
 
   async function handlePost(e) {
     e.preventDefault()
@@ -29,7 +29,7 @@ export default function Postagem(props) {
     }
 
     api.post('post/', data, {
-       headers: { Authorization: `Bearer ${token}` }
+      headers: { Authorization: `Bearer ${token}` }
     })
    .then(response => {
         alert(response.data.message)
