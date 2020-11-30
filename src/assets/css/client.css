@@ -189,7 +189,7 @@ header button.quiz-btn {
 div.conteudo {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
     flex-grow: 1;
     min-height: 86vh;
     background-color: var(--white);
@@ -204,6 +204,7 @@ div.conteudo article.post-content {
 
 article.post-content section {
     margin: 15px 0px;
+    background-color: blue;
 }
 
 article.post-content section h1 {
@@ -274,7 +275,7 @@ div.conteudo {
 div.conteudo h3 {
     width: 86vw;
     padding-left: 23px;
-    margin-top: 40px;
+    margin-top: 150px;
     font-size: clamp(20px, 3vw, 1.5rem);
 }
 

@@ -35,8 +35,8 @@ export default function Homepage() {
 		  		<h3>Publicações</h3>
 		  		<article className="card-wrapper">
 		  			{
-		  				posts.map(post => {
-		  					return(<Card planet={post.planeta} id={post._id} title={post.titulo}/>)
+		  				posts.map((post, i) => {
+		  					return(<Card planet={post.planeta} key={i} id={post._id} title={post.titulo}/>)
 		  				})
 		  			}
 		  		</article>

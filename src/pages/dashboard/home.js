@@ -26,10 +26,10 @@ export default function Home() {
   }
 
   async function generateBook() {
-    console.log(token)
-    const header = { headers: { Authorization: `Bearer ${token}` }}
   	try {
-  	  await api.post('book/', header)
+  	  await api.post('book/', {
+        headers: { Authorization: `Bearer ${token}` }
+      })
       alert('Material gerado com sucesso')
   	} catch(err) {
   		alert(err)

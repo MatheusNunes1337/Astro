@@ -46,21 +46,22 @@ export default function Quiz() {
 
 
  async function answer(e) {
-     if(index !== questions.length - 1) {
-       const answer = e.currentTarget.value;
-       const data = { answer }
-        try {
-          await api.post(`question/${questions[index]._id}`, 
-            data, {
-             headers: { Authorization: `Bearer ${token}` }  
-          })
-          setIndex(index + 1);
-        } catch(err) {
-            alert(err)
-        } 
-     } else {
-       history.push('/quiz/result')
-     }
+   const answer = e.currentTarget.value;
+   const data = { answer }
+    try {
+      await api.post(`question/${questions[index]._id}`, 
+        data, {
+         headers: { Authorization: `Bearer ${token}` }  
+      })
+      if(index === questions.length - 1) {
+        history.push('/quiz/result') 
+      } else {
+        setIndex(index + 1);
+      }  
+    } catch(err) {
+        alert(err)
+    } 
+      
   }
 
   if(questions && acertos >= 0) {

@@ -44,10 +44,11 @@ export default function QuizResult() {
 
   async function tryAgain() {
   	 try {
-  	 	  api.put('quiz/' , {
-          headers: { Authorization: `Bearer ${token}` }
+        console.log(token)
+  	 	  api.put('quiz/', {
+            headers: { Authorization: `Bearer ${token}` }
         })
-  	 	history.push('quiz')
+  	 	history.push('/quiz')
   	 } catch(err) {
          alert(err)
   	 }
