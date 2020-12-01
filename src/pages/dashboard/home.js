@@ -25,15 +25,12 @@ export default function Home() {
       history.push(`/dashboard/create/${page}`);
   }
 
-  async function generateBook() {
-  	try {
-  	  await api.post('book/', {
+  function generateBook() {
+  	api.get('admin', {
         headers: { Authorization: `Bearer ${token}` }
-      })
-      alert('Material gerado com sucesso')
-  	} catch(err) {
-  		alert(err)
-  	}
+    })
+    .then(() => { alert('Material gerado com sucesso') })
+    .catch(err => alert(err))
   }
 
   return (

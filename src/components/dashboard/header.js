@@ -11,6 +11,7 @@ export default function Header() {
   const history = useHistory()
 
   function logout() {
+      localStorage.removeItem('aToken')
       history.push('/login')
   }
 

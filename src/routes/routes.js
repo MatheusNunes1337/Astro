@@ -1,5 +1,6 @@
 import React from 'react';
-import {Route, BrowserRouter as Router, Switch} from "react-router-dom";
+import {BrowserRouter as Router, Route, Switch, Redirect} from "react-router-dom";
+
 
 import Home from '../pages/dashboard/home'
 import Create from '../pages/dashboard/create'
@@ -13,62 +14,75 @@ import Quiz from '../pages/quiz/quiz'
 import Auth from '../pages/quiz/auth'
 import QuizResult from '../pages/quiz/result'
 
+function CustomRoute(props) {
+	const aToken = localStorage.getItem('aToken')
+	const sToken = localStorage.getItem('sToken')
+	if(props.onlyAdmin && !aToken) {
+		return <Redirect to="/login" />
+	} else if(props.onlyStudent && !sToken) {
+		return <Redirect to="/quiz/auth" />
+	} else {
+		return <Route {...props} />
+	}
+}
+
+
 export default function Routes () {
 
 	return (
 		<Router> 
   			<Switch>
-		 		<Route path="/dashboard/create/instituicao">
+		 		<CustomRoute onlyAdmin path="/dashboard/create/instituicao">
 		 			<Create />
-		 		</Route>
-		 		<Route path="/dashboard/create/question">
+		 		</CustomRoute>
+		 		<CustomRoute onlyAdmin path="/dashboard/create/question">
 		 			<Create />
-		 		</Route>
-			    <Route path="/dashboard/create/post">
+		 		</CustomRoute>
+			    <CustomRoute onlyAdmin path="/dashboard/create/post">
 			       <Create />
-			     </Route>
-			    <Route path="/dashboard/update/question/:id">
+			     </CustomRoute>
+			    <CustomRoute onlyAdmin path="/dashboard/update/question/:id">
 			       <Update />
-			    </Route>
-				<Route path="/dashboard/update/post/:id">
+			    </CustomRoute>
+				<CustomRoute onlyAdmin path="/dashboard/update/post/:id">
 				    <Update />
-				</Route>
-		   		<Route path="/dashboard/update/instituicao/:id">
+				</CustomRoute>
+		   		<CustomRoute onlyAdmin path="/dashboard/update/instituicao/:id">
 		     		<Update />
-		   		</Route>
-		   		<Route path="/dashboard/instituicoes">
+		   		</CustomRoute>
+		   		<CustomRoute onlyAdmin path="/dashboard/instituicoes">
 		     		<List />
-		   		</Route>
-		   		<Route path="/dashboard/questions">
+		   		</CustomRoute>
+		   		<CustomRoute onlyAdmin path="/dashboard/questions">
 		     		<List />
-		   		</Route>
-		   		<Route path="/dashboard/posts">
+		   		</CustomRoute>
+		   		<CustomRoute onlyAdmin path="/dashboard/posts">
 		     		<List />
-		   		</Route>
-		   		<Route path="/dashboard/students">
+		   		</CustomRoute>
+		   		<CustomRoute onlyAdmin path="/dashboard/students">
 		     		<List />
-		   		</Route>
+		   		</CustomRoute>
 		     	<Route path="/login">
 		       		<Login />
 		     	</Route>
 		     	<Route path="/post/:id">
 		     		<Post />
 		   		</Route>
-		 		<Route path="/dashboard/">
+		 		<CustomRoute onlyAdmin path="/dashboard/">
 	 				<Home />
-	 			</Route>
+	 			</CustomRoute>
 	 			<Route path="/home">
 		       		<Homepage />
 		     	</Route>
 		     	<Route path="/quiz/auth">
 		       		<Auth />
 		     	</Route>
-		     	<Route path="/quiz/result">
+		     	<CustomRoute onlyStudent path="/quiz/result">
 		       		<QuizResult />
-		     	</Route>
-		     	<Route path="/quiz">
+		     	</CustomRoute>
+		     	<CustomRoute onlyStudent path="/quiz">
 		       		<Quiz />
-		     	</Route>
+		     	</CustomRoute>
 		     	<Route path="/">
 		       		<Index />
 		     	</Route>

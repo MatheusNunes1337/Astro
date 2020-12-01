@@ -40,7 +40,6 @@ export default function Auth() {
       age, 
       school
     }
-    console.log(data)
  
     try {
       const response = await api.post('student', data)
