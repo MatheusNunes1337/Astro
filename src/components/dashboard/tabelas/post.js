@@ -12,6 +12,7 @@ export default function Post() {
   
   let [posts, setPosts] = useState([])
   let [message, setMessage] = useState('')
+  let [deletedPosts, setdeletedPosts] = useState(0)
   let [table, setTable] = useState('')
 
   const token = localStorage.getItem("aToken")
@@ -59,7 +60,7 @@ export default function Post() {
           }
       }
       getPosts()
-    }, [])
+    }, [deletedPosts])
 
 
    function deletePost(e) {
@@ -71,6 +72,7 @@ export default function Post() {
            })
           .then(response => {
             alert(response.data.message)
+            setdeletedPosts(deletedPosts + 1)
           })
           .catch(err => {
               console.error(err)

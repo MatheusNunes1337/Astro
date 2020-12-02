@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import download from 'downloadjs'
 
 import '../../assets/css/global.css'
 import '../../assets/css/client.css'
@@ -32,7 +33,13 @@ export default function QuizResult() {
 
   async function downloadMaterial() {
   	 try {
-  	 	await api.get('book/download')	
+  	 	  const response = await api.get('book/download', {
+            responseType: 'blob',
+                headers: {
+                    'Content-Type': 'application/pdf',
+                }
+         }) 
+        download(response.data, 'apostila.pdf')	
   	 } catch(err) {
   	 	alert(err)
   	 }
@@ -44,11 +51,10 @@ export default function QuizResult() {
 
   async function tryAgain() {
   	 try {
-        console.log(token)
-  	 	  api.put('quiz/', {
+  	 	  await api.put('quiz', {
             headers: { Authorization: `Bearer ${token}` }
         })
-  	 	history.push('/quiz')
+  	 	  history.push('/quiz')
   	 } catch(err) {
          alert(err)
   	 }

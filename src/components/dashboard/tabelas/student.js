@@ -11,12 +11,14 @@ export default function Student() {
   
   let [students, setStudents] = useState([])
   let [message, setMessage] = useState('')
+  let [deletedStudents, setdeletedStudents] = useState(0)
   let [table, setTable] = useState('')
 
   const token = localStorage.getItem("aToken")
 
   useEffect(() => {
       async function getStudents() {
+          console.log('banana')
           const response =  await api.get('student')
           setStudents(response.data)
           if(response.data.length !== 0) {
@@ -55,7 +57,7 @@ export default function Student() {
           }
       }
       getStudents()
-    }, [])
+    }, [deletedStudents])
 
 
    function deleteStudent(e) {
@@ -67,6 +69,7 @@ export default function Student() {
            })
           .then(response => {
             alert(response.data.message)
+            setdeletedStudents(deletedStudents + 1)
           })
           .catch(err => {
               console.error(err)

@@ -95,8 +95,8 @@ aside nav ul li {
     font-size: var(--font-size);
 }
 
-aside nav ul li:hover, aside nav ul li .link:hover {
-    color: var(--secundary-color);
+aside nav ul li:hover, aside nav ul li:hover {
+    background-color: var(--secundary-color);
 }
 
 aside nav ul li .link {

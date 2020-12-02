@@ -12,6 +12,7 @@ export default function School() {
   
   let [instituicoes, setInstituicoes] = useState([])
   let [message, setMessage] = useState('')
+  let [deletedSchools, setdeletedSchools] = useState(0)
   let [table, setTable] = useState('')
 
   const token = localStorage.getItem("aToken")
@@ -61,7 +62,7 @@ export default function School() {
           }
       }
       getInstituicoes()
-    }, [])
+    }, [deletedSchools])
 
 
    function deleteSchool(e) {
@@ -73,6 +74,7 @@ export default function School() {
            })
           .then(response => {
             alert(response.data.message)
+            setdeletedSchools(deletedSchools + 1)
           })
           .catch(err => {
               console.error(err)

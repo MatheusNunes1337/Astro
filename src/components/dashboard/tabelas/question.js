@@ -12,6 +12,7 @@ export default function Question() {
 	
   let [questions, setQuestions] = useState([])
   let [message, setMessage] = useState('')
+  let [deletedQuestions, setdeletedQuestions] = useState(0)
   let [table, setTable] = useState('')
 
   const token = localStorage.getItem("aToken")
@@ -61,7 +62,7 @@ export default function Question() {
           }
       }
       getQuestions()
-    }, [])
+    }, [deletedQuestions])
 
 
    function deleteQuestion(e) {
@@ -73,6 +74,7 @@ export default function Question() {
            })
           .then(response => {
             alert(response.data.message)
+            setdeletedQuestions(deletedQuestions + 1)
           })
           .catch(err => {
               console.error(err)
