@@ -27,26 +27,29 @@ export default function Homepage() {
 
     },[])
 
-  if(posts) {
 	  return (
 	  	<React.Fragment>
 		    <Header />
 		  	<div className="conteudo">
-		  		<h3>Publicações</h3>
-		  		<article className="card-wrapper">
-		  			{
-		  				posts.map((post, i) => {
-		  					return(<Card planet={post.planeta} key={i} id={post._id} title={post.titulo}/>)
-		  				})
-		  			}
-		  		</article>
+		  		{posts ? (
+	  				<div className="conteudo">
+			  			<h3>Publicações</h3>
+			  			<article className="card-wrapper">
+			  			{
+			  				posts.map((post, i) => {
+			  					return(<Card planet={post.planeta} key={i} id={post._id} title={post.titulo}/>)
+			  				})
+			  			}
+			  			</article>
+			  		</div>	
+		  		) : (
+		  			<div className="conteudo" style={{justifyContent: 'center', alignItems: 'center'}}>
+		  				<div className="loader"></div>
+		  			</div>
+		  		)}
 		  	</div>
 			<Footer />
 		</React.Fragment>
 	  );
-    } else {
-    	return(
-			<p>Carregando...</p>	  
-    	)
-    }	  
+    
 }

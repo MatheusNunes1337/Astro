@@ -10,23 +10,36 @@ import api from '../../services/api'
 
 
 export default function QuizResult() {
-  let [acertos, setAcertos] = useState(null)
+  //let [acertos, setAcertos] = useState(null)
+  //let [questions, setQuestions] = useState([])
+  let [result, setResult] = useState('')
 
   const token = localStorage.getItem("sToken")
   let history = useHistory();
 
   useEffect(() => {
-      async function getStudent() {
+      async function getData() {
           try {
-            const response =  await api.get('student/find', {
+            const response1 =  await api.get('student/find', {
               headers: { Authorization: `Bearer ${token}` }
             })
-            setAcertos(response.data.acertos)
+            const acertos = response1.data.acertos
+            const response2 =  await api.get('question')
+            const questions = response2.data.length
+            if((acertos * 100) / questions > 80) {
+              setResult(`Parabéns! Você acertou ${acertos} das ${questions} questões.`)
+            } else if(acertos === 0) {
+              setResult('Que pena! Você não acertou nenhuma questão.') 
+            } else if((acertos * 100) / questions <= 25) {
+              setResult(`Que pena! Você acertou somente ${acertos} das ${questions} questões.`) 
+            } else {
+              setResult(`Você acertou ${acertos} das ${questions} questões.`)
+            }
           } catch(err) {
-             console.error(err)
+             alert(err)
           }
       }  
-      getStudent()
+      getData()
    }, [])
 
  
@@ -51,25 +64,37 @@ export default function QuizResult() {
 
   async function tryAgain() {
   	 try {
-  	 	  await api.put('quiz', {
-            headers: { Authorization: `Bearer ${token}` }
+        console.log('student token', token)
+        console.log('admin token', localStorage.getItem("aToken"))
+  	 	  await api.put('question/tryAgain', {
+            headers: { Authorization: 'Bearer ' + token }
         })
   	 	  history.push('/quiz')
   	 } catch(err) {
-         alert(err)
+        if (err.response && err.response.data) {
+          alert(err.response.data.message)
+        }
   	 }
   }		
 
-  return (
-  	<div className="quiz-bg">
-	    <div className="result-wrapper">
-	      <p className="result">Você acertou {acertos} das 14 questões.</p>
-	      <div className="buttons-wrapper">
-		      <button onClick={downloadMaterial}>Baixar o material</button>
-		      <button onClick={tryAgain}>Tentar novamente</button>
-		      <button onClick={goToHome}>Página inicial</button>
-		  </div>    
-	    </div>
-    </div>
-  );
+  if(result !== '') {
+      return (
+      	<div className="quiz-bg">
+    	    <div className="result-wrapper">
+    	      <p className="result">{result}</p>
+    	      <div className="buttons-wrapper">
+    		      <button onClick={downloadMaterial}>Baixar o material</button>
+    		      <button onClick={tryAgain}>Tentar novamente</button>
+    		      <button onClick={goToHome}>Página inicial</button>
+    		  </div>    
+    	    </div>
+        </div>
+      );
+  } else {
+    return (
+        <div className="quiz-bg">
+          <div className="loader"></div>
+        </div>
+    )
+  }    
 }

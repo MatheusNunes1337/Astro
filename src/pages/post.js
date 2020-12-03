@@ -46,7 +46,11 @@ export default function Post() {
 	  	<div className="conteudo">
 	  		<article className="post-content">
 	  			<section>
-	  				{ReactHtmlParser (conteudo)}
+	  				{conteudo ? (
+              ReactHtmlParser (conteudo)
+            ) : (
+              <div className="loader" style={{alignSelf: 'center', justifyContent: 'center'}}></div>
+            )}
 	  			</section>	
 	  		</article>
 	  	</div>

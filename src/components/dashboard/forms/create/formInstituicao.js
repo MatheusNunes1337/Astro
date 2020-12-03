@@ -38,7 +38,9 @@ export default function Instituicao(props) {
         form.reset()
     })
     .catch(err => {
-        console.error(err)
+       if (err.response && err.response.data) {
+        alert(err.response.data.message)
+      }
     })
   }
 	

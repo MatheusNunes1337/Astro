@@ -31,6 +31,7 @@ export default function Quiz() {
     },[])
 
    useEffect(() => {
+        setAcertos(null)
         async function getStudent() {
             try {
               const response = await api.get('student/find', {
@@ -82,7 +83,9 @@ export default function Quiz() {
       );
   } else {
      return (
-       <p>carregando...</p>
+        <div className="quiz-bg">
+            <div className="loader"></div>
+        </div>
      )
   } 
   	

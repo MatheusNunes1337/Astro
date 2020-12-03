@@ -26,9 +26,7 @@ export default function Home() {
   }
 
   function generateBook() {
-  	api.post('book', {
-        headers: { Authorization: `Bearer ${token}` }
-    })
+  	api.post('book')
     .then(() => { alert('Material gerado com sucesso') })
     .catch(err => alert(err))
   }

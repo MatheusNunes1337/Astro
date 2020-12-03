@@ -9,6 +9,7 @@ import '../assets/css/dashboard.css'
 export default function Login() {
   let [username, setUsername] = useState('')
   let [password, setPassword] = useState('')
+  let [buttonStatus, setbuttonStatus] = useState('Login')
 
   const history = useHistory()
 
@@ -21,11 +22,15 @@ export default function Login() {
   	}
  
   	try {
+      setbuttonStatus('Entrando...')
   		const response = await api.post('auth/login', data)
       localStorage.setItem('aToken', response.data)
   		history.push('/dashboard')
   	} catch(err) {
-  		alert(err)
+      setbuttonStatus('Login')
+      if (err.response && err.response.data) {
+        alert(err.response.data.message)
+      }
   	}
   }
 
@@ -36,7 +41,7 @@ export default function Login() {
 		        <p>Login</p>
 		        <input type="text" name="username" onChange={e => setUsername(e.target.value)} placeholder="username"/>
 		        <input type="password" name="password" onChange={e => setPassword(e.target.value)} placeholder="password"/>
-		        <button type="submit">Login</button>
+		        <button type="submit">{buttonStatus}</button>
     		</form>
 	    </div>
     </React.Fragment>

@@ -18,7 +18,6 @@ export default function Student() {
 
   useEffect(() => {
       async function getStudents() {
-          console.log('banana')
           const response =  await api.get('student')
           setStudents(response.data)
           if(response.data.length !== 0) {

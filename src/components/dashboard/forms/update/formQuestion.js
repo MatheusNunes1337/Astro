@@ -52,7 +52,9 @@ export default function Question(props) {
         alert(response.data.message)
     })
     .catch(err => {
-        console.error(err)
+        if (err.response && err.response.data) {
+          alert(err.response.data.message)
+        }
      })   
   }
 

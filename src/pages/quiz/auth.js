@@ -50,24 +50,32 @@ export default function Auth() {
     }
   } 
 
-  return (
-    <div className="quiz-bg">
-        <form className="quiz-form" onSubmit={handleForm}>
-            <p>Para fazer o quiz, você precisa informar os seus dados logo abaixo</p>
-            <p className="field-name">Nome:</p>
-            <input type="text" name="name" onChange={e => setName(e.target.value)}/>
-            <p className="field-name">Idade:</p>
-            <input type="text" name="age" onChange={e => setAge(e.target.value)}/>
-            <p className="field-name">Escola:</p>
-            <select name="school" onChange={e => console.log(e.target.value)}>
-              {
-                escolas.map((escola, i) => 
-                  <option value={escola._id} key={i}>{escola.name}</option>
-                )
-              }
-            </select>
-            <button onClick={handleForm}>Continuar</button>
-        </form>
-    </div>
-  );
+  if(escolas !== []) {
+      return (
+        <div className="quiz-bg">
+            <form className="quiz-form" onSubmit={handleForm}>
+                <p>Para fazer o quiz, você precisa informar os seus dados logo abaixo</p>
+                <p className="field-name">Nome:</p>
+                <input type="text" name="name" onChange={e => setName(e.target.value)}/>
+                <p className="field-name">Idade:</p>
+                <input type="text" name="age" onChange={e => setAge(e.target.value)}/>
+                <p className="field-name">Escola:</p>
+                <select name="school" onChange={e => console.log(e.target.value)}>
+                  {
+                    escolas.map((escola, i) => 
+                      <option value={escola._id} key={i}>{escola.name}</option>
+                    )
+                  }
+                </select>
+                <button onClick={handleForm}>Continuar</button>
+            </form>
+        </div>
+      );
+  } else {
+      return (
+          <div className="quiz-bg">
+            <div className="loader"></div>
+          </div>
+      )
+  }    
 }
