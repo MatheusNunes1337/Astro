@@ -113,14 +113,14 @@ form.quiz-form input, form.quiz-form select {
   margin-bottom: 20px;
   width: 100%;
   border: none;
-  padding: 12px 0px;
+  padding: 8px 0px;
   text-indent: 7px;
   font-size: clamp(16px, 2.8vw, 1rem); 
 }
 
 
 form.quiz-form button {
-    padding: 12px 10px; /*12px 10px*/;
+    padding: 7px 10px; /*12px 10px*/;
     border: none;
     font-size: clamp(18px, 3.3vw, 1.3rem);
     color: var(--white);
@@ -404,7 +404,7 @@ footer div.footer p.copyright {
 }
 
 .loader {
-  border: 12px solid var(--bg-color); /* Light grey */
+  border: 12px solid transparent;
   border-top: 12px solid var(--main-color);
   border-right: 12px solid var(--main-color);
   border-bottom: 12px solid var(--main-color);
@@ -452,6 +452,11 @@ footer div.footer p.copyright {
 
     div.conteudo {
         min-height: 82vh;
+    }
+
+    div.conteudo h3 {
+        margin-top: 75px;
+        font-size: clamp(20px, 3vw, 1.3rem);
     }
 
     div.conteudo article.card-wrapper, div.conteudo h3 {

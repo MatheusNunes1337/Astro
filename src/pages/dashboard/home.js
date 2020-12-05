@@ -1,8 +1,10 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
 
+import download from 'downloadjs'
+
 import { FaSchool, FaQuestionCircle } from 'react-icons/fa'
-import { ImNewspaper, ImBook } from 'react-icons/im'
+import { ImNewspaper, ImDownload3 } from 'react-icons/im'
 
 import api from '../../services/api'
 
@@ -25,10 +27,18 @@ export default function Home() {
       history.push(`/dashboard/create/${page}`);
   }
 
-  function generateBook() {
-  	api.post('book')
-    .then(() => { alert('Material gerado com sucesso') })
-    .catch(err => alert(err))
+  async function downloadBook() {
+  	try {
+         const response = await api.get('book/download', {
+            responseType: 'blob',
+                headers: {
+                    'Content-Type': 'application/pdf',
+                }
+         }) 
+        download(response.data, 'apostila.pdf')  
+     } catch(err) {
+       alert(err)
+     }
   }
 
   return (
@@ -39,10 +49,10 @@ export default function Home() {
 	    	<Jumbotron />
 	    	<div className="content" style={{background: 'var(--bg-color)'}}>
 	    		<div className="buttons">
-	    			<button value="post" onClick={goToCreate}>Nova Publicação <ImNewspaper className="icu"/></button>
-	    			<button value="question" onClick={goToCreate}>Nova Questão <FaQuestionCircle className="icu"/></button>
-	    			<button value="instituicao" onClick={goToCreate}>Nova Instituição <FaSchool className="icu"/></button>
-	    			<button onClick={generateBook}>Gerar Material <ImBook className="icu"/></button>
+	    			<button value="post" onClick={goToCreate}>Nova Publicação <ImNewspaper className="dashboard-icon"/></button>
+	    			<button value="question" onClick={goToCreate}>Nova Questão <FaQuestionCircle className="dashboard-icon"/></button>
+	    			<button value="instituicao" onClick={goToCreate}>Nova Instituição <FaSchool className="dashboard-icon"/></button>
+	    			<button onClick={downloadBook}>Baixar Material <ImDownload3 className="dashboard-icon"/></button>
 	    		</div>
 	    	</div>
 	    </div>
