@@ -28,7 +28,7 @@ h1, h2, h3, h4, h5, h6 {
 	font-family: 'Montserrat', sans-serif;
 }
 
-p, a, li {
+p, a, li, span {
 	font-family: 'Roboto', sans-serif;
 }
 
@@ -45,4 +45,10 @@ form input {
 form input:focus, textarea:focus {
     box-shadow: 0 0 5px var(--secundary-color);
     border: 1px solid var(--secundary-color);
+}
+
+span.logo {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--white);
 }

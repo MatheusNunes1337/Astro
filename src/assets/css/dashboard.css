@@ -75,11 +75,10 @@ aside {
   top: 0; 
 }
 
-aside picture {
+aside span.logo {
     display: block;
-    width: 55%;
-    background-color: var(--secundary-color);
-    height: 6%;
+    padding: 8px 0px;
+    font-size: clamp(22px, 2.5vw, 1.5rem);
     margin-left: 25px;
 }
 
@@ -354,10 +353,6 @@ td button {
         height: auto;
     }
 
-    aside picture {
-        height: 7%;
-    }
-
     div.main .header {
         height: 7vh;
     }
@@ -391,10 +386,12 @@ td button {
         position: relative;
     } 
 
-    aside picture {
-        width: 30%;
-        height: 8vh;
-        margin-top: 25px;
+    aside span.logo {
+        margin-top: 45px;
+    }
+
+    aside nav {
+        margin: 45px 0px;
     }
 
     aside button {
@@ -463,6 +460,11 @@ td button {
     #adm_form {
         width: 90%;
         height: auto;
+    }
+
+    aside span.logo {
+        margin-top: 55px;
+        margin-bottom: 45px;
     }
 }
 

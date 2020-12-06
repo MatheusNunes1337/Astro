@@ -10,9 +10,9 @@ export default function Header() {
 
   return (
     <header>
-  	    <picture className="logo">
-          
-        </picture>
+  	    <span className="logo">
+          	Astro
+        </span>
         <Link to="/quiz/auth"><button className="quiz-btn">Quiz</button></Link>
 	  </header>
   );

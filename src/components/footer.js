@@ -9,7 +9,7 @@ export default function Footer() {
 
   return (
     <footer>
-    	<div className="logo"></div>
+    	<span className="logo">Astro</span>
     	<div className="about">
     		<h3>Sobre</h3>
     		<p className="content">
