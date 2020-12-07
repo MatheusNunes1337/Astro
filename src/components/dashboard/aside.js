@@ -17,7 +17,7 @@ export default function Aside() {
 
   return (
     <aside>
-        <span className="logo">Astro</span>
+        <Link to="/dashboard"><span className="logo">Astro</span></Link>
         <nav>
             <ul>
                 <li><ImNewspaper className="icon nav-icon"/><Link to="/dashboard/posts" className="link">Postagens</Link></li>

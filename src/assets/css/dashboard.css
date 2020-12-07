@@ -82,6 +82,10 @@ aside span.logo {
     margin-left: 25px;
 }
 
+aside > a {
+    text-decoration: none;
+}
+
 aside nav {
     margin: 75px 0px;
 }
@@ -415,7 +419,7 @@ td button {
         padding: 50px 40px;;
     }
 
-    .icu {
+    .dashboard-icon {
         margin-top: 15px;
     }
 
