@@ -64,11 +64,10 @@ export default function QuizResult() {
 
   async function tryAgain() {
   	 try {
-        console.log('student token', token)
-        console.log('admin token', localStorage.getItem("aToken"))
-  	 	  await api.put('question/tryAgain', {
-            headers: { Authorization: 'Bearer ' + token }
+       const response =  await api.get('student/find', {
+            headers: { Authorization: `Bearer ${token}` }
         })
+  	 	  await api.put(`question/tryAgain/${response.data._id}`)
   	 	  history.push('/quiz')
   	 } catch(err) {
         if (err.response && err.response.data) {
