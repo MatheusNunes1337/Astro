@@ -14,7 +14,7 @@ export default function Question(props) {
    let [category, setCategory] = useState('')
    let [answer, setAnswer] = useState('')
 
-   const token = localStorage.getItem("sToken")
+   const token = localStorage.getItem("aToken")
    
   async function handleQuestion(e) {
     e.preventDefault()
