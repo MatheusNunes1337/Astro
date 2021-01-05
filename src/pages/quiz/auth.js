@@ -42,6 +42,11 @@ export default function Auth() {
     }
  
     try {
+      if(typeof data.name !== 'string')
+          throw 'Informe um nome válido'
+      if(typeof data.age !== 'number' || (data.age < 5 || data.age > 45))
+          throw 'Informe uma idade válida'  
+
       const response = await api.post('student', data)
       localStorage.setItem('sToken', response.data)
       history.push('/quiz')
