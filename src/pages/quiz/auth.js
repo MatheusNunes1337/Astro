@@ -40,12 +40,12 @@ export default function Auth() {
       age, 
       school
     }
- 
+    
     try {
       if(typeof data.name !== 'string')
-          throw 'Informe um nome válido'
+          throw new Error ('Informe um nome válido')
       if(typeof data.age !== 'number' || (data.age < 5 || data.age > 45))
-          throw 'Informe uma idade válida'  
+          throw new Error('Informe uma idade válida')  
 
       const response = await api.post('student', data)
       localStorage.setItem('sToken', response.data)
@@ -63,7 +63,7 @@ export default function Auth() {
                 <p className="field-name">Nome:</p>
                 <input type="text" name="name" onChange={e => setName(e.target.value)}/>
                 <p className="field-name">Idade:</p>
-                <input type="text" name="age" onChange={e => setAge(e.target.value)}/>
+                <input type="number" name="age" onChange={e => setAge(parseInt(e.target.value))}/>
                 <p className="field-name">Escola:</p>
                 <select name="school" onChange={e => console.log(e.target.value)}>
                   {
