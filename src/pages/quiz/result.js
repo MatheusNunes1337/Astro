@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import download from 'downloadjs'
 
 import '../../assets/css/global.css'
 import '../../assets/css/client.css'
@@ -23,17 +22,17 @@ export default function QuizResult() {
             const response1 =  await api.get('student/find', {
               headers: { Authorization: `Bearer ${token}` }
             })
-            const acertos = response1.data.acertos
+            const { acertos, name} = response1.data
             const response2 =  await api.get('question')
             const questions = response2.data.length
             if((acertos * 100) / questions > 80) {
-              setResult(`Parabéns! Você acertou ${acertos} das ${questions} questões.`)
+              setResult(`Parabéns, ${name}! Você acertou ${acertos} das ${questions} questões.`)
             } else if(acertos === 0) {
-              setResult('Que pena! Você não acertou nenhuma questão.') 
+              setResult('Que pena, ${name}! Você não acertou nenhuma questão.') 
             } else if((acertos * 100) / questions <= 25) {
-              setResult(`Que pena! Você acertou somente ${acertos} das ${questions} questões.`) 
+              setResult(`Que pena, ${name}! Você acertou somente ${acertos} das ${questions} questões.`) 
             } else {
-              setResult(`Você acertou ${acertos} das ${questions} questões.`)
+              setResult(`${name}, você acertou ${acertos} das ${questions} questões.`)
             }
           } catch(err) {
              alert(err)
@@ -41,22 +40,6 @@ export default function QuizResult() {
       }  
       getData()
    }, [])
-
- 
-
-  async function downloadMaterial() {
-  	 try {
-  	 	  const response = await api.get('book/download', {
-            responseType: 'blob',
-                headers: {
-                    'Content-Type': 'application/pdf',
-                }
-         }) 
-        download(response.data, 'apostila.pdf')	
-  	 } catch(err) {
-  	 	alert(err)
-  	 }
-  }
 
   function goToHome() {
   	 history.push('/home')
@@ -82,7 +65,7 @@ export default function QuizResult() {
     	    <div className="result-wrapper">
     	      <p className="result">{result}</p>
     	      <div className="buttons-wrapper">
-    		      <button onClick={downloadMaterial}>Baixar o material</button>
+    		      <button>Resultados gerais</button>
     		      <button onClick={tryAgain}>Tentar novamente</button>
     		      <button onClick={goToHome}>Página inicial</button>
     		  </div>    

@@ -33,7 +33,7 @@ export default function Homepage() {
 		  	<div className="conteudo">
 		  		{posts ? (
 	  				<div className="conteudo">
-			  			<h3>Publicações</h3>
+			  			<h3>Planetas</h3>
 			  			<article className="card-wrapper">
 			  			{
 			  				posts.map((post, i) => {

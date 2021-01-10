@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 import { useHistory, useParams } from 'react-router-dom'
 
+import { ImDownload3 } from 'react-icons/im'
+
 import ReactHtmlParser from 'react-html-parser';
+import download from 'downloadjs'
 
 import api from '../services/api'
 
@@ -38,6 +41,20 @@ export default function Post() {
       const id = e.currentTarget.id
       history.push(`/post/${id}`);
   }
+
+  async function downloadMaterial() {
+     try {
+         const response = await api.get('book/download', {
+            responseType: 'blob',
+                headers: {
+                    'Content-Type': 'application/pdf',
+                }
+         }) 
+        download(response.data, 'apostila.pdf')  
+     } catch(err) {
+       alert(err)
+     }
+  }
   
 
   return (
@@ -51,7 +68,8 @@ export default function Post() {
             ) : (
               <div className="loader" style={{alignSelf: 'center', justifyContent: 'center'}}></div>
             )}
-	  			</section>	
+	  			</section>
+          <button className="download-book" onClick={downloadMaterial}>Baixar o material completo <ImDownload3 className="download-icon"/></button>	
 	  		</article>
 	  	</div>
 		<Footer />
