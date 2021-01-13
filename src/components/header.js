@@ -13,7 +13,7 @@ export default function Header() {
   	    <Link to="/home"><span className="logo">
           	Astro
         </span></Link>
-        <Link to="/quiz/auth"><button className="quiz-btn">Quiz</button></Link>
+        <Link to="/quiz/home"><button className="quiz-btn">Quiz</button></Link>
 	  </header>
   );
 }

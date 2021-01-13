@@ -11,7 +11,10 @@ import Homepage from '../pages/home'
 import Post from '../pages/post'
 import Index from '../pages/index'
 import Quiz from '../pages/quiz/quiz'
-import Auth from '../pages/quiz/auth'
+import AuthStudent from '../pages/quiz/authStudent'
+import LoginSchool from '../pages/quiz/loginSchool'
+import RegisterSchool from '../pages/quiz/registerSchool'
+import QuizIndex from '../pages/quiz/index'
 import QuizResult from '../pages/quiz/result'
 
 function CustomRoute(props) {
@@ -20,7 +23,7 @@ function CustomRoute(props) {
 	if(props.onlyAdmin && !aToken) {
 		return <Redirect to="/login" />
 	} else if(props.onlyStudent && !sToken) {
-		return <Redirect to="/quiz/auth" />
+		return <Redirect to="/quiz/auth/student" />
 	} else {
 		return <Route {...props} />
 	}
@@ -74,8 +77,17 @@ export default function Routes () {
 	 			<Route path="/home">
 		       		<Homepage />
 		     	</Route>
-		     	<Route path="/quiz/auth">
-		       		<Auth />
+		     	<Route path="/quiz/auth/student">
+		       		<AuthStudent />
+		     	</Route>
+		     	<Route path="/quiz/auth/school/login">
+		       		<LoginSchool />
+		     	</Route>
+		     	<Route path="/quiz/auth/school/register">
+		       		<RegisterSchool />
+		     	</Route>
+		     	<Route path="/quiz/home">
+		       		<QuizIndex />
 		     	</Route>
 		     	<CustomRoute onlyStudent path="/quiz/result">
 		       		<QuizResult />

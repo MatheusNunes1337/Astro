@@ -153,7 +153,13 @@ div.result-wrapper button {
   width: 45%;
 }
 
-
+form.quiz-form a.already_accounted {
+  display: block;
+  margin-top: 25px;
+  text-decoration: none;
+  color: var(--white);
+  font-size: 18px;
+}
 
 /*home page */
 

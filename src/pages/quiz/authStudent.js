@@ -8,7 +8,7 @@ import '../../assets/css/global.css'
 import '../../assets/css/client.css'
 
 
-export default function Auth() {
+export default function AuthStudent() {
 
   let [escolas, setEscolas] = useState([])
   let [name, setName] = useState('')
