@@ -69,7 +69,7 @@ export default function Post() {
               <div className="loader" style={{alignSelf: 'center', justifyContent: 'center'}}></div>
             )}
 	  			</section>
-          <button className="download-book" onClick={downloadMaterial}>Baixar o material completo <ImDownload3 className="download-icon"/></button>	
+          <button className="download-book" onClick={downloadMaterial}><ImDownload3 className="download-icon"/>Baixar o material completo</button>	
 	  		</article>
 	  	</div>
 		<Footer />

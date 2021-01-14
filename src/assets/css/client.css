@@ -97,7 +97,7 @@ p.acertos {
 }
 
 form.quiz-form {
-    width: 30%;
+    width: 25%;
     height: auto;
 }
 
@@ -153,7 +153,7 @@ div.result-wrapper button {
   width: 45%;
 }
 
-form.quiz-form a.already_accounted {
+form.quiz-form a.no_account_yet {
   display: block;
   margin-top: 25px;
   text-decoration: none;
@@ -253,7 +253,7 @@ article button.download-book {
 
 .download-icon {
   align-self: center;
-  margin-left: 9px;
+  margin-right: 9px;
   display: block;
 }
 
@@ -431,13 +431,13 @@ footer div.footer p.copyright {
 }
 
 .loader {
-  border: 10px solid transparent;
-  border-top: 10px solid var(--main-color);
-  border-right: 10px solid var(--main-color);
-  border-bottom: 10px solid var(--main-color);
+  border: 7px solid transparent;
+  border-top: 7px solid var(--main-color);
+  border-right: 7px solid var(--main-color);
+  border-bottom: 7px solid var(--main-color);
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 42px;
+  height: 42px;
   animation: spin 0.7s linear infinite;
 }
 

@@ -9,11 +9,8 @@ import api from '../../services/api'
 
 export default function LoginSchool() {
 
-  let [escolas, setEscolas] = useState([])
-  let [name, setName] = useState('')
-  let [age, setAge] = useState('')
-  let [school, setSchool] = useState('')
-
+  let [email_resp, setEmail] = useState('')
+  let [password, setPassword] = useState('')
  
   const history = useHistory()
 
@@ -21,35 +18,29 @@ export default function LoginSchool() {
     e.preventDefault()
 
     const data = {
-      name,
-      age, 
-      school
+      email_resp,
+      password
     }
     
     try {
-      if(typeof data.name !== 'string')
-          throw new Error ('Informe um nome válido')
-      if(typeof data.age !== 'number' || (data.age < 5 || data.age > 45))
-          throw new Error('Informe uma idade válida')  
-
-      const response = await api.post('student', data)
-      localStorage.setItem('sToken', response.data)
-      history.push('/quiz')
+      const response = await api.post('school/login', data)
+      localStorage.setItem('iToken', response.data)
+      history.push('/home')
     } catch(err) {
-      alert(err)
+      alert(err.response.data.message)
     }
   } 
 
   return (
     <div className="quiz-bg">
         <form className="quiz-form" onSubmit={handleForm}>
-            <p>Informe os dados abaixo</p>
+            <p>Login</p>
             <p className="field-name">Email do responsável:</p>
-            <input type="email" name="email_resp" onChange={e => setName(e.target.value)}/>
+            <input type="email" name="email_resp" onChange={e => setEmail(e.target.value)}/>
             <p className="field-name">Senha:</p>
-            <input type="password" name="password" onChange={e => setAge(parseInt(e.target.value))}/>
+            <input type="password" name="password" onChange={e => setPassword(e.target.value)}/>
             <button onClick={handleForm}>Entrar</button>
-            <Link to="/quiz/auth/school/register" className="already_accounted">Já possui uma conta?</Link>
+            <Link to="/quiz/auth/school/register" className="no_account_yet">Não possui um cadastro?</Link>
         </form>
     </div>
   );   
