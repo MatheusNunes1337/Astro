@@ -25,7 +25,7 @@ export default function LoginSchool() {
     try {
       const response = await api.post('school/login', data)
       localStorage.setItem('iToken', response.data)
-      history.push('/home')
+      history.push('/quiz/result/students')
     } catch(err) {
       alert(err.response.data.message)
     }

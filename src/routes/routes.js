@@ -16,15 +16,20 @@ import LoginSchool from '../pages/quiz/loginSchool'
 import RegisterSchool from '../pages/quiz/registerSchool'
 import QuizIndex from '../pages/quiz/index'
 import QuizResult from '../pages/quiz/result'
+import StudentsResult from '../pages/quiz/studentsResult'
 
 function CustomRoute(props) {
 	const aToken = localStorage.getItem('aToken')
 	const sToken = localStorage.getItem('sToken')
+	const iToken = localStorage.getItem('iToken')
 	if(props.onlyAdmin && !aToken) {
 		return <Redirect to="/login" />
 	} else if(props.onlyStudent && !sToken) {
 		return <Redirect to="/quiz/auth/student" />
-	} else {
+	} else if(props.onlySchool && !iToken) {
+		return <Redirect to="/quiz/auth/school/login" />
+	}
+	else {
 		return <Route {...props} />
 	}
 }
@@ -89,6 +94,9 @@ export default function Routes () {
 		     	<Route path="/quiz/home">
 		       		<QuizIndex />
 		     	</Route>
+		     	<CustomRoute onlySchool path="/quiz/result/students">
+		       		<StudentsResult />
+		     	</CustomRoute>
 		     	<CustomRoute onlyStudent path="/quiz/result">
 		       		<QuizResult />
 		     	</CustomRoute>
