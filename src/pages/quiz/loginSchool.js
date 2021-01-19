@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory, Link, Redirect } from 'react-router-dom'
 
 import '../../assets/css/global.css'
 import '../../assets/css/client.css'
@@ -11,6 +11,8 @@ export default function LoginSchool() {
 
   let [email_resp, setEmail] = useState('')
   let [password, setPassword] = useState('')
+
+  const iToken = localStorage.getItem('iToken')
  
   const history = useHistory()
 
@@ -29,6 +31,10 @@ export default function LoginSchool() {
     } catch(err) {
       alert(err.response.data.message)
     }
+  }
+
+  if(iToken) {
+    return <Redirect to="/quiz/result/students" />
   } 
 
   return (

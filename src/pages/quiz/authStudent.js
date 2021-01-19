@@ -65,7 +65,7 @@ export default function AuthStudent() {
                 <p className="field-name">Idade:</p>
                 <input type="number" name="age" onChange={e => setAge(parseInt(e.target.value))}/>
                 <p className="field-name">Escola:</p>
-                <select name="school" onChange={e => console.log(e.target.value)}>
+                <select name="school" onChange={e => setSchool(e.target.value)}>
                   {
                     escolas.map((escola, i) => 
                       <option value={escola._id} key={i}>{escola.name}</option>

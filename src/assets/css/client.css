@@ -161,6 +161,18 @@ form.quiz-form a.no_account_yet {
   font-size: 18px;
 }
 
+div.quiz-bg > div.table-wrap {
+    width: 50%;
+    margin-top: -400px;
+    background-color: black;
+    overflow-x: auto;
+}
+
+div.quiz-bg > div.table-wrap table {
+   width: 100%;
+   color: var(--white);
+}
+
 /*home page */
 
 header {
@@ -520,6 +532,10 @@ footer div.footer p.copyright {
 
     div.result-wrapper button {
        width: 65%;
+    }
+
+    div.quiz-bg > div.table-wrap {
+      width: 80%;
     }
 
 

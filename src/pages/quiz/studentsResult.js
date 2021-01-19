@@ -20,7 +20,7 @@ export default function StudentsResult() {
             const response =  await api.get('student/findBySchool', {
               headers: { Authorization: `Bearer ${token}` }
             })
-            console.log(response.data)
+            setStudents(response.data)
           } catch(err) {
              alert(err)
           }
@@ -33,9 +33,34 @@ export default function StudentsResult() {
   }
 
 	
-  if(students == '') {
+  if(students !== '') {
       return (
-      	<h1>Resultados do quiz</h1>
+      	<div className="quiz-bg">
+            <div className="table-wrap"> 
+              <table>
+                  <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Nome</th>
+                        <th>Idade</th>
+                        <th>Acertos</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      {
+                         students.map((student, i) => 
+                            <tr key={i}>
+                              <td>{i + 1}</td>
+                              <td>{student.name}</td>
+                              <td>{student.age}</td>
+                              <td>{student.acertos}</td>
+                            </tr>
+                        )
+                      }
+                  </tbody>
+              </table>
+            </div>
+        </div>
       );
   } else {
     return (
