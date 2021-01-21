@@ -153,12 +153,19 @@ div.result-wrapper button {
   width: 45%;
 }
 
-form.quiz-form a.no_account_yet {
+form.quiz-form a.accounted_already, button.forgot_pass {
   display: block;
-  margin-top: 25px;
+  margin-top: 18px;
   text-decoration: none;
   color: var(--white);
   font-size: 18px;
+}
+
+button.forgot_pass {
+  outline: none;
+  background-color: red;
+  border: none;
+  color: blue;
 }
 
 div.quiz-bg > div.table-wrap {

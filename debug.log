@@ -2,3 +2,5 @@
 [1029/123929.317:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
 [0118/123501.039:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
 [0118/123503.617:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\cliente\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\d22c280c-3558-43c5-83c1-e6d142cd0cf7: O sistema não pode encontrar o caminho especificado. (0x3)
+[0121/125222.007:ERROR:directory_reader_win.cc(43)] FindFirstFile: O sistema não pode encontrar o caminho especificado. (0x3)
+[0121/125222.194:ERROR:filesystem_win.cc(129)] GetFileAttributes C:\Users\cliente\AppData\Local\Google\Chrome\User Data\Crashpad\attachments\1c6605e7-8afb-4040-8384-b34aad944c4f: O sistema não pode encontrar o caminho especificado. (0x3)

@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory, Link, Redirect } from 'react-router-dom'
 
-import '../../assets/css/global.css'
-import '../../assets/css/client.css'
+import '../../../assets/css/global.css'
+import '../../../assets/css/client.css'
 
-import api from '../../services/api'
+import api from '../../../services/api'
 
 export default function RegisterSchool() {
 
@@ -16,7 +16,7 @@ export default function RegisterSchool() {
   let [state, setState] = useState('')
   let [city, setCity] = useState('')
 
- 
+   const iToken = localStorage.getItem('iToken')
   const history = useHistory()
 
   async function handleForm(e) {
@@ -49,6 +49,10 @@ export default function RegisterSchool() {
     } catch(err) {
       alert(err.response.data.message)
     }
+  }
+
+  if(iToken) {
+    return <Redirect to="/quiz/result/students" />
   } 
 
   return (
@@ -68,6 +72,7 @@ export default function RegisterSchool() {
             <p className="field-name">Cidade:</p>
             <input type="email" name="email_resp" onChange={e => setCity(e.target.value)}/>
             <button onClick={handleForm}>Cadastrar</button>
+            <Link to="/quiz/auth/school/login" className="accounted_already">Já possui um cadastro?</Link>
         </form>
     </div>
   );   

@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 
-import '../../assets/css/global.css'
-import '../../assets/css/client.css'
+import '../../../assets/css/global.css'
+import '../../../assets/css/client.css'
 
 import { useHistory } from 'react-router-dom'
 
-import api from '../../services/api'
+import api from '../../../services/api'
 
 
 export default function StudentsResult() {

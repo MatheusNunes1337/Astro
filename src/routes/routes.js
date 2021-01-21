@@ -12,11 +12,12 @@ import Post from '../pages/post'
 import Index from '../pages/index'
 import Quiz from '../pages/quiz/quiz'
 import AuthStudent from '../pages/quiz/authStudent'
-import LoginSchool from '../pages/quiz/loginSchool'
-import RegisterSchool from '../pages/quiz/registerSchool'
+import LoginSchool from '../pages/quiz/school/loginSchool'
+import RegisterSchool from '../pages/quiz/school/registerSchool'
+import PasswordForm from '../pages/quiz/school/passwordForm'
 import QuizIndex from '../pages/quiz/index'
 import QuizResult from '../pages/quiz/result'
-import StudentsResult from '../pages/quiz/studentsResult'
+import StudentsResult from '../pages/quiz/school/studentsResult'
 
 function CustomRoute(props) {
 	const aToken = localStorage.getItem('aToken')
@@ -87,6 +88,9 @@ export default function Routes () {
 		     	</Route>
 		     	<Route path="/quiz/auth/school/login">
 		       		<LoginSchool />
+		     	</Route>
+		     	<Route path="/quiz/auth/school/recover/pass">
+		       		<PasswordForm />
 		     	</Route>
 		     	<Route path="/quiz/auth/school/register">
 		       		<RegisterSchool />

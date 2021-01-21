@@ -27,15 +27,10 @@ export default function Home() {
       history.push(`/dashboard/create/${page}`);
   }
 
-  async function downloadBook() {
+  async function generateBook() {
   	try {
-         const response = await api.get('book/download', {
-            responseType: 'blob',
-                headers: {
-                    'Content-Type': 'application/pdf',
-                }
-         }) 
-        download(response.data, 'apostila.pdf')  
+        const response = await api.post('book/generate')
+        alert(response.data.message)
      } catch(err) {
        alert(err)
      }
@@ -52,7 +47,7 @@ export default function Home() {
 	    			<button value="post" onClick={goToCreate}>Nova Publicação <ImNewspaper className="dashboard-icon"/></button>
 	    			<button value="question" onClick={goToCreate}>Nova Questão <FaQuestionCircle className="dashboard-icon"/></button>
 	    			<button value="instituicao" onClick={goToCreate}>Nova Instituição <FaSchool className="dashboard-icon"/></button>
-	    			<button onClick={downloadBook}>Baixar Material <ImDownload3 className="dashboard-icon"/></button>
+	    			<button onClick={generateBook}>Gerar Material <ImDownload3 className="dashboard-icon"/></button>
 	    		</div>
 	    	</div>
 	    </div>

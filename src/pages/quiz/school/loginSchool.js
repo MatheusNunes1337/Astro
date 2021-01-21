@@ -2,15 +2,16 @@ import React, {useState, useEffect} from 'react';
 
 import { useHistory, Link, Redirect } from 'react-router-dom'
 
-import '../../assets/css/global.css'
-import '../../assets/css/client.css'
+import '../../../assets/css/global.css'
+import '../../../assets/css/client.css'
 
-import api from '../../services/api'
+import api from '../../../services/api'
 
 export default function LoginSchool() {
 
   let [email_resp, setEmail] = useState('')
   let [password, setPassword] = useState('')
+  let [forgot_pass, setForgot_pass] = useState(false)
 
   const iToken = localStorage.getItem('iToken')
  
@@ -28,6 +29,22 @@ export default function LoginSchool() {
       const response = await api.post('school/login', data)
       localStorage.setItem('iToken', response.data)
       history.push('/quiz/result/students')
+      console.log(data)
+    } catch(err) {
+      alert(err.response.data.message)
+    }
+  }
+
+  async function recoverPass(e) {
+    e.preventDefault()
+
+    const data = {
+      email_resp,
+    }
+    
+    try {
+      const response = await api.post('recover/pass', data)
+      alert(response.data)
     } catch(err) {
       alert(err.response.data.message)
     }
@@ -39,6 +56,8 @@ export default function LoginSchool() {
 
   return (
     <div className="quiz-bg">
+      {
+        (!forgot_pass) ?
         <form className="quiz-form" onSubmit={handleForm}>
             <p>Login</p>
             <p className="field-name">Email do responsável:</p>
@@ -46,8 +65,17 @@ export default function LoginSchool() {
             <p className="field-name">Senha:</p>
             <input type="password" name="password" onChange={e => setPassword(e.target.value)}/>
             <button onClick={handleForm}>Entrar</button>
-            <Link to="/quiz/auth/school/register" className="no_account_yet">Não possui um cadastro?</Link>
+            <button className="forgot_pass" onClick={() => setForgot_pass(true)}>Esqueceu da senha?</button>    
         </form>
+        :
+        <form className="quiz-form" onSubmit={handleForm}>
+            <p>Informe o email do responsável</p>
+            <p className="field-name">Email do responsável:</p>
+            <input type="email" name="email_resp" onChange={e => setEmail(e.target.value)}/>
+            <button onClick={recoverPass}>Confirmar</button>    
+        </form>
+      }  
     </div>
   );   
 }
+
