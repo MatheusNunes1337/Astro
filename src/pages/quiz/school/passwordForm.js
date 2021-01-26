@@ -13,13 +13,15 @@ export default function PasswordForm() {
   let [password2, setPassword2] = useState('')
  
   const history = useHistory()
+  const email_resp = localStorage.getItem('email')
 
   async function handleForm(e) {
     e.preventDefault()
 
     const data = {
       password,
-      password2
+      password2,
+      email_resp
     }
     
     try {
@@ -27,12 +29,12 @@ export default function PasswordForm() {
           throw new Error ('As senhas não coincidem.')
       else if(data.password.length < 6 || data.password.length > 12)
           throw new Error ('A senha deve conter de 6 a 12 caracteres.')
-      console.log('redefiniu a senha')
-      //const response = await api.post('school/login', data)
-      //localStorage.setItem('iToken', response.data)
-      //history.push('/quiz/result/students')
+      console.log(data)  
+      //const response = await api.put('school', data)
+      //alert(response.data.message)
+      //history.push('/quiz/auth/school/login')
     } catch(err) {
-      //alert(err.response.data.message)
+      alert(err.response.data.message)
       alert(err)
     }
   }

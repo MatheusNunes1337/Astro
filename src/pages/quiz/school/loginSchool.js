@@ -43,8 +43,11 @@ export default function LoginSchool() {
     }
     
     try {
+      console.log(data)
       const response = await api.post('recover/pass', data)
-      alert(response.data)
+      localStorage.setItem('email', data.email_resp)
+      localStorage.setItem('recoverPass', true)
+      alert(response.data.message)
     } catch(err) {
       alert(err.response.data.message)
     }

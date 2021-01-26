@@ -23,6 +23,7 @@ function CustomRoute(props) {
 	const aToken = localStorage.getItem('aToken')
 	const sToken = localStorage.getItem('sToken')
 	const iToken = localStorage.getItem('iToken')
+	const recoverPass = localStorage.getItem('recoverPass')
 	if(props.onlyAdmin && !aToken) {
 		return <Redirect to="/login" />
 	} else if(props.onlyStudent && !sToken) {
