@@ -19,7 +19,7 @@ export default function QuizIndex() {
   }
 
   function goToSchoolForm() {
-     history.push('/quiz/auth/school/login')
+     history.push('/quiz/auth/school/register')
   }
 
   return (

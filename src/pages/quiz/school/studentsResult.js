@@ -4,6 +4,7 @@ import '../../../assets/css/global.css'
 import '../../../assets/css/client.css'
 
 import { useHistory } from 'react-router-dom'
+import { BsBoxArrowInLeft } from "react-icons/bs";
 
 import api from '../../../services/api'
 
@@ -32,10 +33,16 @@ export default function StudentsResult() {
   	 history.push('/home')
   }
 
+  function logout() {
+    localStorage.removeItem('iToken')
+    history.push('/quiz/home')
+  }
+
 	
   if(students !== '') {
       return (
-      	<div className="quiz-bg">
+      	<div className="students-result-bg">
+            <button onClick={logout}><BsBoxArrowInLeft className="logout-icon" />Sair</button>
             <div className="table-wrap"> 
               <table>
                   <thead>

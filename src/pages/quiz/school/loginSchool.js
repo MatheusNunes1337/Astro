@@ -29,7 +29,6 @@ export default function LoginSchool() {
       const response = await api.post('school/login', data)
       localStorage.setItem('iToken', response.data)
       history.push('/quiz/result/students')
-      console.log(data)
     } catch(err) {
       alert(err.response.data.message)
     }
@@ -39,11 +38,10 @@ export default function LoginSchool() {
     e.preventDefault()
 
     const data = {
-      email_resp,
+      email_resp
     }
     
     try {
-      console.log(data)
       const response = await api.post('recover/pass', data)
       localStorage.setItem('email', data.email_resp)
       localStorage.setItem('recoverPass', true)
@@ -68,7 +66,7 @@ export default function LoginSchool() {
             <p className="field-name">Senha:</p>
             <input type="password" name="password" onChange={e => setPassword(e.target.value)}/>
             <button onClick={handleForm}>Entrar</button>
-            <button className="forgot_pass" onClick={() => setForgot_pass(true)}>Esqueceu da senha?</button>    
+            <button className="forgot-pass" onClick={() => setForgot_pass(true)}>Esqueceu da senha?</button>    
         </form>
         :
         <form className="quiz-form" onSubmit={handleForm}>

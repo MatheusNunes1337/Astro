@@ -45,7 +45,7 @@ div.title button {
 
 /* quiz page */
 
-div.quiz-bg {
+div.quiz-bg, div.students-result-bg {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -55,6 +55,8 @@ div.quiz-bg {
   background: rgb(35,30,36);
   background: linear-gradient(90deg, rgba(35,30,36,1) 0%, rgba(30,9,33,1) 35%, rgba(30,9,33,1) 100%);
 }
+
+
 
 div.quiz-wrapper, div.result-wrapper {
    width: 38%;
@@ -153,32 +155,49 @@ div.result-wrapper button {
   width: 45%;
 }
 
-form.quiz-form a.accounted_already, button.forgot_pass {
+form.quiz-form a.accounted_already, button.forgot-pass {
   display: block;
   margin-top: 18px;
   text-decoration: none;
   color: var(--white);
-  font-size: 18px;
+  font-size: 20px;
 }
 
-button.forgot_pass {
-  outline: none;
-  background-color: red;
-  border: none;
-  color: blue;
+
+div.students-result-bg {
+  align-items: center;
+  justify-content: flex-start;
 }
 
-div.quiz-bg > div.table-wrap {
+div.students-result-bg > div.table-wrap {
     width: 50%;
-    margin-top: -400px;
+    margin-top: 30px;
     background-color: black;
     overflow-x: auto;
 }
 
-div.quiz-bg > div.table-wrap table {
+div.students-result-bg > div.table-wrap table {
    width: 100%;
    color: var(--white);
 }
+
+div.students-result-bg button {
+  align-self: flex-start;
+  display: flex;
+  align-items: center;
+  margin-top: 25px;
+  margin-left: 3vw;
+  padding: 15px 25px;
+  background-color: var(--main-color);
+  color: var(--white);
+  font-size: clamp(16px, 2.9vw, 1.1rem);
+  border: none;
+}
+
+div.students-result-bg button svg {
+  margin-right: 5px;
+}
+
 
 /*home page */
 
@@ -541,10 +560,14 @@ footer div.footer p.copyright {
        width: 65%;
     }
 
-    div.quiz-bg > div.table-wrap {
-      width: 80%;
+    div.students-result-bg > div.table-wrap {
+      width: 85%;
     }
 
+    div.students-result-bg button {
+      margin-left: 7.5vw;
+      padding: 12px 20px;
+    }
 
     header {
        height: 75px;
