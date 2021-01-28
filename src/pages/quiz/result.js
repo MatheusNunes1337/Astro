@@ -45,6 +45,10 @@ export default function QuizResult() {
   	 history.push('/home')
   }
 
+  function goToResultPage() {
+    history.push('/quiz/result/students')
+  }
+
   async function tryAgain() {
   	 try {
        const response =  await api.get('student/find', {
@@ -65,7 +69,7 @@ export default function QuizResult() {
     	    <div className="result-wrapper">
     	      <p className="result">{result}</p>
     	      <div className="buttons-wrapper">
-    		      <button>Resultados gerais</button>
+    		      <button onClick={goToResultPage}>Resultados gerais</button>
     		      <button onClick={tryAgain}>Tentar novamente</button>
     		      <button onClick={goToHome}>Página inicial</button>
     		  </div>    

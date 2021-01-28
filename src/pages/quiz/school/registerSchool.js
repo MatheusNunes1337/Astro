@@ -57,7 +57,7 @@ export default function RegisterSchool() {
 
   return (
     <div className="quiz-bg">
-        <form className="quiz-form" onSubmit={handleForm}>
+        <form className="auth-form" onSubmit={handleForm}>
             <p>Nova instituição</p>
             <p className="field-name">Nome da instituição:</p>
             <input type="email" name="email_resp" onChange={e => setName(e.target.value)}/>

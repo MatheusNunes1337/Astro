@@ -98,19 +98,25 @@ p.acertos {
     color: var(--white);
 }
 
-form.quiz-form {
+form.quiz-form, form.auth-form {
     width: 25%;
     height: auto;
 }
 
 
-form.quiz-form p:first-of-type {
+form.quiz-form p:first-of-type, form.auth-form p:first-of-type {
     margin-bottom: 35px;
     font-size: clamp(20px, 3.2vw, 1.5rem);/*clamp(20px, 3.5vw, 1.7rem);*/
     text-align: left;
+    color: var(--white);
 }
 
-form.quiz-form input, form.quiz-form select {
+form.auth-form p:first-of-type {
+   margin-bottom: 25px;
+   /*font-size: clamp(26px, 3.2vw, 1.6rem);*/
+}
+
+form.quiz-form input, form.quiz-form select, form.auth-form input {
   display: block;
   margin-bottom: 20px;
   width: 100%;
@@ -121,7 +127,7 @@ form.quiz-form input, form.quiz-form select {
 }
 
 
-form.quiz-form button {
+form.quiz-form button, form.auth-form button {
     padding: 7px 10px; /*12px 10px*/;
     border: none;
     font-size: clamp(18px, 3.3vw, 1.3rem);
@@ -129,7 +135,7 @@ form.quiz-form button {
     background-color: var(--main-color);
 }
 
-form.quiz-form p.field-name {
+form.quiz-form p.field-name, form.auth-form p.field-name , a.accounted_already{
   margin-bottom: 10px;
   font-size: clamp(18px, 3.3vw, 1.3rem);
   color: var(--white);
@@ -137,7 +143,7 @@ form.quiz-form p.field-name {
 
 div.result-wrapper p {
   text-align: center;
-  margin-bottom: 45px;
+  margin-bottom: 25px;
 }
 
 div.buttons-wrapper {
@@ -152,15 +158,13 @@ div.buttons-wrapper {
 div.result-wrapper button {
   text-align: center;
   margin: 5px auto;
-  width: 45%;
+  width: 50%;
 }
 
-form.quiz-form a.accounted_already, button.forgot-pass {
+a.accounted_already, button.forgot-pass {
   display: block;
   margin-top: 18px;
   text-decoration: none;
-  color: var(--white);
-  font-size: 20px;
 }
 
 
@@ -190,7 +194,7 @@ div.students-result-bg button {
   padding: 15px 25px;
   background-color: var(--main-color);
   color: var(--white);
-  font-size: clamp(16px, 2.9vw, 1.1rem);
+  font-size: clamp(18px, 2.9vw, 1.1rem);
   border: none;
 }
 
@@ -295,45 +299,6 @@ article button.download-book {
   display: block;
 }
 
-
-
-/*
-div.post-buttons {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  height: auto;
-}
-
-button.previous-post, button.next-post {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    margin: 20px 15px;
-    padding: 10px 20px;
-    border: 2px solid var(--secundary-color);
-    background-color: var(--white); 
-    color: var(--secundary-color);
-}
-
-button.previous-post:hover, button.next-post:hover {
-    background-color: var(--secundary-color); 
-    color: var(--white);
-}
-
-.icon {
-    color: red;
-}
-
-button.previous-post .icon {
-   margin-right: 5px;
-}
-
-button.next-post .icon{
-   margin-left: 5px;
-}
-
-*/
 
 div.conteudo {
   display: flex;
@@ -548,7 +513,7 @@ footer div.footer p.copyright {
         text-align: center;
     }
 
-    form.quiz-form {
+    form.quiz-form, form.auth-form {
         width: 80%;
     }
 
@@ -566,7 +531,7 @@ footer div.footer p.copyright {
 
     div.students-result-bg button {
       margin-left: 7.5vw;
-      padding: 12px 20px;
+      padding: 15px 25px;
     }
 
     header {
@@ -659,16 +624,6 @@ footer div.footer p.copyright {
     article.post-content section img {
         width: 100%
     }
-
-    /*
-
-    button.previous-post, button.next-post {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    */
 
     div.conteudo article.card-wrapper {
         justify-content: space-between;

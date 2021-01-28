@@ -30,9 +30,9 @@ export default function PasswordForm() {
       else if(data.password.length < 6 || data.password.length > 12)
           throw new Error ('A senha deve conter de 6 a 12 caracteres.')
       const email_resp = localStorage.getItem('email') 
-      alert(email_resp)
       const response = await api.put('school', data)
       localStorage.removeItem('email')
+      localStorage.removeItem('recoverPass')
       alert(response.data.message)
       history.push('/quiz/auth/school/login')
     } catch(err) {
@@ -43,7 +43,7 @@ export default function PasswordForm() {
 
   return (
     <div className="quiz-bg">
-        <form className="quiz-form" onSubmit={handleForm}>
+        <form className="auth-form" onSubmit={handleForm}>
             <p>Informe a sua nova senha</p>
             <p className="field-name">Nova senha:</p>
             <input type="password" name="email_resp" onChange={e => setPassword(e.target.value)}/>

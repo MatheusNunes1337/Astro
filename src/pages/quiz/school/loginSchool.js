@@ -59,7 +59,7 @@ export default function LoginSchool() {
     <div className="quiz-bg">
       {
         (!forgot_pass) ?
-        <form className="quiz-form" onSubmit={handleForm}>
+        <form className="auth-form" onSubmit={handleForm}>
             <p>Login</p>
             <p className="field-name">Email do responsável:</p>
             <input type="email" name="email_resp" onChange={e => setEmail(e.target.value)}/>
@@ -69,7 +69,7 @@ export default function LoginSchool() {
             <button className="forgot-pass" onClick={() => setForgot_pass(true)}>Esqueceu da senha?</button>    
         </form>
         :
-        <form className="quiz-form" onSubmit={handleForm}>
+        <form className="auth-form" onSubmit={handleForm}>
             <p>Informe o email do responsável</p>
             <p className="field-name">Email do responsável:</p>
             <input type="email" name="email_resp" onChange={e => setEmail(e.target.value)}/>

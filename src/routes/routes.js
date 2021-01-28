@@ -30,6 +30,8 @@ function CustomRoute(props) {
 		return <Redirect to="/quiz/auth/student" />
 	} else if(props.onlySchool && !iToken) {
 		return <Redirect to="/quiz/auth/school/login" />
+	} else if(props.onlyRecover && !recoverPass) {
+		return <Redirect to="/quiz/auth/school/login" />
 	}
 	else {
 		return <Route {...props} />
@@ -90,9 +92,9 @@ export default function Routes () {
 		     	<Route path="/quiz/auth/school/login">
 		       		<LoginSchool />
 		     	</Route>
-		     	<Route path="/quiz/auth/school/recover/pass">
+		     	<CustomRoute onlyRecover path="/quiz/auth/school/recover/pass">
 		       		<PasswordForm />
-		     	</Route>
+		     	</CustomRoute>
 		     	<Route path="/quiz/auth/school/register">
 		       		<RegisterSchool />
 		     	</Route>
