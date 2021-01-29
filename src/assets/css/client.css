@@ -50,7 +50,7 @@ div.quiz-bg, div.students-result-bg {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background: rgb(35,30,36);
   background: linear-gradient(90deg, rgba(35,30,36,1) 0%, rgba(30,9,33,1) 35%, rgba(30,9,33,1) 100%);
@@ -127,7 +127,7 @@ form.quiz-form input, form.quiz-form select, form.auth-form input {
 }
 
 
-form.quiz-form button, form.auth-form button {
+form.quiz-form button, form.auth-form button:not(.forgot-pass) {
     padding: 7px 10px; /*12px 10px*/;
     border: none;
     font-size: clamp(18px, 3.3vw, 1.3rem);
@@ -161,10 +161,17 @@ div.result-wrapper button {
   width: 50%;
 }
 
+a.accounted_already {
+  text-decoration: none;
+}
+
 a.accounted_already, button.forgot-pass {
   display: block;
   margin-top: 18px;
-  text-decoration: none;
+  background-color: transparent;
+  border: none;
+  font-size: clamp(16px, 3.1vw, 1.1rem);
+  color: var(--white);
 }
 
 
@@ -466,6 +473,14 @@ footer div.footer p.copyright {
 
     form.quiz-form {
         width: 40%;
+    }
+
+    form.auth-form p:first-of-type {
+      margin-top: 7vh;
+    }
+
+    a.accounted_already {
+      margin-bottom: 7vh;
     }
 
     header {
