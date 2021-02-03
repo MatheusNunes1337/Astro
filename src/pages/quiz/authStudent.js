@@ -32,6 +32,10 @@ export default function AuthStudent() {
       getEscolas()
    }, [])
 
+  function capitalizeFirstLetter(string) {
+      return string.charAt(0).toUpperCase() + string.slice(1);
+  }
+
   async function handleForm(e) {
     e.preventDefault()
 
@@ -45,8 +49,8 @@ export default function AuthStudent() {
       if(typeof data.name !== 'string')
           throw new Error ('Informe um nome válido')
       if(typeof data.age !== 'number' || (data.age < 5 || data.age > 45))
-          throw new Error('Informe uma idade válida')  
-
+          throw new Error('Informe uma idade válida')
+           
       const response = await api.post('student', data)
       localStorage.setItem('sToken', response.data)
       history.push('/quiz')
@@ -61,7 +65,7 @@ export default function AuthStudent() {
             <form className="quiz-form" onSubmit={handleForm}>
                 <p>Para fazer o quiz, você precisa informar os seus dados logo abaixo</p>
                 <p className="field-name">Nome:</p>
-                <input type="text" name="name" onChange={e => setName(e.target.value)}/>
+                <input type="text" name="name" onChange={e => setName(capitalizeFirstLetter(e.target.value))}/>
                 <p className="field-name">Idade:</p>
                 <input type="number" name="age" onChange={e => setAge(parseInt(e.target.value))}/>
                 <p className="field-name">Escola:</p>

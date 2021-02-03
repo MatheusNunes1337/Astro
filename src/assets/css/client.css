@@ -227,7 +227,13 @@ header span {
   font-size: clamp(22px, 2.5vw, 1.5rem);
 }
 
-header button.quiz-btn {
+header div.menu_buttons {
+  display: flex;
+  width: auto;
+  margin-right: 7vw;
+}
+
+header button {
   display: inline-flex; 
   align-items: center;
   justify-content: center;
@@ -236,7 +242,7 @@ header button.quiz-btn {
   background-color: var(--secundary-color);
   color: var(--white);
   font-size: var(--font-size);
-  margin-right: 7vw;
+  margin-left: 0.5vw;
 }
 
 header a {
@@ -270,7 +276,7 @@ article.post-content section h1 {
     font-size: clamp(22px, 4vw, 2.1rem);
 }
 
-article.post-content section p, article.post-content button, .icon, button.download-book {
+article.post-content section p, article.post-content button, .icon {
   font-size: clamp(17px, 2vw, 1.2rem);
 }
 
@@ -289,23 +295,6 @@ section p {
   text-align: justify;
   margin-top: 8px;
 }
-
-article button.download-book {
-  margin-left: 5px;
-  padding: 5px 10px;
-  font-size: clamp(15px, 2vw, 1.1rem);
-  display: flex;
-  color: var(--white);
-  border: none;
-  background-color: var(--secundary-color);
-}
-
-.download-icon {
-  align-self: center;
-  margin-right: 9px;
-  display: block;
-}
-
 
 div.conteudo {
   display: flex;
@@ -491,7 +480,7 @@ footer div.footer p.copyright {
         width: 10%;
     }
 
-    header button.quiz-btn {
+    header button {
         padding: 5px 30px;
     }
 
@@ -524,6 +513,17 @@ footer div.footer p.copyright {
         width: 85%;
     }
 
+    header div.menu_buttons {
+      align-items: center;
+    }
+
+    header button {
+       padding: 10px 16px;
+       margin-top: 12px;
+       align-self: center;
+       margin: auto 0px auto 1.5vw;
+    }
+
     p.quiz-question {
         text-align: center;
     }
@@ -549,18 +549,6 @@ footer div.footer p.copyright {
       padding: 15px 25px;
     }
 
-    header {
-       height: 75px;
-    }
-
-    header span.logo {
-        margin-left: 6vw;
-    }
-
-    header button.quiz-btn {
-       margin-right: 6vw;
-       padding: 11px 25px;
-    }
 
     div.conteudo article.post-content {
         width: 90vw;
@@ -617,12 +605,39 @@ footer div.footer p.copyright {
         text-align: center;
     }
 
-    header span.logo {
-        margin-left: 6vw;
+    header {
+       height: auto;
+       justify-content: flex-start;
+       align-items: center;
+       flex-direction: column;
     }
 
-    button.quiz-btn {
-       margin-right: 6vw;
+    header span.logo {
+      margin-top: 20px;
+      display: block;
+    }
+
+    header span.logo, div.menu_buttons {
+        margin-left: 0px;
+        margin-right: 0px;
+    }
+
+    header div.menu_buttons {
+      margin-bottom: 20px;
+      margin-top: 20px;
+      width: auto;
+    }
+
+    header button {
+       padding: 8px 16px;
+    }
+
+    header button.quiz-btn {
+      margin-left: 10px;
+    }
+
+    header button.material-btn {
+      margin-right: 10px;
     }
 
     div.conteudo article.post-content {
@@ -632,10 +647,7 @@ footer div.footer p.copyright {
     section > h1, section > p, section > h2 {
       padding: 0px;
     }
-    article button.download-book {
-      margin-left: 0px;
-    }
-
+  
     article.post-content section img {
         width: 100%
     }
