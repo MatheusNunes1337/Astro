@@ -233,7 +233,7 @@ header div.menu_buttons {
   margin-right: 7vw;
 }
 
-header ul.menu_dropdown {
+header ul#menu_dropdown {
   display: none;
 }
 
@@ -534,16 +534,23 @@ footer div.footer p.copyright {
     }
 
     header button.dropdown_btn {
-       padding: 7px 12px;
+       padding: 4px 12px;
        margin-top: 10px;
        margin-bottom: 10px;
        color: var(--white);
        font-size: 18px;
-       margin-right: 6vw;
+       margin-right: 6.5vw;
        display: block;
+       border: none;
+       outline: none;
     }
 
-    header ul.menu_dropdown {
+     header button.dropdown_btn .icon {
+      margin-top: 5px;
+      font-size: 22px;
+     }
+
+    header ul#menu_dropdown {
       width: 100%;
       margin: 0 auto;
       display: block;
@@ -569,6 +576,7 @@ footer div.footer p.copyright {
       margin-right: 8px;
       font-size: 15px;
     }
+
     header div.menu_buttons {
       margin: 0;
       display: none;

@@ -14,7 +14,6 @@ import api from '../services/api'
 
 export default function Header() {
   let [hiddenMenu, setVisibility] = useState(true)
-  const screen_size = window.innerWidth
 
   async function downloadMaterial() {
      try {
@@ -38,22 +37,24 @@ export default function Header() {
   	}
   }
 
-  console.log(window.innerWidth)
-
   return (
     <header>
   	    <Link to="/home"><span className="logo">
           	Astro
         </span></Link>
-        <button className="dropdown_btn" onClick={dropdown}><FaBars/></button>
+        <button className="dropdown_btn" onClick={dropdown}><FaBars className="icon"/></button>
         <div className="menu_buttons">
         	<Link to="/quiz/home"><button className="quiz-btn">Quiz</button></Link>
         	<button className="material-btn" onClick={downloadMaterial}>Material</button>
         </div>
-        <ul className="menu_dropdown" style={hiddenMenu ? { display: 'none'} : {display : 'block'}}>
-        	<li><Link to="/quiz/home"><span><RiQuestionnaireFill className="icon"/>Quiz</span></Link></li>
-        	<li><Link><span onClick={downloadMaterial}><FaDownload className="icon"/>Material</span></Link></li>
-        </ul>
+        {!hiddenMenu ? 
+        	(
+              <ul id="menu_dropdown">
+        		<li><Link to="/quiz/home"><span><RiQuestionnaireFill className="icon"/>Quiz</span></Link></li>
+        		<li><Link><span onClick={downloadMaterial}><FaDownload className="icon"/>Material</span></Link></li>
+        	  </ul>
+            ) : ''
+    	}
 	 </header>
   );
 }

@@ -52,3 +52,7 @@ span.logo {
   text-transform: uppercase;
   color: var(--white);
 }
+
+.show_menu {
+  display: block;
+}
