@@ -8,6 +8,7 @@ import Update from '../pages/dashboard/update'
 import List from '../pages/dashboard/list'
 import Login from '../pages/login'
 import Homepage from '../pages/home'
+import SolarSystem from '../pages/solarSystem'
 import Post from '../pages/post'
 import Index from '../pages/index'
 import Quiz from '../pages/quiz/quiz'
@@ -85,6 +86,9 @@ export default function Routes () {
 	 			</CustomRoute>
 	 			<Route path="/home">
 		       		<Homepage />
+		     	</Route>
+		     	<Route path="/solar-system">
+		       		<SolarSystem />
 		     	</Route>
 		     	<Route path="/quiz/auth/student">
 		       		<AuthStudent />
