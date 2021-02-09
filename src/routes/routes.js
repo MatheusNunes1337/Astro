@@ -21,6 +21,7 @@ import QuizResult from '../pages/quiz/result'
 import StudentsResult from '../pages/quiz/school/studentsResult'
 
 function CustomRoute(props) {
+	const deviceWidth = window.innerWidth
 	const aToken = localStorage.getItem('aToken')
 	const sToken = localStorage.getItem('sToken')
 	const iToken = localStorage.getItem('iToken')
@@ -33,7 +34,8 @@ function CustomRoute(props) {
 		return <Redirect to="/quiz/auth/school/login" />
 	} else if(props.onlyRecover && !recoverPass) {
 		return <Redirect to="/quiz/auth/school/login" />
-	}
+	} else if (props.onlyLargeScreens && deviceWidth <= 768)
+		return <Redirect to="/home" />
 	else {
 		return <Route {...props} />
 	}
@@ -87,9 +89,9 @@ export default function Routes () {
 	 			<Route path="/home">
 		       		<Homepage />
 		     	</Route>
-		     	<Route path="/solar-system">
+		     	<CustomRoute onlyLargeScreens path="/solar-system">
 		       		<SolarSystem />
-		     	</Route>
+		     	</CustomRoute>
 		     	<Route path="/quiz/auth/student">
 		       		<AuthStudent />
 		     	</Route>

@@ -46,6 +46,7 @@ export default function Header() {
         <div className="menu_buttons">
         	<Link to="/quiz/home"><button className="quiz-btn">Quiz</button></Link>
         	<button className="material-btn" onClick={downloadMaterial}>Material</button>
+          <Link to="/solar-system"><button className="ver_planetas-btn">Ver planetas</button></Link>
         </div>
         {!hiddenMenu ? 
         	(
