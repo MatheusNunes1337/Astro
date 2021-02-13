@@ -17,8 +17,8 @@ export default function Footer() {
                 Além disso, permite que o aluno teste o seu conhecimento através de um quiz.
     		</p>
     	</div>
-    	<p className="icon-attribution">Icons made by <a href="https://www.flaticon.com/authors/monkik">monkik</a>
-        from <a href="https://www.flaticon.com">flaticon.com</a>
+    	<p className="icon-attribution">Icons made by <a href="https://www.flaticon.com/authors/monkik" target="_blank">monkik</a>
+        from <a href="https://www.flaticon.com" target="_blank"target="_blank">flaticon.com</a>
         </p>
         <p className="img-attribution">Martian Vectors by <a href="https://www.vecteezy.com/free-vector/martian">Vecteezy</a>
         </p>
