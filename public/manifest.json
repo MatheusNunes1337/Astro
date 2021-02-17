@@ -1,0 +1,27 @@
+{
+    "lang": "Portuguese",
+    "name": "Astro",
+    "short_name": "Astro",
+    "scope": "/",
+    "display": "standalone",
+    "start_url": "http://astrooo.herokuapp.com/",
+    "background_color": "#fff",
+    "theme_color": "#1e0921",
+    "description": "O astro é uma plataforma de astronomia que provém informações sobre os planetas do sistema solar. 
+    Além disso, permite que o aluno teste o seu conhecimento através de um quiz",
+    "orientation": "portrait",
+    "icons": [
+        {
+          "src": "logo192.png",
+          "type": "image/png",
+          "sizes": "192x192"
+        },
+        {
+          "src": "logo512.png",
+          "type": "image/png",
+          "sizes": "512x512"
+        }
+    ],
+    "url": "http://astrooo.herokuapp.com",
+    "screenshots": []
+}
