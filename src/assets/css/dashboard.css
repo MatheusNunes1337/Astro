@@ -11,8 +11,8 @@
 
 div.login-bg {
     display: flex;
-    background: rgb(35,30,36);
-    background: linear-gradient(90deg, rgba(35,30,36,1) 0%, rgba(30,9,33,1) 35%, rgba(30,9,33,1) 100%);
+    background: rgb(26,8,29);
+  background: linear-gradient(90deg, rgba(26,8,29,1) 0%, rgba(54,9,64,1) 0%, rgba(54,9,64,1) 89%, rgba(26,8,29,1) 100%);
     flex-wrap: wrap;
     width: 100vw;
     height: 100vh;
@@ -362,7 +362,7 @@ td button {
     }
 
     .header button.logout {
-        padding: 4px 9px;
+        padding: 6px 9px;
     }
 
     div.content table {

@@ -61,8 +61,8 @@ div.quiz-bg, div.students-result-bg {
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
-  background: rgb(35,30,36);
-  background: linear-gradient(90deg, rgba(35,30,36,1) 0%, rgba(30,9,33,1) 35%, rgba(30,9,33,1) 100%);
+  background: rgb(26,8,29);
+  background: linear-gradient(90deg, rgba(26,8,29,1) 0%, rgba(54,9,64,1) 0%, rgba(54,9,64,1) 89%, rgba(26,8,29,1) 100%); 
 }
 
 
@@ -405,7 +405,7 @@ footer div.about p.content {
   margin-top: 15px;
   text-align: justify;
   font-size: var(--font-size-2);
-  color: gray;
+  color: var(--white);
 }
 
 
@@ -415,7 +415,7 @@ footer p.icon-attribution, footer p.img-attribution {
   margin: 0px 0px 0px 7vw;
   padding: 4px 0px;
   /*border-bottom: 2.5px solid gray;*/
-  color: gray;
+  color: var(--white);
   font-size: var(--font-size-2);
 }
 
