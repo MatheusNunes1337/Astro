@@ -11,8 +11,7 @@
 
 div.login-bg {
     display: flex;
-    background: rgb(26,8,29);
-  background: linear-gradient(90deg, rgba(26,8,29,1) 0%, rgba(54,9,64,1) 0%, rgba(54,9,64,1) 89%, rgba(26,8,29,1) 100%);
+    background-image: linear-gradient(to left top, #570c2c, #540a2c, #51092d, #4e082d, #4b072d, #4b072e, #4a082e, #4a082f, #4c0931, #4e0b33, #510d35, #530e37);
     flex-wrap: wrap;
     width: 100vw;
     height: 100vh;

@@ -61,8 +61,9 @@ div.quiz-bg, div.students-result-bg {
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
-  background: rgb(26,8,29);
-  background: linear-gradient(90deg, rgba(26,8,29,1) 0%, rgba(54,9,64,1) 0%, rgba(54,9,64,1) 89%, rgba(26,8,29,1) 100%); 
+  /*background-image: linear-gradient(to right bottom, #5e083b, #4f0a39, #400b35, #320b30, #250a2a);
+  background-image: linear-gradient(to left top, #570c2c, #580d2f, #580d31, #590e34, #590f37, #580f38, #581039, #57103a, #561039, #550f38, #540f38, #530e37);*/
+  background-image: linear-gradient(to left top, #570c2c, #540a2c, #51092d, #4e082d, #4b072d, #4b072e, #4a082e, #4a082f, #4c0931, #4e0b33, #510d35, #530e37);
 }
 
 
