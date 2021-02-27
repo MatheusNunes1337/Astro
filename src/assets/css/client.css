@@ -61,8 +61,6 @@ div.quiz-bg, div.students-result-bg {
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
-  /*background-image: linear-gradient(to right bottom, #5e083b, #4f0a39, #400b35, #320b30, #250a2a);
-  background-image: linear-gradient(to left top, #570c2c, #580d2f, #580d31, #590e34, #590f37, #580f38, #581039, #57103a, #561039, #550f38, #540f38, #530e37);*/
   background-image: linear-gradient(to left top, #570c2c, #540a2c, #51092d, #4e082d, #4b072d, #4b072e, #4a082e, #4a082f, #4c0931, #4e0b33, #510d35, #530e37);
 }
 
@@ -634,6 +632,10 @@ div.solarSystem-bg a {
 
 @media only screen and (max-width: 768px) {
 
+  div.quiz-bg, div.students-result-bg {
+       background-image: linear-gradient(to right top, #dd53a1, #ce4793, #bf3c86, #b03079, #a1236c, #a1226c, #a0216b, #a0206b, #af2b77, #be3584, #cd4090, #dd4a9d);
+  }
+
     div.title button {
         padding: 10px 20px;
     }
@@ -658,12 +660,13 @@ div.solarSystem-bg a {
        padding: 4px 12px;
        margin-top: 10px;
        margin-bottom: 10px;
-       color: var(--white);
-       font-size: 18px;
        margin-right: 6.5vw;
+       font-size: 18px;
        display: block;
        border: none;
        outline: none;
+       background-color: #8D0F5B;
+      color: var(--white);
     }
 
      header button.dropdown_btn .icon {
@@ -684,7 +687,7 @@ div.solarSystem-bg a {
     }
 
     header ul li:hover {
-      background-color: var(--secundary-color);
+      background-color: #8D0F5B;;
     }
 
     header ul li span {
@@ -716,7 +719,7 @@ div.solarSystem-bg a {
     }
 
     div.result-wrapper button {
-       width: 65%;
+       width: 50%;
     }
 
     div.students-result-bg > div.table-wrap {
@@ -768,6 +771,10 @@ div.solarSystem-bg a {
     footer div.about {
        width: 89%;
     }
+
+    footer div.footer {
+       background-color: #8D0F5B;
+     }
 
     footer span.logo, footer div.about, footer p.icon-attribution, footer p.img-attribution, footer div.footer p.copyright {
         margin-left: 6vw;

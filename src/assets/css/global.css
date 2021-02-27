@@ -3,7 +3,7 @@
 :root {
   --bg-color: #e5e4e4;
   --main-color: #000000;
-  --secundary-color: /*#1e0921;*/ /*#570c2c*/ /*#641138;*/ /*#360940*/ #47062d;
+  --secundary-color: /*#1e0921;*/ /*#570c2c*/ /*#641138;*/ /*#360940*/ #47062d /*#A927AD*/;
   --white: #FEFEFE;
   --font-size: clamp(14px, 2vw, 1rem);
 }

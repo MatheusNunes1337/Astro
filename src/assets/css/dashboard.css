@@ -12,6 +12,7 @@
 div.login-bg {
     display: flex;
     background-image: linear-gradient(to left top, #570c2c, #540a2c, #51092d, #4e082d, #4b072d, #4b072e, #4a082e, #4a082f, #4c0931, #4e0b33, #510d35, #530e37);
+    /*background-image: linear-gradient(to right top, #dd53a1, #d54aa2, #cd41a4, #c338a6, #b930a9, #b631b0, #b133b8, #ac36c0, #ae41ce, #af4bdd, #ae55ec, #ad5ffb);*/
     flex-wrap: wrap;
     width: 100vw;
     height: 100vh;
@@ -380,6 +381,14 @@ td button {
     #adm_form {
         width: 50%;
         height: auto;
+    }
+
+    #adm_form button {
+        background-color: #8D0F5B;
+    }
+
+    div.login-bg {
+         background-image: linear-gradient(to right top, #dd53a1, #ce4793, #bf3c86, #b03079, #a1236c, #a1226c, #a0216b, #a0206b, #af2b77, #be3584, #cd4090, #dd4a9d);
     }
 
     aside {
