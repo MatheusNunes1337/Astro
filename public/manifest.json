@@ -6,7 +6,7 @@
     "start_url": "./",
     "scope": ".",
     "background_color": "#fff",
-    "theme_color": "#1e0921",
+    "theme_color": "#47062d",
     "description": "O astro é uma plataforma de astronomia que provém informações sobre os planetas do sistema solar. Além disso, permite que o aluno teste o seu conhecimento através de um quiz",
     "related_applications": [],
     "prefer_related_applications": false,

@@ -13,8 +13,8 @@ export default function Footer() {
     	<div className="about">
     		<h3>Sobre</h3>
     		<p className="content">
-    			O astro é uma plataforma de astronomia que provém informações sobre os planetas do sistema solar.
-                Além disso, permite que o aluno teste o seu conhecimento através de um quiz.
+    			O Astro é uma plataforma educacional de astronomia, 
+                que provê informações sobre os planetas do sistema solar e, além disso, dispõe de um quiz interativo para que o aluno teste os seu conhecimento sobre os temas abordados.
     		</p>
     	</div>
     	<p className="icon-attribution">Icons made by <a href="https://www.flaticon.com/authors/monkik" target="_blank">monkik</a>
@@ -23,7 +23,7 @@ export default function Footer() {
         <p className="img-attribution">Martian Vectors by <a href="https://www.vecteezy.com/free-vector/martian">Vecteezy</a>
         </p>
     	<div className="footer">
-    		<p className="copyright">&copy; 2020 Astro</p>
+    		<p className="copyright">&copy; 2021 Astro</p>
     	</div>
 	  </footer>
   );
