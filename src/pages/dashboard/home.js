@@ -4,7 +4,7 @@ import { useHistory } from 'react-router-dom'
 import download from 'downloadjs'
 
 import { FaSchool, FaQuestionCircle } from 'react-icons/fa'
-import { ImNewspaper, ImDownload3 } from 'react-icons/im'
+import { ImNewspaper, ImBook } from 'react-icons/im'
 
 import api from '../../services/api'
 
@@ -30,7 +30,7 @@ export default function Home() {
   async function generateBook() {
   	try {
         const response = await api.post('book/generate')
-        alert(response.data.message)
+        alert(`${response.data.message}. Para que ele seja efetivamente atualizado, é necessário fazer o build da aplicação.`)
      } catch(err) {
        alert(err)
      }
@@ -47,7 +47,7 @@ export default function Home() {
 	    			<button value="post" onClick={goToCreate}>Nova Publicação <ImNewspaper className="dashboard-icon"/></button>
 	    			<button value="question" onClick={goToCreate}>Nova Questão <FaQuestionCircle className="dashboard-icon"/></button>
 	    			<button value="instituicao" onClick={goToCreate}>Nova Instituição <FaSchool className="dashboard-icon"/></button>
-	    			<button onClick={generateBook}>Gerar Material <ImDownload3 className="dashboard-icon"/></button>
+	    			<button onClick={generateBook}>Gerar Material <ImBook className="dashboard-icon"/></button>
 	    		</div>
 	    	</div>
 	    </div>
