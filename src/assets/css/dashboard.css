@@ -389,13 +389,12 @@ td button {
     }
 
     #adm_form button {
-        background-color: #8D0F5B;
+        background-color: var(--sm-devices-color);
     }
 
     div.login-bg {
-         background-image: linear-gradient(to right top, #dd53a1, #ce4793, #bf3c86, #b03079, #a1236c, #a1226c, #a0216b, #a0206b, #af2b77, #be3584, #cd4090, #dd4a9d);
-    }
-
+        background-image: linear-gradient(to right top, #620C40, #820e54, #770e4d, #6c0d47, #620c40);
+    } 
     aside {
         width: 100vw;
         min-height: auto;
@@ -412,11 +411,12 @@ td button {
     }
 
     aside nav ul li:hover {
-        background-color: #8D0F5B;
+        background-color: var(--sm-devices-color); 
     }
 
     aside button {
         display: block;
+        background-color: var(--sm-devices-color);
     }
 
     div.main {
