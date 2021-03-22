@@ -265,6 +265,11 @@ header a {
   text-decoration: none;
 }
 
+header a > button {
+  background-color: transparent;
+  border-color: transparent;
+}
+
 div.conteudo {
     display: flex;
     align-items: center;
@@ -274,25 +279,25 @@ div.conteudo {
     background-color: var(--white);
 }
 
-div.conteudo article.post-content {
+div.conteudo article.post-content, div.conteudo article.about-content {
     width: 60vw;
     height: auto;
     margin: 30px 0px;
     background-color: var(--white);
 }
 
-article.post-content section {
+article.post-content section, article.about-content section {
     display: flex;
     justify-content: center;
     flex-direction: column;
     margin: 15px 0px;
 }
 
-article.post-content section h1 {
-    font-size: clamp(22px, 4vw, 2.1rem);
+article.post-content section h1, article.about-content section h1 {
+    font-size: clamp(23px, 3.7vw, 1.9rem);
 }
 
-article.post-content section p, article.post-content button, .icon {
+article.post-content section p, article.about-content section p, article.post-content button, .icon {
   font-size: clamp(17px, 2vw, 1.2rem);
 }
 
@@ -301,8 +306,8 @@ section > h1, section > p, section > h2 {
   padding: 5px;
 }
 
-article.post-content section h2 {
-  font-size: clamp(24px, 3.5vw, 1.8rem);
+article.post-content section h2, article.about-content section h2 {
+  font-size: clamp(19px, 3.2vw, 1.6rem);
   margin-top: 30px;
 }
 
@@ -633,7 +638,7 @@ div.solarSystem-bg a {
 @media only screen and (max-width: 768px) {
 
   div.quiz-bg, div.students-result-bg {
-      background-image: linear-gradient(to right top, #620C40, #820e54, #770e4d, #6c0d47, #620c40);
+       background-image: linear-gradient(to right top, #dd53a1, #ce4793, #bf3c86, #b03079, #a1236c, #a1226c, #a0216b, #a0206b, #af2b77, #be3584, #cd4090, #dd4a9d);
   }
 
     div.title button {
@@ -665,7 +670,7 @@ div.solarSystem-bg a {
        display: block;
        border: none;
        outline: none;
-       background-color: var(--sm-devices-color);
+       background-color: #8D0F5B;
       color: var(--white);
     }
 
@@ -680,14 +685,18 @@ div.solarSystem-bg a {
       display: block;
     }
 
-    header ul li {
+    header ul#menu_dropdown button {
+        margin: 12px 
+    }
+
+    header ul li{
       margin: 12px auto;
       padding: 5px 1vw;
       width: 90%;
     }
 
     header ul li:hover {
-      background-color: var(--sm-devices-color);
+      background-color: #8D0F5B;;
     }
 
     header ul li span {
@@ -732,7 +741,7 @@ div.solarSystem-bg a {
     }
 
 
-    div.conteudo article.post-content {
+    div.conteudo article.post-content, div.conteudo article.about-content  {
         width: 90vw;
     }
 
@@ -773,7 +782,7 @@ div.solarSystem-bg a {
     }
 
     footer div.footer {
-       background-color: var(--sm-devices-color);
+       background-color: #8D0F5B;
      }
 
     footer span.logo, footer div.about, footer p.icon-attribution, footer p.img-attribution, footer div.footer p.copyright {

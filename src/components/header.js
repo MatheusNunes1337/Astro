@@ -44,16 +44,18 @@ export default function Header() {
         </span></Link>
         <button className="dropdown_btn" onClick={dropdown}><FaBars className="icon"/></button>
         <div className="menu_buttons">
-        	<Link to="/quiz/home"><button className="quiz-btn">Quiz</button></Link>
-        	<button className="material-btn" onClick={downloadMaterial}>Material</button>
           <Link to="/solar-system"><button className="ver_planetas-btn">Ver planetas</button></Link>
+          <Link to="/sobre"><button className="ver_planetas-btn">sobre</button></Link>
+          <Link to="/quiz/home"><button className="quiz-btn">Quiz</button></Link>
+          <button className="material-btn" onClick={downloadMaterial}>Material</button>
         </div>
         {!hiddenMenu ? 
         	(
               <ul id="menu_dropdown">
-        		<li><Link to="/quiz/home"><span><RiQuestionnaireFill className="icon"/>Quiz</span></Link></li>
-        		<li><Link><span onClick={downloadMaterial}><FaDownload className="icon"/>Material</span></Link></li>
-        	  </ul>
+                <li><Link to="/solar-system"><span>sobre</span></Link></li>
+        		    <li><Link to="/quiz/home"><span><RiQuestionnaireFill className="icon"/>Quiz</span></Link></li>
+        		    <button onClick={downloadMaterial}><FaDownload className="icon"/>Material</button>
+        	    </ul>
             ) : ''
     	}
 	 </header>

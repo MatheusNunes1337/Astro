@@ -9,6 +9,7 @@ import List from '../pages/dashboard/list'
 import Login from '../pages/login'
 import Homepage from '../pages/home'
 import SolarSystem from '../pages/solarSystem'
+import Sobre from '../pages/sobre'
 import Post from '../pages/post'
 import Index from '../pages/index'
 import Quiz from '../pages/quiz/quiz'
@@ -92,6 +93,9 @@ export default function Routes () {
 		     	<CustomRoute onlyLargeScreens path="/solar-system">
 		       		<SolarSystem />
 		     	</CustomRoute>
+		     	<Route path="/sobre">
+		       		<Sobre />
+		     	</Route>
 		     	<Route path="/quiz/auth/student">
 		       		<AuthStudent />
 		     	</Route>
