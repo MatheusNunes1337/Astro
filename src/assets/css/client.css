@@ -251,6 +251,7 @@ header button {
   justify-content: center;
   padding: 10px 25px;
   border: 2px solid var(--secundary-color);
+  border-radius: 3px;
   background-color: var(--secundary-color);
   color: var(--white);
   font-size: var(--font-size);
@@ -670,8 +671,8 @@ div.solarSystem-bg a {
        display: block;
        border: none;
        outline: none;
-       background-color: #8D0F5B;
-      color: var(--white);
+       background-color: var(--sm-devices-color);
+       color: var(--white);
     }
 
      header button.dropdown_btn .icon {
@@ -685,8 +686,11 @@ div.solarSystem-bg a {
       display: block;
     }
 
-    header ul#menu_dropdown button {
-        margin: 12px 
+    header ul#menu_dropdown button.material-btn {
+        margin: 12px 5vw;
+        padding: 6px 9px;
+        font-size: 18px;
+        background-color: var(--sm-devices-color);
     }
 
     header ul li{
@@ -696,18 +700,18 @@ div.solarSystem-bg a {
     }
 
     header ul li:hover {
-      background-color: #8D0F5B;;
+      background-color: var(--sm-devices-color);;
     }
 
-    header ul li span {
+    header ul li a {
       font-size: 18px;
       margin-left: 0px;
       color: var(--white);
     }
 
-    header ul li span .icon {
+    header ul .icon {
       margin-right: 8px;
-      font-size: 15px;
+      font-size: 14px;
     }
 
     header div.menu_buttons {
@@ -782,7 +786,7 @@ div.solarSystem-bg a {
     }
 
     footer div.footer {
-       background-color: #8D0F5B;
+       background-color: var(--sm-devices-color);
      }
 
     footer span.logo, footer div.about, footer p.icon-attribution, footer p.img-attribution, footer div.footer p.copyright {
