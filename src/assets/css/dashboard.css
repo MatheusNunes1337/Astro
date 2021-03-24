@@ -238,7 +238,7 @@ div.content form input, form textarea, div.wysiwyg_field, div.question_options {
     margin: 7px 20px 18px 20px;
 }
 
-form input, div.wysiwyg_field {
+form input, form textarea, div.wysiwyg_field {
     display: block;
     border: 2px solid var(--bg-color);
     background: var(--white);
