@@ -13,6 +13,7 @@ export default function Question(props) {
    let [question, setQuestion] = useState('')
    let [category, setCategory] = useState('')
    let [answer, setAnswer] = useState('')
+   let [fullAnswer, setFullAnswer] = useState('')
 
    const token = localStorage.getItem("aToken")
 
@@ -24,6 +25,7 @@ export default function Question(props) {
               setQuestion(response.data.question)
               setCategory(response.data.category)
               setAnswer(response.data.answer)
+              setFullAnswer(response.data.fullAnswer)
             } catch(err) {
                console.error(err)
             }
@@ -42,7 +44,8 @@ export default function Question(props) {
       question,
       category,
       options,
-      answer
+      answer,
+      fullAnswer
     }
 
     api.put(`question/${props.questionId}`, data, {
@@ -92,7 +95,12 @@ export default function Question(props) {
               <div className="form-group">
                   <p>Resposta</p>
                   <input type="text" name="answer" value={answer} onChange={e => setAnswer(e.target.value)}/>
-              </div> 
+              </div>
+              <div className="form-group">
+                  <p>Resposta completa</p>
+                  <textarea type="text" name="fullAnswer" rows="8" value={fullAnswer} onChange={e => setFullAnswer(e.target.value)}>
+                  </textarea>
+              </div>  
               <button type="submit">Atualizar</button>
           </form> 
       );

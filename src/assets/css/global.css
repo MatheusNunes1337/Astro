@@ -44,7 +44,10 @@ form input, form textarea {
 }
 
 form textarea {
+  padding-left: 15px;
+  padding-right: 15px;
   text-indent: 0px;
+  text-align: justify; 
 }
 
 form input:focus, textarea:focus {
