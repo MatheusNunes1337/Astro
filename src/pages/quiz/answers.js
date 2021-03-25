@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 
 import { useHistory } from 'react-router-dom'
 
+import { BsArrowRight } from 'react-icons/bs';
+
 import api from '../../services/api'
 
 import '../../assets/css/global.css'
@@ -31,7 +33,7 @@ export default function Answers() {
     },[])
 
 
- async function nextAnswer(e) {
+ async function nextAnswer() {
     if(index === questions.length - 1) {
       history.push('/quiz/result') 
     } else {
@@ -45,9 +47,10 @@ export default function Answers() {
           <div className="answers-wrapper">
             <p className="question">{questions[index].question}</p>
             <div>
-              <p className="answer">Resposta correta: {questions[index].answer}</p>
-              <p className="fullAnswer">Resposta completa aqui</p>
-            </div>    
+              <p className="answer">R: {questions[index].answer}</p>
+              <p className="fullAnswer">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+            </div>
+            <button><BsArrowRight className="arrow-icon" onClick={nextAnswer}/></button>    
           </div>
         </div>
       );

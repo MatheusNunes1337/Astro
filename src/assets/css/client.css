@@ -71,7 +71,7 @@ div.quiz-wrapper, div.result-wrapper, div.answers-wrapper {
    height: auto;
 }
 
-p.quiz-question, form.quiz-form p:first-of-type, p.result, p.question {
+p.quiz-question, form.quiz-form p:first-of-type,div.result-wrapper p, div.answers-wrapper p {
    font-size: clamp(22px, 3.6vw, 1.6rem);  /*clamp(24px, 4vw, 2rem)*/;
    color: var(--white);
    text-align: center;
@@ -149,18 +149,54 @@ form.quiz-form p.field-name, form.auth-form p.field-name , a.accounted_already{
   color: var(--white);
 }
 
-div.result-wrapper p, div.answers-wrapper >  p {
-  text-align: center;
-  margin-bottom: 25px;
+div.result-wrapper p {
+  margin-bottom: 30px;
 }
 
-div.answers-wrapper p.answer, p.fullAnswer {
-  font-size: clamp(19px, 3.3vw, 1.2rem);
-  color: var(--white); 
+div.result-wrapper button {
+  text-align: center;
+  margin: 5px auto;
+  width: 50%;
+}
+
+div.answers-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+div.answers-wrapper p {
+   font-size: clamp(20px, 3.4vw, 1.4rem);
+}
+
+div.answers-wrapper >  p, div.answers-wrapper p.answer {
+    margin-bottom: 20px;
+}
+
+
+div.answers-wrapper div p.fullAnswer {
+  text-align: justify; 
 }
 
 div.answers-wrapper > p {
   color: var(--white);
+}
+
+div.answers-wrapper > div {
+  min-height: 5vh;
+  height: auto;
+}
+
+div.answers-wrapper button {
+    padding: 9px 12px;
+    margin-top: 20px;
+    align-self: center;
+    border: none;
+    background-color: var(--main-color);
+}
+
+div.answers-wrapper button svg.arrow-icon {
+  color: var(--white);
+  font-size: 30px;
 }
 
 div.buttons-wrapper {
@@ -171,12 +207,6 @@ div.buttons-wrapper {
     justify-content: center;
 }
 
-
-div.result-wrapper button {
-  text-align: center;
-  margin: 5px auto;
-  width: 50%;
-}
 
 a.accounted_already {
   text-decoration: none;
@@ -657,6 +687,10 @@ div.solarSystem-bg a {
 
     div.quiz-wrapper, div.result-wrapper, div.answers-wrapper {
         width: 85%;
+    }
+
+    div.answers-wrapper button {
+      margin-top: 20px;
     }
 
     header {
