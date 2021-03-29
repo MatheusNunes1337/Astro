@@ -12,6 +12,7 @@ export default function Question(props) {
 	 let [options, setOptions] = useState([])
    let [question, setQuestion] = useState('')
    let [category, setCategory] = useState('')
+   let [difficulty, setDifficulty] = useState('')
    let [answer, setAnswer] = useState('')
    let [fullAnswer, setFullAnswer] = useState('')
 
@@ -25,6 +26,7 @@ export default function Question(props) {
     const data = {
       question,
       category,
+      difficulty,
       options,
       answer,
       fullAnswer
@@ -65,6 +67,14 @@ export default function Question(props) {
           <div className="form-group">
               <p>Categoria</p>
               <input type="text" name="category" value={category} onChange={e => setCategory(e.target.value)}/>
+          </div>
+          <div className="form-group">
+              <p>Dificuldade</p>
+               <select name="school" onChange={e => setDifficulty(e.target.value)}>
+                   <option value="fácil">fácil</option>
+                   <option value="média">média</option>
+                   <option value="difícil">difícil</option>
+               </select>
           </div>
           <div className="form-group">
               <p>Opções</p>
