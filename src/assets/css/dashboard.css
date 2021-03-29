@@ -233,26 +233,27 @@ div.content form div p {
     padding: 0px 20px;
 }
 
-div.content form input, form textarea, form select, div.wysiwyg_field, div.question_options {
+div.content form input, form textarea, #formQuestion select, div.wysiwyg_field, div.question_options {
     width: 80%;
     margin: 7px 20px 18px 20px;
 }
 
-form select {
+#formQuestion select {
     width: 25%;
 }
 
-form input, form textarea, form select, div.wysiwyg_field {
+
+form input, form textarea, #formQuestion select, div.wysiwyg_field {
     display: block;
     border: 2px solid var(--bg-color);
     background: var(--white);
 }
 
-div.content form input, form textarea, form select {
+div.content form input, form textarea, #formQuestion select {
     font-size: var(--font-size);
 }
 
-div.content form input, form select {
+div.content form input, #formQuestion select {
     height: 42px; 
 }
 
@@ -447,11 +448,6 @@ td button {
     div.content form input, form textarea, form select, div.wysiwyg_field, div.question_options {
         width: 95%;
         margin: 10px auto 20px auto;
-    }
-
-    form select {
-        width: 60%;
-        margin: 10px 10px 20px 10px;
     }
 
     div.content form div p {

@@ -75,7 +75,7 @@ export default function Question(props) {
 
   if(question !== '') {
       return (
-          <form name="question" onSubmit={handleQuestion}>
+          <form name="question" id="formQuestion" onSubmit={handleQuestion}>
               <div className="form-group">
                   <p>Pergunta</p>
                   <input type="text" name="question" value={question} onChange={e => setQuestion(e.target.value)}/>
@@ -84,12 +84,15 @@ export default function Question(props) {
                   <p>Categoria</p>
                   <input type="text" name="category" value={category} onChange={e => setCategory(e.target.value)}/>
               </div>
-              <select name="school" onChange={e => setDifficulty(e.target.value)}>
-                   <option value={difficulty} selected disabled hidden>{difficulty}</option>
-                   <option value="fácil">fácil</option>
-                   <option value="média">média</option>
-                   <option value="difícil">difícil</option>
-               </select>
+              <div className="form-group">
+                  <p>Dificuldade</p>
+                  <select name="school" onChange={e => setDifficulty(e.target.value)}>
+                     <option value={difficulty} selected disabled hidden>{difficulty}</option>
+                     <option value="fácil">fácil</option>
+                     <option value="média">média</option>
+                     <option value="difícil">difícil</option>
+                  </select>
+               </div>
               <div className="form-group">
                   <p>Opções</p>
                   <input type="text" name="option" id="options_field"/>

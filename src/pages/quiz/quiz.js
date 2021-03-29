@@ -4,8 +4,8 @@ import { useHistory } from 'react-router-dom'
 
 import api from '../../services/api'
 
-import '../../assets/css/global.css'
 import '../../assets/css/client.css'
+import '../../assets/css/global.css'
 
 
 export default function Quiz() {
@@ -47,8 +47,15 @@ export default function Quiz() {
 
 
  async function answer(e) {
-   const answer = e.currentTarget.value;
-   const data = { answer }
+   const choice = e.currentTarget.value
+   const choice_id = e.currentTarget.id
+   const answer = questions[index].answer
+   if(choice === answer) {
+     document.getElementById(choice_id).style.backgroundColor = "green"
+   } else {
+     document.getElementById(choice_id).style.backgroundColor = "red"
+   }
+   const data = { answer: choice }
     try {
       await api.post(`question/${questions[index]._id}`, 
         data, {
@@ -58,11 +65,11 @@ export default function Quiz() {
         history.push('/quiz/result') 
       } else {
         setIndex(index + 1);
+        document.getElementById(choice_id).style.backgroundColor = "#000000"
       }  
     } catch(err) {
         alert(err)
-    } 
-      
+    }    
   }
 
   if(questions && acertos >= 0) {
@@ -73,10 +80,10 @@ export default function Quiz() {
             <p className="question-number">Pergunta {index + 1}</p>
             <div className="quiz-wrapper">
               <p className="quiz-question">{questions[index].question}</p>
-              <button className="quiz-option" value={questions[index].options[0]} onClick={answer}>{questions[index].options[0]}</button>
-              <button className="quiz-option" value={questions[index].options[1]} onClick={answer}>{questions[index].options[1]}</button>
-              <button className="quiz-option" value={questions[index].options[2]} onClick={answer}>{questions[index].options[2]}</button>
-              <button className="quiz-option" value={questions[index].options[3]} onClick={answer}>{questions[index].options[3]}</button>
+              <button className="quiz-option" id="opcao_01" value={questions[index].options[0]} onClick={answer}>{questions[index].options[0]}</button>
+              <button className="quiz-option" id="opcao_02" value={questions[index].options[1]} onClick={answer}>{questions[index].options[1]}</button>
+              <button className="quiz-option" id="opcao_03" value={questions[index].options[2]} onClick={answer}>{questions[index].options[2]}</button>
+              <button className="quiz-option" id="opcao_04" value={questions[index].options[3]} onClick={answer}>{questions[index].options[3]}</button>
             </div>
             <p className="acertos">Acertos: {acertos}</p>
         </div>

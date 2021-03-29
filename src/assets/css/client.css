@@ -134,7 +134,6 @@ form.quiz-form input, form.quiz-form select, form.auth-form input {
   font-size: clamp(16px, 2.8vw, 1rem); 
 }
 
-
 form.quiz-form button, form.auth-form button:not(.forgot-pass) {
     padding: 7px 10px; /*12px 10px*/;
     border: none;
@@ -187,8 +186,8 @@ div.answers-wrapper > div {
 }
 
 div.answers-wrapper button {
-    padding: 9px 12px;
-    margin-top: 20px;
+    padding: 8px 12px;
+    margin-top: 34px;
     align-self: center;
     border: none;
     background-color: var(--main-color);
@@ -196,7 +195,7 @@ div.answers-wrapper button {
 
 div.answers-wrapper button svg.arrow-icon {
   color: var(--white);
-  font-size: 30px;
+  font-size: 26px;
 }
 
 div.buttons-wrapper {
@@ -687,10 +686,6 @@ div.solarSystem-bg a {
 
     div.quiz-wrapper, div.result-wrapper, div.answers-wrapper {
         width: 85%;
-    }
-
-    div.answers-wrapper button {
-      margin-top: 20px;
     }
 
     header {
