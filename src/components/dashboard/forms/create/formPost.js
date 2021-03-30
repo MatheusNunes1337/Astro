@@ -55,7 +55,16 @@ export default function Postagem(props) {
           </div>
           <div className="form-group">
               <p>Planeta</p>
-              <input type="text" name="planeta" onChange={e => setPlaneta(e.target.value)}/>
+              <select name="planeta" onChange={e => setPlaneta(e.target.value)}>
+                   <option value="Mercúrio">Mercúrio</option>
+                   <option value="Vênus">Vênus</option>
+                   <option value="Terra">Terra</option>
+                   <option value="Marte">Marte</option>
+                   <option value="Júpiter">Júpiter</option>
+                   <option value="Saturno">Saturno</option>
+                   <option value="Urano">Urano</option>
+                   <option value="Netuno">Netuno</option>
+               </select>
           </div>
           <div className="form-group">
               <div className="wysiwyg_field">
