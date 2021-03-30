@@ -21,7 +21,7 @@ export default function Card(props) {
   let history = useHistory();
 
   switch (props.planet) {
-  	 case 'Mercurio': 
+  	 case 'Mercúrio': 
   	 	planeta = mercurio
   	 	break
   	 case 'Vênus': 

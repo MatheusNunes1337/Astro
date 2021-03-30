@@ -75,7 +75,7 @@ export default function QuizResult() {
     	      <div className="buttons-wrapper">
     		      <button onClick={goToResultPage}>Resultados gerais</button>
     		      <button onClick={tryAgain}>Tentar novamente</button>
-              <button onClick={goToAnswersPage}>Ver respostas</button>
+              <button onClick={goToAnswersPage}>Ver gabarito</button>
     		      <button onClick={goToHome}>Página inicial</button>
     		  </div>    
     	    </div>

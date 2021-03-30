@@ -50,10 +50,20 @@ export default function Quiz() {
    const choice = e.currentTarget.value
    const choice_id = e.currentTarget.id
    const answer = questions[index].answer
+   let right_option
+
+   const options = document.getElementsByClassName('quiz-option')
+
    if(choice === answer) {
      document.getElementById(choice_id).style.backgroundColor = "green"
    } else {
      document.getElementById(choice_id).style.backgroundColor = "red"
+     for(let i = 0; i < options.length; i++) {
+         if(options[i].value === answer) {
+             options[i].style.backgroundColor = 'green'
+             right_option = options[i]
+         }
+     }
    }
    const data = { answer: choice }
     try {
@@ -66,10 +76,13 @@ export default function Quiz() {
       } else {
         setIndex(index + 1);
         document.getElementById(choice_id).style.backgroundColor = "#000000"
+        if(right_option) { 
+          right_option.style.backgroundColor = '#000000' 
+        }
       }  
     } catch(err) {
         alert(err)
-    }    
+    }   
   }
 
   if(questions && acertos >= 0) {
