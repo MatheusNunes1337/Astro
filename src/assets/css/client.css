@@ -71,7 +71,7 @@ div.quiz-wrapper, div.result-wrapper, div.answers-wrapper {
    height: auto;
 }
 
-p.quiz-question, form.quiz-form p:first-of-type,div.result-wrapper p, div.answers-wrapper p {
+p.quiz-question, div.result-wrapper p, div.answers-wrapper p /*form.quiz-form p:first-of-type*/ {
    font-size: clamp(22px, 3.6vw, 1.6rem);  /*clamp(24px, 4vw, 2rem)*/;
    color: var(--white);
    text-align: center;
@@ -142,10 +142,14 @@ form.quiz-form button, form.auth-form button:not(.forgot-pass) {
     background-color: var(--main-color);
 }
 
-form.quiz-form p.field-name, form.auth-form p.field-name , a.accounted_already{
+form.quiz-form p.field-name, form.quiz-form p:first-of-type, form.auth-form p.field-name , a.accounted_already{
   margin-bottom: 10px;
   font-size: clamp(18px, 3.3vw, 1.3rem);
   color: var(--white);
+}
+
+form.quiz-form p:first-of-type {
+  margin-bottom: 25px;
 }
 
 div.result-wrapper p {

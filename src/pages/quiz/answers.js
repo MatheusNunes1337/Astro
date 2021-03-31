@@ -16,8 +16,6 @@ export default function Answers() {
    let [index, setIndex] = useState(0)
    //let [acertos, setAcertos] = useState(null)
 
-   const token = localStorage.getItem("sToken")
-
    let history = useHistory();
    
    useEffect(() => {

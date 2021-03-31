@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 
 import '../../../assets/css/global.css'
 import '../../../assets/css/client.css'

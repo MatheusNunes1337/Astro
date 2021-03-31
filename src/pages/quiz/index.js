@@ -11,8 +11,10 @@ export default function QuizIndex() {
   const studentToken = localStorage.getItem("sToken")
   const schoolToken = localStorage.getItem("iToken")
 
-  //if(studentToken)
-    //return <Redirect to="/quiz" />
+  if(studentToken)
+    return <Redirect to="/quiz" />
+  if(schoolToken)
+    return <Redirect to="/quiz/result/students" />
 
   function goToStudentForm() {
   	 history.push('/quiz/auth/student')
