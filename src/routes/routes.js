@@ -12,6 +12,7 @@ import SolarSystem from '../pages/solarSystem'
 import Sobre from '../pages/sobre'
 import Post from '../pages/post'
 import Index from '../pages/index'
+import QuizLevel from '../pages/quiz/quizLevel'
 import Quiz from '../pages/quiz/quiz'
 import Answers from '../pages/quiz/answers'
 import AuthStudent from '../pages/quiz/authStudent'
@@ -117,6 +118,9 @@ export default function Routes () {
 		     	</CustomRoute>
 		     	<CustomRoute onlyStudent path="/quiz/result">
 		       		<QuizResult />
+		     	</CustomRoute>
+		     	<CustomRoute onlyStudent path="/quiz/level">
+		       		<QuizLevel />
 		     	</CustomRoute>
 		     	<CustomRoute onlyStudent path="/quiz/answers">
 		       		<Answers />

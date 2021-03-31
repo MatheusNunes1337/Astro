@@ -53,7 +53,7 @@ export default function AuthStudent() {
            
       const response = await api.post('student', data)
       localStorage.setItem('sToken', response.data)
-      history.push('/quiz')
+      history.push('/quiz/level')
     } catch(err) {
       alert(err)
     }
