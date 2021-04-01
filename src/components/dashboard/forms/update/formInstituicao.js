@@ -33,7 +33,7 @@ export default function Instituicao(props) {
 
       getSchool()
 
-    },[])
+    },[props.schoolId])
 
 
   async function handleSchool(e) {

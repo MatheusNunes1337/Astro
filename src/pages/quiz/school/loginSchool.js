@@ -1,6 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState } from 'react';
 
-import { useHistory, Link, Redirect } from 'react-router-dom'
+import { useHistory, Redirect } from 'react-router-dom'
 
 import '../../../assets/css/global.css'
 import '../../../assets/css/client.css'

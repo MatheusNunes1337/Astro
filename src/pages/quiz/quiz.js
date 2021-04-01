@@ -28,7 +28,7 @@ export default function Quiz() {
             }
         }  
       getQuestions()   
-    },[])
+    },[token])
 
    useEffect(() => {
         setAcertos(null)

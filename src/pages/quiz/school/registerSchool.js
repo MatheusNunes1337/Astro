@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, { useState } from 'react';
 
 import { useHistory, Link, Redirect } from 'react-router-dom'
 
@@ -44,7 +44,7 @@ export default function RegisterSchool() {
           throw new Error ('Informe um nome válido para o campo de cidade.')          
         
 
-      const response = await api.post('school/register', data)
+      await api.post('school/register', data)
       history.push('/quiz/auth/school/login')
     } catch(err) {
       alert(err.response.data.message)

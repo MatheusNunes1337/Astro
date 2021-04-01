@@ -44,7 +44,7 @@ export default function SolarSystem() {
         <button onClick={goToPost} id="Saturno">saturn</button>
         <button onClick={goToPost} id="Urano">uranus</button>
         <button onClick={goToPost} id="Netuno">neptune</button>
-        <a href="http://www.freepik.com" target="_blank">Designed by brgfx / Freepik</a>
+        <a href="http://www.freepik.com" target="_blank" rel="noopener noreferrer">Designed by brgfx / Freepik</a>
     </div>
   );
 }

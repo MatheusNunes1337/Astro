@@ -1,8 +1,6 @@
 import React from 'react';
 import { useHistory } from 'react-router-dom'
 
-import download from 'downloadjs'
-
 import { FaSchool, FaQuestionCircle } from 'react-icons/fa'
 import { ImNewspaper, ImBook } from 'react-icons/im'
 
@@ -18,8 +16,7 @@ import Jumbotron from '../../components/dashboard/jumbotron'
 
 
 export default function Home() {
-
-  const token = localStorage.getItem("aToken")	
+	
   let history = useHistory();
 
   function goToCreate(e) {

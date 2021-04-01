@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 
-import { useHistory, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 import ReactHtmlParser from 'react-html-parser';
 
@@ -15,7 +15,6 @@ import '../assets/css/client.css'
 export default function Post() {
 
    let { id } = useParams();
-   let history = useHistory();
 
    let [conteudo, setConteudo] = useState('')
    
@@ -33,12 +32,6 @@ export default function Post() {
 
     },[id])
   
-
-  function goToPost(e) {
-      const id = e.currentTarget.id
-      history.push(`/post/${id}`);
-  }
-
   return (
   	<React.Fragment>
 	    <Header />

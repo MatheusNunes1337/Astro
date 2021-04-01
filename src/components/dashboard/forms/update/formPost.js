@@ -31,7 +31,7 @@ export default function Postagem(props) {
 
       getPost()
 
-    },[])
+    },[props.postId])
 
   async function handlePost(e) {
     e.preventDefault()

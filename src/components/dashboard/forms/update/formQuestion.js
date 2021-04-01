@@ -35,7 +35,7 @@ export default function Question(props) {
 
       getQuestion()
 
-    },[])
+    },[props.questionId])
      
    
 

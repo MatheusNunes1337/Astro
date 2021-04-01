@@ -27,11 +27,7 @@ export default function StudentsResult() {
           }
       }  
       getStudents()
-   }, [])
-
-  function goToHome() {
-  	 history.push('/home')
-  }
+   }, [token])
 
   function logout() {
     localStorage.removeItem('iToken')

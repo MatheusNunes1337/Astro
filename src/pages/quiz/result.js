@@ -28,7 +28,7 @@ export default function QuizResult() {
             if((acertos * 100) / questions > 80) {
               setResult(`Parabéns, ${name}! Você acertou ${acertos} das ${questions} questões.`)
             } else if(acertos === 0) {
-              setResult('Que pena, ${name}! Você não acertou nenhuma questão.') 
+              setResult(`Que pena, ${name}! Você não acertou nenhuma questão.`) 
             } else if((acertos * 100) / questions <= 25) {
               setResult(`Que pena, ${name}! Você acertou somente ${acertos} das ${questions} questões.`) 
             } else {
@@ -39,11 +39,7 @@ export default function QuizResult() {
           }
       }  
       getData()
-   }, [])
-
-  function goToHome() {
-  	 history.push('/home')
-  }
+   }, [token])
 
   function goToResultPage() {
     history.push('/quiz/result/students')
@@ -65,6 +61,20 @@ export default function QuizResult() {
           alert(err.response.data.message)
         }
   	 }
+  }
+
+  async function goHome() {
+     try {
+       const response =  await api.get('student/find', {
+            headers: { Authorization: `Bearer ${token}` }
+        })
+         await api.put(`question/tryAgain/${response.data._id}`)
+         history.push('/home')
+     } catch(err) {
+        if (err.response && err.response.data) {
+          alert(err.response.data.message)
+        }
+     }
   }		
 
   if(result !== '') {
@@ -76,7 +86,7 @@ export default function QuizResult() {
     		      <button onClick={goToResultPage}>Resultados gerais</button>
     		      <button onClick={tryAgain}>Tentar novamente</button>
               <button onClick={goToAnswersPage}>Ver gabarito</button>
-    		      <button onClick={goToHome}>Página inicial</button>
+    		      <button onClick={goHome} value="goHome">Página inicial</button>
     		  </div>    
     	    </div>
         </div>

@@ -46,7 +46,7 @@ export default function Answers() {
             <p className="question">{`${index + 1}. ${questions[index].question}`}</p>
             <div>
               <p className="answer">R: {questions[index].answer}</p>
-              <p className="fullAnswer">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+              <p className="fullAnswer">{questions[index].fullAnswer}</p>
             </div>
             <button><BsArrowRight className="arrow-icon" onClick={nextAnswer}/></button>    
           </div>
