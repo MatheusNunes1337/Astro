@@ -9,7 +9,7 @@ import '../../../../assets/css/dashboard.css';
 
 export default function Postagem(props) {
 	 
-   let [titulo, setTitulo] = useState('')
+   let [titulo, setTitulo] = useState(false)
    let [categoria, setCategoria] = useState('')
    let [planeta, setPlaneta] = useState('')
    let [conteudo, setConteudo] = useState('')
@@ -56,7 +56,7 @@ export default function Postagem(props) {
      })
   }
   
-  if(titulo !== '') {
+  if(titulo !== false) {
       return (
           <form name="postagem" id="formPost" onSubmit={handlePost}>
               <div className="form-group">

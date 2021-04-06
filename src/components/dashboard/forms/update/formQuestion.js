@@ -10,7 +10,7 @@ import { MdAddCircle, MdDelete } from "react-icons/md"
         
 export default function Question(props) {
 	 let [options, setOptions] = useState([])
-   let [question, setQuestion] = useState('')
+   let [question, setQuestion] = useState(false)
    let [category, setCategory] = useState('')
    let [difficulty, setDifficulty] = useState('')
    let [answer, setAnswer] = useState('')
@@ -73,7 +73,7 @@ export default function Question(props) {
       setOptions([])
   }
 
-  if(question !== '') {
+  if(question !== false) {
       return (
           <form name="question" id="formQuestion" onSubmit={handleQuestion}>
               <div className="form-group">

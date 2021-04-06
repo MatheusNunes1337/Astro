@@ -9,7 +9,7 @@ import api from '../../../../services/api'
 
 export default function Instituicao(props) {
 
-   let [name, setName] = useState('')
+   let [name, setName] = useState(false)
    let [city, setCity] = useState('')
    let [state, setState] = useState('')
    let [responsavel, setResponsavel] = useState('')
@@ -60,9 +60,9 @@ export default function Instituicao(props) {
      })
   }
 	
-  if(name !== '') {
+  if(name !== false) {
       return (
-          <form name="Instituicao" onSubmit={handleSchool}>
+          <form name="Instituicao" id="formSchool" onSubmit={handleSchool}>
               <div className="form-group">
                   <p>Nome</p>
                   <input type="text" name="name" value={name} onChange={e => setName(e.target.value)}/>
