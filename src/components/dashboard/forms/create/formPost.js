@@ -67,9 +67,10 @@ export default function Postagem(props) {
                </select>
           </div>
           <div className="form-group">
+              <p>Conteúdo</p>
               <div className="wysiwyg_field">
                   <Editor
-                       initialValue="<p>Digite o seu conteúdo aqui</p>"
+                       initialValue="<p>Digite o conteúdo aqui. Ps: Títulos em Heading 1 e sub titulos em Heading 2</p>"
                        apiKey='0eps1wrjj72zeyaz83lyvv2si0k8dqf2vtgk0vnlq8rfnmj5'
                        init={{
                          height: 300,

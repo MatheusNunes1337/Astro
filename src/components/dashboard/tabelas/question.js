@@ -31,6 +31,7 @@ export default function Question() {
                                 <th>#</th>
                                 <th>Questão</th>
                                 <th>Categoria</th>
+                                <th>Dificuldade</th>
                                 <th>Resposta</th>
                                 <th>Ações</th>
                               </tr>
@@ -42,6 +43,7 @@ export default function Question() {
                                       <td>{i + 1}</td>
                                       <td>{question.question}</td>
                                       <td>{question.category}</td>
+                                      <td>{question.difficulty}</td>
                                       <td>{question.answer}</td>
                                       <td>
                                           <Link to={'/dashboard/update/question/' + question._id} className="link">

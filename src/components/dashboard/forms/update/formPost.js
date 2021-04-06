@@ -82,6 +82,7 @@ export default function Postagem(props) {
                    </select>
               </div>
               <div className="form-group">
+                  <p>Conteúdo</p>
                   <div className="wysiwyg_field">
                       <Editor
                            initialValue={conteudo}
