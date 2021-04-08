@@ -61,7 +61,7 @@ div.quiz-bg, div.students-result-bg {
   justify-content: center;
   min-height: 100vh;
   width: 100vw;
-  background-color: var(--sm-devices-color);
+  background-color: var(--secundary-color);
 }
 
 
@@ -681,7 +681,7 @@ div.solarSystem-bg a {
 @media only screen and (max-width: 768px) {
 
   div.quiz-bg, div.students-result-bg {
-       background-color: var(--sm-devices-color);
+       background-color: var(--secundary-color);
   }
 
     div.title button {
@@ -713,7 +713,7 @@ div.solarSystem-bg a {
        display: block;
        border: none;
        outline: none;
-       background-color: var(--sm-devices-color);
+       background-color: var(--secundary-color);
        color: var(--white);
     }
 
@@ -732,7 +732,7 @@ div.solarSystem-bg a {
         margin: 12px 5vw;
         padding: 6px 9px;
         font-size: 18px;
-        background-color: var(--sm-devices-color);
+        background-color: var(--secundary-color);
     }
 
     header ul li{
@@ -742,7 +742,7 @@ div.solarSystem-bg a {
     }
 
     header ul li:hover {
-      background-color: var(--sm-devices-color);;
+      background-color: var(--secundary-color);;
     }
 
     header ul li a {
@@ -829,7 +829,7 @@ div.solarSystem-bg a {
     }
 
     footer div.footer {
-       background-color: var(--sm-devices-color);
+       background-color: var(--secundary-color);
      }
 
     footer span.logo, footer div.about, footer p.icon-attribution, footer p.img-attribution, footer div.footer p.copyright {
@@ -848,8 +848,8 @@ div.solarSystem-bg a {
     }
 
     div.result-wrapper button {
-       width: 70%;
-       padding: 17px;
+       width: 75%;
+       padding: 15.5px;
     }
 
     div.conteudo article.post-content {

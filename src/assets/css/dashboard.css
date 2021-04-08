@@ -11,7 +11,7 @@
 
 div.login-bg {
     display: flex;
-    background-color: var(--sm-devices-color);
+    background-color: var(--secundary-color);
     /*background-image: linear-gradient(to right top, #dd53a1, #d54aa2, #cd41a4, #c338a6, #b930a9, #b631b0, #b133b8, #ac36c0, #ae41ce, #af4bdd, #ae55ec, #ad5ffb);*/
     flex-wrap: wrap;
     width: 100vw;
@@ -397,11 +397,11 @@ td button {
     }
 
     #adm_form button {
-        background-color: var(--sm-devices-color);
+        background-color: var(--secundary-color);
     }
 
     div.login-bg {
-        background-color: var(--sm-devices-color);
+        background-color: var(--secundary-color);
     } 
     aside {
         width: 100vw;
@@ -419,12 +419,12 @@ td button {
     }
 
     aside nav ul li:hover {
-        background-color: var(--sm-devices-color); 
+        background-color: var(--secundary-color); 
     }
 
     aside button {
         display: block;
-        background-color: var(--sm-devices-color);
+        background-color: var(--secundary-color);
     }
 
     div.main {
