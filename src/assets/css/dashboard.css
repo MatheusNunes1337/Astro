@@ -11,7 +11,7 @@
 
 div.login-bg {
     display: flex;
-    background-image: linear-gradient(to left top, #570c2c, #540a2c, #51092d, #4e082d, #4b072d, #4b072e, #4a082e, #4a082f, #4c0931, #4e0b33, #510d35, #530e37);
+    background-color: var(--sm-devices-color);
     /*background-image: linear-gradient(to right top, #dd53a1, #d54aa2, #cd41a4, #c338a6, #b930a9, #b631b0, #b133b8, #ac36c0, #ae41ce, #af4bdd, #ae55ec, #ad5ffb);*/
     flex-wrap: wrap;
     width: 100vw;
@@ -401,7 +401,7 @@ td button {
     }
 
     div.login-bg {
-        background-image: linear-gradient(to right top, #620C40, #820e54, #770e4d, #6c0d47, #620c40);
+        background-color: var(--sm-devices-color);
     } 
     aside {
         width: 100vw;
