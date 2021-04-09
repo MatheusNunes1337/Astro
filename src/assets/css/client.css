@@ -354,6 +354,11 @@ article.post-content section h2, article.about-content section h2 {
   margin-top: 30px;
 }
 
+article.post-content section img {
+    max-width: 85%;
+    object-fit: contain;
+}
+
 section p {
   line-height: 1.6;
   text-align: justify;
@@ -805,7 +810,7 @@ div.solarSystem-bg a {
         padding-left: 0px;
      }
 
-
+     
     article button.post-card {
         margin: 15px 0px;
     }
@@ -860,9 +865,6 @@ div.solarSystem-bg a {
       padding: 0px;
     }
   
-    article.post-content section img {
-        width: 100%
-    }
 
     div.conteudo article.card-wrapper {
         justify-content: space-between;
