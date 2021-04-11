@@ -22,7 +22,6 @@ export default function Homepage() {
                console.error(err)
             }
         }  
-
       getPost()
 
     },[])

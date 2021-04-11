@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { useHistory } from 'react-router-dom'
+
 import '../assets/css/global.css'
 import '../assets/css/client.css'
 
@@ -15,7 +17,7 @@ import urano from '../assets/images/uranus.png'
 
 
 export default function Card(props) {
-	
+	let history = useHistory();
   let planeta
 
   switch (props.planet) {
@@ -50,7 +52,7 @@ export default function Card(props) {
 
   function goToPost(e) {
       const id = e.currentTarget.id
-      window.open(`/post/${id}`);
+      history.push(`/post/${id}`);  //window.open
   }
 
 

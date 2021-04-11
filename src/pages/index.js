@@ -6,6 +6,7 @@ import '../assets/css/global.css'
 import '../assets/css/client.css'
 
 export default function Index() {
+
 	return (
 		<div class="index-background">
 			<div class="title">
