@@ -31,7 +31,7 @@ export default function SolarSystem() {
          return post.planeta === planeta         
     })
     const { _id } = post[0]
-    history.push(`/post/${_id}`)
+    window.open(`/post/${_id}`)
   }
 
   return (

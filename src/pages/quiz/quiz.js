@@ -14,7 +14,7 @@ export default function Quiz() {
    let [index, setIndex] = useState(0)
    let [acertos, setAcertos] = useState(null)
 
-   const token = localStorage.getItem("sToken")
+   const token = sessionStorage.getItem("sToken")
 
    let history = useHistory();
    

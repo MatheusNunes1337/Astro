@@ -8,7 +8,7 @@ import { useHistory, Redirect } from 'react-router-dom'
 
 export default function QuizIndex() {
   let history = useHistory();
-  const studentToken = localStorage.getItem("sToken")
+  const studentToken = sessionStorage.getItem("sToken")
   const schoolToken = localStorage.getItem("iToken")
 
   if(studentToken)

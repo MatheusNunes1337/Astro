@@ -26,7 +26,7 @@ import StudentsResult from '../pages/quiz/school/studentsResult'
 function CustomRoute(props) {
 	const deviceWidth = window.innerWidth
 	const aToken = localStorage.getItem('aToken')
-	const sToken = localStorage.getItem('sToken')
+	const sToken = sessionStorage.getItem('sToken')
 	const iToken = localStorage.getItem('iToken')
 	const recoverPass = localStorage.getItem('recoverPass')
 	if(props.onlyAdmin && !aToken) {

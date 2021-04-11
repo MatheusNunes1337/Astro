@@ -13,7 +13,7 @@ export default function QuizResult() {
   //let [questions, setQuestions] = useState([])
   let [result, setResult] = useState('')
 
-  const token = localStorage.getItem("sToken")
+  const token = sessionStorage.getItem("sToken")
   let history = useHistory();
 
   useEffect(() => {
