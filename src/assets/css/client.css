@@ -264,23 +264,20 @@ div.students-result-bg button svg {
 
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 1rem 5rem;
   width: 100vw;
-  height: 7vh;
   background-color: var(--main-color);
 }
 
 header span {
-  padding: 6px 0px;
-  margin-left: 7vw;
-  font-size: clamp(22px, 2.5vw, 1.5rem);
+  font-size: clamp(24px, 2.5vw, 1.5rem);
 }
 
 header div.menu_buttons {
   display: flex;
-  width: auto;
-  margin-right: 7vw;
 }
 
 header ul#menu_dropdown {
@@ -291,17 +288,23 @@ header button {
   display: inline-flex; 
   align-items: center;
   justify-content: center;
-  padding: 10px 25px;
+  padding: 10px 15px;
   border: 2px solid var(--secundary-color);
   border-radius: 3px;
+  margin-right: 15px;
   background-color: var(--secundary-color);
   color: var(--white);
   font-size: var(--font-size);
   margin-left: 0.5vw;
 }
 
+header button.material-btn {
+    margin-right: 0px;
+}
+
 header button.dropdown_btn {
   display: none;
+  margin-right: 0px;
 }
 
 header a {
@@ -581,7 +584,7 @@ div.solarSystem-bg a {
 }
 
 
-@media only screen and (max-width: 1366px) {
+@media only screen and (max-width: 1400px) {
 
     div.title button {
         padding: 13px 22px;
@@ -606,19 +609,6 @@ div.solarSystem-bg a {
     a.accounted_already {
       margin-bottom: 7vh;
     }
-
-    header {
-      height: 9vh;
-    }
-
-    header picture {
-        width: 10%;
-    }
-
-    header button {
-        padding: 9px 20px;
-    }
-
     div.conteudo {
         min-height: 82vh;
     }
@@ -698,22 +688,15 @@ div.solarSystem-bg a {
     }
 
     header {
-       height: auto;
-       align-items: center;
-       flex-wrap: wrap;
+       padding: 0.7rem 3.5rem;
     }
 
     header span.logo {
       display: block;
-      padding: 12px 0px;
-      margin-left: 6vw;
     }
 
     header button.dropdown_btn {
        padding: 4px 12px;
-       margin-top: 10px;
-       margin-bottom: 10px;
-       margin-right: 6.5vw;
        font-size: 18px;
        display: block;
        border: none;
@@ -729,12 +712,12 @@ div.solarSystem-bg a {
 
     header ul#menu_dropdown {
       width: 100%;
-      margin: 0 auto;
       display: block;
+      margin-top: 10px;
     }
 
     header ul#menu_dropdown button.material-btn {
-        margin: 12px 5vw;
+        margin: 12px 0vw;
         padding: 6px 9px;
         font-size: 18px;
         background-color: var(--secundary-color);
@@ -743,7 +726,7 @@ div.solarSystem-bg a {
     header ul li{
       margin: 12px auto;
       padding: 5px 1vw;
-      width: 90%;
+      list-style: none;
     }
 
     header ul li:hover {
@@ -885,6 +868,10 @@ div.solarSystem-bg a {
 
     article button.post-card .card-title {
         margin-top: 25px;
+    }
+
+    header {
+      padding: 0.7rem 1.5rem;
     }
 
 }
