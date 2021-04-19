@@ -262,6 +262,7 @@ div.students-result-bg button svg {
 
 /*home page */
 
+
 header {
   display: flex;
   justify-content: space-between;
@@ -323,6 +324,7 @@ div.conteudo {
     flex-grow: 1;
     min-height: 86vh;
     background-color: var(--white);
+    background-color: goldenrod;
 }
 
 div.conteudo article.post-content, div.conteudo article.about-content {
@@ -439,21 +441,20 @@ footer {
 
 footer span {
    display: block;
-   font-size: clamp(23px, 2.2vw, 1.9rem);
+   font-size: clamp(24px, 2.5vw, 1.5rem); /*font-size: clamp(23px, 2.2vw, 1.7rem);*/
    padding: 8px 0px;
-   margin: 25px 0px 25px 7vw;  
+   margin: 25px 0px;
 }
-
 
 footer div.about {
     height: auto;
-    width: 45%;
-    margin: 0px 0px 25px 7vw;
+    margin-bottom: 25px;
+    padding-right: 45vw;
 }
 
 footer div.about h3 {
   color: var(--white);
-  font-size: clamp(17px, 2.5vw, 1.3rem)
+  font-size: clamp(20px, 2.5vw, 1.3rem);
 }
 
 footer div.about p.content {
@@ -463,12 +464,8 @@ footer div.about p.content {
   color: var(--white);
 }
 
-
-
 footer p.icon-attribution, footer p.img-attribution {
-  width: 86%;
-  margin: 0px 0px 0px 7vw;
-  padding: 4px 0px;
+  padding: 4px 0px 4px 0px;
   /*border-bottom: 2.5px solid gray;*/
   color: var(--white);
   font-size: var(--font-size-2);
@@ -493,12 +490,14 @@ footer div.footer {
   background-color: var(--secundary-color);
 }
 
-
 footer div.footer p.copyright {
-    margin-left: 7vw;
     align-self: center;
     font-size: var(--font-size-2);
     color: var(--white);
+}
+
+footer :is(span.logo, p, h3) {
+    padding-left: 5rem;
 }
 
 .loader {
@@ -619,7 +618,7 @@ div.solarSystem-bg a {
     }
 
     div.conteudo article.card-wrapper, div.conteudo h3 {
-        width: 90vw;
+        background-color: lightcoral;
     }
 
     footer div.logo {
@@ -807,22 +806,19 @@ div.solarSystem-bg a {
       height: 45px;
     }
 
-    footer div.logo {
-        width: 16%;
-        height: 50px;
-    }
-
-    footer div.about {
-       width: 89%;
-    }
-
     footer div.footer {
        background-color: var(--secundary-color);
      }
 
-    footer span.logo, footer div.about, footer p.icon-attribution, footer p.img-attribution, footer div.footer p.copyright {
-        margin-left: 6vw;
-    }
+     footer div.about {
+       padding-right: 3.5rem;
+     }
+
+     footer :is(span.logo, p, h3) {
+       padding-left: 3.5rem;
+     }
+
+   
 }
 
 @media only screen and (max-width: 460px) {
@@ -872,6 +868,14 @@ div.solarSystem-bg a {
 
     header {
       padding: 0.7rem 1.5rem;
+    }
+
+    footer div.about {
+      padding-right: 1.5rem;
+    }
+
+    footer :is(span.logo, p, h3) {
+      padding-left: 1.5rem;
     }
 
 }

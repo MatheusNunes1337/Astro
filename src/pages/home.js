@@ -31,7 +31,7 @@ export default function Homepage() {
 		    <Header />
 		  	<div className="conteudo">
 		  		{posts ? (
-	  				<div className="conteudo">
+	  				
 			  			<h3>Planetas</h3>
 			  			<article className="card-wrapper">
 			  			{
@@ -40,7 +40,7 @@ export default function Homepage() {
 			  				})
 			  			}
 			  			</article>
-			  		</div>	
+			  			
 		  		) : (
 		  			<div className="conteudo" style={{justifyContent: 'center', alignItems: 'center'}}>
 		  				<div className="loader"></div>
