@@ -11,7 +11,6 @@ export default function Sobre() {
   return (
   	<React.Fragment>
 	    <Header />
-	  	<div className="conteudo">
 	  		<article className="about-content">
 	  			<section>
 	  				  <h1> Sobre o Astro </h1>
@@ -44,8 +43,7 @@ export default function Sobre() {
               		  Sed placerat elit ac massa bibendum consectetur. Sed tellus lacus, pretium at orci et, lobortis pulvinar augue. 
               		  Cras a vestibulum mi, at varius mi. Etiam eu dapibus diam, non fermentum arcu.</p>
 	  			</section>	
-	  		</article>
-	  	</div>
+	  	</article>
 		<Footer />
 	</React.Fragment>
   );

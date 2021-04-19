@@ -35,7 +35,6 @@ export default function Post() {
   return (
   	<React.Fragment>
 	    <Header />
-	  	<div className="conteudo">
 	  		<article className="post-content">
 	  			<section>
 	  				{conteudo ? (
@@ -45,7 +44,6 @@ export default function Post() {
             )}
 	  			</section>	
 	  		</article>
-	  	</div>
 		<Footer />
 	</React.Fragment>
   );

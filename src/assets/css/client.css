@@ -268,7 +268,7 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  padding: 1rem 5rem;
+  padding: 0.75rem 5rem;
   width: 100vw;
   background-color: var(--main-color);
 }
@@ -317,20 +317,10 @@ header a > button {
   border-color: transparent;
 }
 
-div.conteudo {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-    flex-grow: 1;
-    min-height: 86vh;
-    background-color: var(--white);
-    background-color: goldenrod;
-}
 
-div.conteudo article.post-content, div.conteudo article.about-content {
-    width: 60vw;
+article.about-content, article.post-content {
+    padding: 2rem 15vw;
     height: auto;
-    margin: 30px 0px;
     background-color: var(--white);
 }
 
@@ -339,6 +329,7 @@ article.post-content section, article.about-content section {
     justify-content: center;
     flex-direction: column;
     margin: 15px 0px;
+    background-color: crimson;
 }
 
 article.post-content section h1, article.about-content section h1 {
@@ -375,27 +366,28 @@ div.conteudo {
   flex-direction: column;
 }
 
-div.conteudo h3 {
-    width: 86vw;
-    padding-left: 23px;
-    margin-top: 150px;
+div.home_container h3 {
     font-size: clamp(20px, 3vw, 1.5rem);
 }
 
-div.conteudo article.card-wrapper {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-start;
-  width: 86vw;
+div.conteudo, div.home_container {
+  width: 100vw;
+  min-height: 86vh;
   height: auto;
-  margin-top: 25px;
-  margin-bottom: 40px;  
+  padding: 3rem 5rem;
+  background-color: var(--white);
+}
+
+div.home_container article.card-wrapper {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  height: auto;
 }
 
 article button.post-card {
-    width: 280px;
+    width: calc(100% / 4 - 3rem);
     height: 150px;
-    margin: 10px 0px 10px 23px;
     background-color: var(--white);
     color: var(--main-color);
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
@@ -612,13 +604,17 @@ div.solarSystem-bg a {
         min-height: 82vh;
     }
 
-    div.conteudo h3 {
-        margin-top: 75px;
+    div.home_container h3 {
         font-size: clamp(20px, 3vw, 1.3rem);
+        margin-bottom: 30px;
     }
 
-    div.conteudo article.card-wrapper, div.conteudo h3 {
-        background-color: lightcoral;
+    div.home_container {
+        padding: 3rem 5rem;
+    }
+
+    article button.post-card {
+        width: calc(100% / 4 - 0.75rem);
     }
 
     footer div.logo {
@@ -729,7 +725,7 @@ div.solarSystem-bg a {
     }
 
     header ul li:hover {
-      background-color: var(--secundary-color);;
+      background-color: var(--secundary-color);
     }
 
     header ul li a {
@@ -784,18 +780,17 @@ div.solarSystem-bg a {
         margin: 20px 0px;
     }
 
-     div.conteudo article.card-wrapper, div.conteudo h3 {
-        width: 86vw;
+
+     div.home_container {
+        padding-left: 3.5rem;
+        padding-right: 3.5rem;
      }
 
-     div.conteudo h3 {
-        padding-left: 0px;
-     }
-
-     
     article button.post-card {
-        margin: 15px 0px;
+        width: calc(100% /2 - 0.5rem);
     }
+
+
 
     button.post-card .card-title {
       margin-top: 24px;
@@ -843,6 +838,11 @@ div.solarSystem-bg a {
     section > h1, section > p, section > h2 {
       padding: 0px;
     }
+
+    div.home_container {
+      padding-left: 1.4rem;
+      padding-right: 1.4rem;
+   }
   
 
     div.conteudo article.card-wrapper {
@@ -853,8 +853,6 @@ div.solarSystem-bg a {
 
      article button.post-card {
         height: 130px;
-        margin: 15px 0px;
-        width: 47%;   
     }
 
     article button.post-card .card-icon {
@@ -867,15 +865,15 @@ div.solarSystem-bg a {
     }
 
     header {
-      padding: 0.7rem 1.5rem;
+      padding: 0.7rem 1.4rem;
     }
 
     footer div.about {
-      padding-right: 1.5rem;
+      padding-right: 1.4rem;
     }
 
     footer :is(span.logo, p, h3) {
-      padding-left: 1.5rem;
+      padding-left: 1.4rem;
     }
 
 }

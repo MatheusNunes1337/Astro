@@ -29,9 +29,9 @@ export default function Homepage() {
 	  return (
 	  	<React.Fragment>
 		    <Header />
-		  	<div className="conteudo">
+		  	<div className="home_container">
 		  		{posts ? (
-	  				
+	  				<>
 			  			<h3>Planetas</h3>
 			  			<article className="card-wrapper">
 			  			{
@@ -40,7 +40,7 @@ export default function Homepage() {
 			  				})
 			  			}
 			  			</article>
-			  			
+			  		</>	
 		  		) : (
 		  			<div className="conteudo" style={{justifyContent: 'center', alignItems: 'center'}}>
 		  				<div className="loader"></div>
