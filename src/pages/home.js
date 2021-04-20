@@ -42,7 +42,7 @@ export default function Homepage() {
 			  			</article>
 			  		</>	
 		  		) : (
-		  			<div className="conteudo" style={{justifyContent: 'center', alignItems: 'center'}}>
+		  			<div className="home_container" style={{justifyContent: 'center', alignItems: 'center'}}>
 		  				<div className="loader"></div>
 		  			</div>
 		  		)}

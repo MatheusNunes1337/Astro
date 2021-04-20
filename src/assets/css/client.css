@@ -289,7 +289,7 @@ header button {
   display: inline-flex; 
   align-items: center;
   justify-content: center;
-  padding: 10px 15px;
+  padding: 10px 20px;
   border: 2px solid var(--secundary-color);
   border-radius: 3px;
   margin-right: 15px;
@@ -326,18 +326,15 @@ article.about-content, article.post-content {
 
 article.post-content section, article.about-content section {
     display: flex;
-    justify-content: center;
     flex-direction: column;
-    margin: 15px 0px;
-    background-color: crimson;
 }
 
 article.post-content section h1, article.about-content section h1 {
-    font-size: clamp(23px, 3.7vw, 1.9rem);
+    font-size: clamp(25px, 3.7vw, 1.9rem);
 }
 
 article.post-content section p, article.about-content section p, article.post-content button, .icon {
-  font-size: clamp(17px, 2vw, 1.2rem);
+  font-size: clamp(19px, 2vw, 1.2rem);
 }
 
 section > h1, section > p, section > h2 {
@@ -361,16 +358,13 @@ section p {
   margin-top: 8px;
 }
 
-div.conteudo {
-  display: flex;
-  flex-direction: column;
-}
+
 
 div.home_container h3 {
     font-size: clamp(20px, 3vw, 1.5rem);
 }
 
-div.conteudo, div.home_container {
+div.home_container {
   width: 100vw;
   min-height: 86vh;
   height: auto;
@@ -501,6 +495,7 @@ footer :is(span.logo, p, h3) {
   width: 42px;
   height: 42px;
   animation: spin 0.7s linear infinite;
+  position: absolute;
 }
 
 @keyframes spin {
@@ -683,7 +678,7 @@ div.solarSystem-bg a {
     }
 
     header {
-       padding: 0.7rem 3.5rem;
+       padding: 0.7rem 2.5rem;
     }
 
     header span.logo {
@@ -770,27 +765,15 @@ div.solarSystem-bg a {
       padding: 15px 25px;
     }
 
-
-    div.conteudo article.post-content, div.conteudo article.about-content  {
-        width: 90vw;
-    }
-
-    div.conteudo article.card-wrapper {
-        justify-content: space-between;
-        margin: 20px 0px;
-    }
-
-
+  
      div.home_container {
-        padding-left: 3.5rem;
-        padding-right: 3.5rem;
+        padding-left: 2.5rem;
+        padding-right: 2.5rem;
      }
 
     article button.post-card {
         width: calc(100% /2 - 0.5rem);
     }
-
-
 
     button.post-card .card-title {
       margin-top: 24px;
@@ -800,17 +783,22 @@ div.solarSystem-bg a {
       width: 45px;
       height: 45px;
     }
+    
+    article.about-content, article.post-content {
+      padding: 2rem 2.5rem;
+    }
 
     footer div.footer {
        background-color: var(--secundary-color);
      }
 
      footer div.about {
-       padding-right: 3.5rem;
+       padding-right: 2.5rem;
      }
 
+
      footer :is(span.logo, p, h3) {
-       padding-left: 3.5rem;
+       padding-left: 2.5rem;
      }
 
    
@@ -862,6 +850,10 @@ div.solarSystem-bg a {
 
     article button.post-card .card-title {
         margin-top: 25px;
+    }
+
+    article.about-content, article.post-content {
+        padding: 2rem 1.4rem;
     }
 
     header {
