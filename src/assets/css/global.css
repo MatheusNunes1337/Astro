@@ -5,7 +5,7 @@
   --main-color: #000000;
   --secundary-color: /*#1e0921;*/ /*#570c2c*/ /*#641138;*/ /*#360940*/ #721b65 /*#A927AD*/;
   --white: #FEFEFE;
-  --font-size: clamp(14px, 2vw, 1rem);
+  --font-size: clamp(16px, 2vw, 1.10rem);
 }
 
 * {

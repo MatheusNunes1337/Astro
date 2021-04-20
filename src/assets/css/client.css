@@ -268,7 +268,7 @@ header {
   justify-content: space-between;
   flex-wrap: wrap;
   align-items: center;
-  padding: 0.75rem 5rem;
+  padding: 0.75rem 8rem;
   width: 100vw;
   background-color: var(--main-color);
 }
@@ -319,7 +319,7 @@ header a > button {
 
 
 article.about-content, article.post-content {
-    padding: 2rem 15vw;
+    padding: 4rem 20vw;
     height: auto;
     background-color: var(--white);
 }
@@ -337,13 +337,12 @@ article.post-content section p, article.about-content section p, article.post-co
   font-size: clamp(19px, 2vw, 1.2rem);
 }
 
-section > h1, section > p, section > h2 {
+section > p, section > h2 {
   margin-top: 15px;
-  padding: 5px;
 }
 
 article.post-content section h2, article.about-content section h2 {
-  font-size: clamp(19px, 3.2vw, 1.6rem);
+  font-size: clamp(22px, 3.2vw, 1.6rem);
   margin-top: 30px;
 }
 
@@ -362,13 +361,14 @@ section p {
 
 div.home_container h3 {
     font-size: clamp(20px, 3vw, 1.5rem);
+    margin-bottom: 45px;
 }
 
 div.home_container {
   width: 100vw;
   min-height: 86vh;
   height: auto;
-  padding: 3rem 5rem;
+  padding: 6.5rem 8rem 4rem 8rem;
   background-color: var(--white);
 }
 
@@ -380,7 +380,7 @@ div.home_container article.card-wrapper {
 }
 
 article button.post-card {
-    width: calc(100% / 4 - 3rem);
+    width: calc(100% / 6 - 0.84rem);
     height: 150px;
     background-color: var(--white);
     color: var(--main-color);
@@ -409,6 +409,7 @@ button.post-card .card-title {
     margin: 25px 0px 10px 0px;
     padding: 0px 15px;
     text-align: left;
+    font-weight: 600;
     width: auto;
     display: -webkit-box;
     -webkit-line-clamp: 2;
@@ -483,7 +484,7 @@ footer div.footer p.copyright {
 }
 
 footer :is(span.logo, p, h3) {
-    padding-left: 5rem;
+    padding-left: 8rem;
 }
 
 .loader {
@@ -599,6 +600,10 @@ div.solarSystem-bg a {
         min-height: 82vh;
     }
 
+    header {
+        padding: 0.75rem 5rem;
+    }
+
     div.home_container h3 {
         font-size: clamp(20px, 3vw, 1.3rem);
         margin-bottom: 30px;
@@ -606,14 +611,22 @@ div.solarSystem-bg a {
 
     div.home_container {
         padding: 3rem 5rem;
-    }
+    } 
 
     article button.post-card {
         width: calc(100% / 4 - 0.75rem);
     }
 
+    article.about-content, article.post-content {
+        padding: 2rem 15vw;
+    }
+
     footer div.logo {
         width: 9%;
+    }
+
+    footer :is(span.logo, p, h3) {
+        padding-left: 5rem;
     }
 
     #Mercurio {
