@@ -29,24 +29,22 @@ export default function Homepage() {
 	  return (
 	  	<React.Fragment>
 		    <Header />
-		  	<div className="home_container">
-		  		{posts ? (
-	  				<>
-			  			<h3>Planetas</h3>
-			  			<article className="card-wrapper">
-			  			{
-			  				posts.map((post, i) => {
-			  					return(<Card planet={post.planeta} key={i} id={post._id} title={post.titulo}/>)
-			  				})
-			  			}
-			  			</article>
-			  		</>	
-		  		) : (
-		  			<div className="home_container" style={{justifyContent: 'center', alignItems: 'center'}}>
-		  				<div className="loader"></div>
-		  			</div>
-		  		)}
-		  	</div>
+	  		{posts ? (	  				
+  				<div className="home_container">
+		  			<h3>Planetas</h3>
+		  			<article className="card-wrapper">
+		  			{
+		  				posts.map((post, i) => {
+		  					return(<Card planet={post.planeta} key={i} id={post._id} title={post.titulo}/>)
+		  				})
+		  			}
+		  			</article>
+		  		</div>	
+	  		) : (
+	  		  <div className="loader_container">
+	  				<div className="loader"></div>
+	  		  </div>
+	  		)}
 			<Footer />
 		</React.Fragment>
 	  );

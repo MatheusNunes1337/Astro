@@ -35,15 +35,17 @@ export default function Post() {
   return (
   	<React.Fragment>
 	    <Header />
-	  		<article className="post-content">
-	  			<section>
-	  				{conteudo ? (
-              ReactHtmlParser (conteudo)
-            ) : (
-              <div className="loader" style={{alignSelf: 'center', justifyContent: 'center'}}></div>
-            )}
-	  			</section>	
-	  		</article>
+				{conteudo ? (
+          <article className="post-content">
+              <section>
+                  {ReactHtmlParser (conteudo)}
+              </section> 
+          </article>       
+        ) : (
+          <div className="loader_container">
+              <div className="loader"></div>
+          </div>
+        )}	
 		<Footer />
 	</React.Fragment>
   );
