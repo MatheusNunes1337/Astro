@@ -17,6 +17,20 @@ export default function Quiz() {
    const token = sessionStorage.getItem("sToken")
 
    let history = useHistory();
+
+   useEffect(() => {
+    async function resetQuiz() {
+        try {
+          const response =  await api.get('student/find', {
+            headers: { Authorization: `Bearer ${token}` }
+          })
+  	 	    await api.put(`question/tryAgain/${response.data._id}`)
+        } catch(err) {
+           alert(err)
+        }
+    }  
+    resetQuiz()   
+  },[])
    
    useEffect(() => {
         async function getQuestions() {

@@ -22,7 +22,8 @@ export default function QuizResult() {
             const response1 =  await api.get('student/find', {
               headers: { Authorization: `Bearer ${token}` }
             })
-            const { acertos, name} = response1.data
+            let { acertos, name} = response1.data
+            acertos = acertos.length
             const response2 =  await api.get('question')
             const questions = response2.data.length
             if((acertos * 100) / questions > 80) {
