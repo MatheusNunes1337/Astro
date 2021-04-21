@@ -56,7 +56,7 @@ export default function StudentsResult() {
                               <td>{i + 1}</td>
                               <td>{student.name}</td>
                               <td>{student.age}</td>
-                              <td>{student.acertos}</td>
+                              <td>{student.acertos.length}</td>
                             </tr>
                         )
                       }

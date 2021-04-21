@@ -8,11 +8,9 @@ import { useHistory, Redirect } from 'react-router-dom'
 
 export default function QuizIndex() {
   let history = useHistory();
-  const studentToken = sessionStorage.getItem("sToken")
+  
   const schoolToken = localStorage.getItem("iToken")
 
-  if(studentToken)
-    return <Redirect to="/quiz" />
   if(schoolToken)
     return <Redirect to="/quiz/result/students" />
 

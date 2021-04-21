@@ -37,7 +37,7 @@ export default function Quiz() {
               const response = await api.get('student/find', {
                 headers: { Authorization: `Bearer ${token}` }
               })
-              setAcertos(response.data.acertos)
+              setAcertos(response.data.acertos.length)
             } catch(err) {
                alert(err)
             }
