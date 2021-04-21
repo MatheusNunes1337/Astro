@@ -319,10 +319,36 @@ header a > button {
 }
 
 
-article.about-content, article.post-content {
-    padding: 4rem 20vw;
+article.about-content, article.post-content, article.download-content {
+    padding: 8rem 20vw;
     height: auto;
     background-color: var(--white);
+}
+
+article.download-content {
+  min-height: 86vh;
+  width: 100vw;
+}
+
+article.download-content h1 {
+  margin-bottom: 20px;
+}
+
+article.download-content div.form-group {
+  display: flex;
+  margin: 10px 0px;
+}
+article.download-content form label {
+  margin-left: 10px;
+}
+
+article.download-content form button {
+  padding: 8px 10px;
+  margin-top: 15px;
+  background-color: var(--secundary-color);
+  outline: none;
+  border: 2px solid var(--secundary-color);
+  color: var(--white);
 }
 
 article.post-content section, article.about-content section {
@@ -330,11 +356,13 @@ article.post-content section, article.about-content section {
     flex-direction: column;
 }
 
-article.post-content section h1, article.about-content section h1 {
+article.post-content section h1, article.about-content section h1, article.download-content h1 {
     font-size: clamp(25px, 3.7vw, 1.9rem);
 }
 
-article.post-content section p, article.about-content section p, article.post-content button, .icon {
+article.post-content section p, article.about-content section p, 
+article.download-content form label, article.download-content form button, 
+article.post-content button, .icon {
   font-size: clamp(19px, 2vw, 1.2rem);
 }
 
@@ -631,8 +659,8 @@ div.solarSystem-bg a {
         width: calc(100% / 4 - 0.75rem);
     }
 
-    article.about-content, article.post-content {
-        padding: 2rem 15vw;
+    article.about-content, article.post-content, article.download-content {
+        padding: 4rem 15vw;
     }
 
     footer div.logo {
@@ -815,8 +843,8 @@ div.solarSystem-bg a {
       height: 45px;
     }
     
-    article.about-content, article.post-content {
-      padding: 2rem 2.5rem;
+    article.about-content, article.post-content, article.download-content {
+      padding: 4rem 2.5rem;
     }
 
     footer div.footer {
@@ -883,8 +911,8 @@ div.solarSystem-bg a {
         margin-top: 25px;
     }
 
-    article.about-content, article.post-content {
-        padding: 2rem 1.4rem;
+    article.about-content, article.post-content, article.download-content {
+        padding: 4rem 1.4rem;
     }
 
     header {

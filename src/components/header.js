@@ -1,6 +1,8 @@
 import React, {useState} from 'react';
 import download from 'downloadjs'
 
+import { useHistory } from 'react-router-dom'
+
 import { Link } from 'react-router-dom'
 import { FaBars, FaDownload } from 'react-icons/fa'
 //import { RiQuestionnaireFill } from "react-icons/ri"
@@ -15,18 +17,10 @@ import api from '../services/api'
 export default function Header() {
   let [hiddenMenu, setVisibility] = useState(true)
 
-  async function downloadMaterial() {
-     try {
-         const response = await api.get('book/download', {
-            responseType: 'blob',
-                headers: {
-                    'Content-Type': 'application/pdf',
-                }
-         }) 
-        download(response.data, 'apostila.pdf')  
-     } catch(err) {
-       alert(err)
-     }
+  const history = useHistory()
+
+  async function goToDownloadPage() {
+      history.push('download-material')
   }
 
   function dropdown() {
@@ -47,14 +41,14 @@ export default function Header() {
           <Link to="/solar-system"><button className="ver_planetas-btn">Ver planetas</button></Link>
           <Link to="/sobre"><button className="ver_planetas-btn">Sobre</button></Link>
           <Link to="/quiz/home"><button className="quiz-btn">Quiz</button></Link>
-          <button className="material-btn" onClick={downloadMaterial}>Material</button>
+          <button className="material-btn" onClick={goToDownloadPage}>Material</button>
         </div>
         {!hiddenMenu ? 
         	(
               <ul id="menu_dropdown">
                 <li><Link to="/sobre">Sobre</Link></li>
         		    <li><Link to="/quiz/home">Quiz</Link></li>
-        		    <button onClick={downloadMaterial} className="material-btn"><FaDownload className="icon"/>Material</button>
+        		    <button onClick={goToDownloadPage} className="material-btn"><FaDownload className="icon"/>Material</button>
         	    </ul>
             ) : ''
     	}
