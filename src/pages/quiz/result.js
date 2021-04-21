@@ -41,10 +41,6 @@ export default function QuizResult() {
       getData()
    }, [token])
 
-  function goToResultPage() {
-    history.push('/quiz/result/students')
-  }
-
   function goToAnswersPage() {
     history.push('/quiz/answers')
   }
@@ -83,7 +79,6 @@ export default function QuizResult() {
     	    <div className="result-wrapper">
     	      <p className="result">{result}</p>
     	      <div className="buttons-wrapper">
-    		      <button onClick={goToResultPage}>Resultados gerais</button>
     		      <button onClick={tryAgain}>Tentar novamente</button>
               <button onClick={goToAnswersPage}>Ver gabarito</button>
     		      <button onClick={goHome} value="goHome">Página inicial</button>
