@@ -351,6 +351,15 @@ article.post-content section img {
     object-fit: contain;
 }
 
+article.post-content > a {
+   color: var(--secundary-color);
+   margin-top: 20px;
+   font-size: clamp(19px, 2vw, 1.2rem);
+   display: block;
+   display: flex;
+   align-items: center;
+}
+
 section p {
   line-height: 1.6;
   text-align: justify;
@@ -452,8 +461,6 @@ footer div.about p.content {
 }
 
 footer p.icon-attribution, footer p.img-attribution {
-  padding: 4px 0px 4px 0px;
-  /*border-bottom: 2.5px solid gray;*/
   color: var(--white);
   font-size: var(--font-size-2);
 }
@@ -483,7 +490,7 @@ footer div.footer p.copyright {
     color: var(--white);
 }
 
-footer :is(span.logo, p, h3) {
+footer span.logo, footer p, footer h3 {
     padding-left: 8rem;
 }
 
@@ -631,8 +638,12 @@ div.solarSystem-bg a {
         width: 9%;
     }
 
-    footer :is(span.logo, p, h3) {
+    footer span.logo, footer p, footer h3 {
         padding-left: 5rem;
+    }
+
+    p.icon-attribution, p.img-attribution {
+      color: blue;
     }
 
     #Mercurio {
@@ -816,7 +827,7 @@ div.solarSystem-bg a {
      }
 
 
-     footer :is(span.logo, p, h3) {
+     footer span.logo, footer p, footer h3 {
        padding-left: 2.5rem;
      }
 
@@ -883,7 +894,7 @@ div.solarSystem-bg a {
       padding-right: 1.4rem;
     }
 
-    footer :is(span.logo, p, h3) {
+    footer span.logo, footer p, footer h3 {
       padding-left: 1.4rem;
     }
 

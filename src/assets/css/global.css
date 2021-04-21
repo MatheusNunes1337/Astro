@@ -60,3 +60,7 @@ span.logo {
   text-transform: uppercase;
   color: var(--white);
 }
+
+button {
+  cursor: pointer;
+}

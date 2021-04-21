@@ -2,7 +2,11 @@ import React, { useState, useEffect } from 'react';
 
 import { useParams } from 'react-router-dom'
 
+import { Link } from 'react-router-dom'
+
 import ReactHtmlParser from 'react-html-parser';
+
+import { BsArrowLeftShort } from 'react-icons/bs'
 
 import api from '../services/api'
 
@@ -40,6 +44,7 @@ export default function Post() {
               <section>
                   {ReactHtmlParser (conteudo)}
               </section> 
+              <Link to="/solar-system"><BsArrowLeftShort />Voltar</Link>
           </article>       
         ) : (
           <div className="loader_container">
