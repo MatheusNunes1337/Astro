@@ -19,6 +19,7 @@ div.index-background {
 div.solarSystem-bg {
   height: 100vh;
   width: 100vw;
+  overflow-x: hidden;
   background-image: url('../images/sistemasolar1880.jpg');
   background-size: cover;
   background-repeat: no-repeat;
@@ -463,6 +464,7 @@ footer div.about p.content {
 footer p.icon-attribution, footer p.img-attribution {
   color: var(--white);
   font-size: var(--font-size-2);
+  margin: 5px 0px;
 }
 
 footer p.img-attribution {
@@ -575,12 +577,11 @@ div.solarSystem-bg > button {
 
 div.solarSystem-bg a {
   position: absolute;
-  display: block;
   text-decoration: none;
   color: var(--white);
-  bottom: 0;
-  font-size: 20px;
-  left: 5px;
+  font-size: 18px;
+  bottom: calc(0px - (2rem * 2));
+  left: 10px;
 }
 
 

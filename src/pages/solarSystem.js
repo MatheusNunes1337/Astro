@@ -2,6 +2,9 @@ import React, { useState, useEffect } from 'react';
 
 import { useHistory } from 'react-router-dom'
 
+import Header from '../components/header'
+import Footer from '../components/footer'
+
 import api from '../services/api'
 
 import '../assets/css/global.css'
@@ -31,20 +34,24 @@ export default function SolarSystem() {
          return post.planeta === planeta         
     })
     const { _id } = post[0]
-    window.open(`/post/${_id}`)
+    history.push(`/post/${_id}`)
   }
 
   return (
-  	<div className="solarSystem-bg">
-        <button onClick={goToPost} id="Mercurio">mercury</button>
-        <button onClick={goToPost} id="Vênus">venus</button>
-        <button onClick={goToPost} id="Terra">earth</button>
-        <button onClick={goToPost} id="Marte">mars</button>
-        <button onClick={goToPost} id="Júpiter">jupiter</button>
-        <button onClick={goToPost} id="Saturno">saturn</button>
-        <button onClick={goToPost} id="Urano">uranus</button>
-        <button onClick={goToPost} id="Netuno">neptune</button>
-        <a href="http://www.freepik.com" target="_blank" rel="noopener noreferrer">Designed by brgfx / Freepik</a>
-    </div>
+    <React.Fragment>
+      <Header />
+    	<div className="solarSystem-bg">
+          <button onClick={goToPost} id="Mercurio">mercury</button>
+          <button onClick={goToPost} id="Vênus">venus</button>
+          <button onClick={goToPost} id="Terra">earth</button>
+          <button onClick={goToPost} id="Marte">mars</button>
+          <button onClick={goToPost} id="Júpiter">jupiter</button>
+          <button onClick={goToPost} id="Saturno">saturn</button>
+          <button onClick={goToPost} id="Urano">uranus</button>
+          <button onClick={goToPost} id="Netuno">neptune</button>
+          <a href="http://www.freepik.com" target="_blank" rel="noopener noreferrer">Designed by brgfx / Freepik</a>
+      </div>
+      <Footer />
+  </React.Fragment>
   );
 }
