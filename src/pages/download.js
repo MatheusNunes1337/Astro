@@ -11,17 +11,13 @@ import api from '../services/api'
 
 export default function Download() {
 
-  let [material_type, setMaterial] = useState('')
+  let [material, setMaterial] = useState('')
 
   async function downloadMaterial(e) {
       e.preventDefault()
-      
-      const data = {
-        material_type
-      }
 
       try {
-          const response = await api.post('book/download', data, {
+          const response = await api.get(`book/download?material=${material}`, {
               responseType: 'blob',
                   headers: {
                       'Content-Type': 'application/pdf',
@@ -40,15 +36,15 @@ export default function Download() {
 	  			<form onSubmit={downloadMaterial}>
               <h1>Selecione o conteúdo do material:</h1>
               <div className="form-group">
-                  <input type="radio" id="only-text" name="material" onChange={e => setMaterial(e.target.value)} value="conteudo"/>
+                  <input type="radio" id="only-text" name="apostila" onChange={e => setMaterial(e.target.value)} value="material3"/>
                   <label htmlFor="only-text">Apenas o conteúdo</label>
               </div>
               <div className="form-group">
-                  <input type="radio" id="text-and-questions" name="material" onChange={e => setMaterial(e.target.value)} value="conteudo_perguntas"/>
+                  <input type="radio" id="text-and-questions" name="apostila" onChange={e => setMaterial(e.target.value)} value="material2"/>
                   <label htmlFor="text-and-questions">Conteúdo e perguntas do quiz</label>
               </div>
               <div className="form-group">
-                  <input type="radio" id="full-content" name="material" onChange={e => setMaterial(e.target.value)} value="completo"/>
+                  <input type="radio" id="full-content" name="apostila" onChange={e => setMaterial(e.target.value)} value="material1"/>
                   <label htmlFor="full-content">Conteúdo, perguntas e respostas do quiz</label>
               </div>
               <button type="submit" className="material-btn">Download</button>
