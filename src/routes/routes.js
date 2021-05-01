@@ -15,7 +15,7 @@ import Post from '../pages/post'
 import Index from '../pages/index'
 import QuizLevel from '../pages/quiz/quizLevel'
 import Quiz from '../pages/quiz/quiz'
-import Answers from '../pages/quiz/answers'
+import Answer from '../pages/quiz/answer'
 import AuthStudent from '../pages/quiz/authStudent'
 import LoginSchool from '../pages/quiz/school/loginSchool'
 import RegisterSchool from '../pages/quiz/school/registerSchool'
@@ -126,8 +126,8 @@ export default function Routes () {
 		     	<CustomRoute onlyStudent path="/quiz/level">
 		       		<QuizLevel />
 		     	</CustomRoute>
-		     	<CustomRoute onlyStudent path="/quiz/answers">
-		       		<Answers />
+		     	<CustomRoute onlyStudent path="/quiz/answer/:id">
+		       		<Answer />
 		     	</CustomRoute>
 		     	<CustomRoute onlyStudent path="/quiz">
 		       		<Quiz />

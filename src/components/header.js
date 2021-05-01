@@ -1,5 +1,4 @@
 import React, {useState} from 'react';
-import download from 'downloadjs'
 
 import { useHistory } from 'react-router-dom'
 
@@ -10,9 +9,6 @@ import { FaBars, FaDownload } from 'react-icons/fa'
 
 import '../assets/css/global.css'
 import '../assets/css/client.css'
-
-import api from '../services/api'
-
 
 export default function Header() {
   let [hiddenMenu, setVisibility] = useState(true)
