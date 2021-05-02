@@ -55,7 +55,7 @@ div.title button {
 
 /* quiz page */
 
-div.quiz-bg, div.students-result-bg {
+div.quiz-bg, div.students-result-bg, div.gabarito-container {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -64,7 +64,6 @@ div.quiz-bg, div.students-result-bg {
   width: 100vw;
   background-color: var(--secundary-color);
 }
-
 
 
 div.quiz-wrapper, div.result-wrapper, div.answer-wrapper {
@@ -193,6 +192,7 @@ div.answer-wrapper > div {
 div.answer-wrapper button {
     padding: 8px 12px;
     margin-top: 34px;
+    display: flex;
     font-size: clamp(18px, 3.4vw, 1.2rem);
     color: white;
     align-self: center;
@@ -200,10 +200,6 @@ div.answer-wrapper button {
     background-color: var(--main-color);
 }
 
-div.answer-wrapper button svg.arrow-icon {
-  color: var(--white);
-  font-size: 26px;
-}
 
 div.buttons-wrapper {
     display: flex;
@@ -228,24 +224,44 @@ a.accounted_already, button.forgot-pass {
 }
 
 
-div.students-result-bg {
+div.students-result-bg, div.gabarito-container {
   align-items: center;
   justify-content: flex-start;
 }
 
-div.students-result-bg > div.table-wrap {
-    width: 50%;
+
+div.students-result-bg > div.table-wrap, div.gabarito-container > div.table-wrap {
+    min-width: 50%;
+    width: auto;
     margin-top: 30px;
     background-color: black;
     overflow-x: auto;
 }
 
-div.students-result-bg > div.table-wrap table {
+div.students-result-bg > div.table-wrap table, div.gabarito-container > div.table-wrap table{
    width: 100%;
    color: var(--white);
 }
 
-div.students-result-bg button {
+div.gabarito-container h1 {
+  color: var(--white);
+  margin-top: 70px;
+  font-size: clamp(1.6rem, 3vw, 2rem);
+} 
+
+div.gabarito-container table td {
+   padding: 15px 0px;
+   font-size: clamp(18px, 2.9vw, 1.1rem);
+}
+
+div.gabarito-container table td button {
+   color: var(--white);
+   font-size: clamp(15px, 2.9vw, 0.9rem);
+}
+
+
+
+div.students-result-bg button, div.gabarito-container > button {
   align-self: flex-start;
   display: flex;
   align-items: center;
@@ -258,8 +274,9 @@ div.students-result-bg button {
   border: none;
 }
 
-div.students-result-bg button svg {
+div.students-result-bg button svg, div.gabarito-container > button svg, div.answer-wrapper button svg {
   margin-right: 5px;
+  align-self: center;
 }
 
 
@@ -817,8 +834,9 @@ div.solarSystem-bg a {
        padding: 17px;
     }
 
-    div.students-result-bg > div.table-wrap {
-      width: 85%;
+    div.students-result-bg > div.table-wrap, div.gabarito-container div.table-wrap {
+      min-width: 85%;
+      width: auto;
     }
 
     div.students-result-bg button {
