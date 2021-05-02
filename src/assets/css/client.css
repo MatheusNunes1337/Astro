@@ -249,7 +249,7 @@ div.gabarito-container h1 {
   font-size: clamp(1.6rem, 3vw, 2rem);
 } 
 
-div.gabarito-container table td {
+div.gabarito-container table td, div.gabarito-container span {
    padding: 15px 0px;
    font-size: clamp(18px, 2.9vw, 1.1rem);
 }
@@ -257,6 +257,31 @@ div.gabarito-container table td {
 div.gabarito-container table td button {
    color: var(--white);
    font-size: clamp(15px, 2.9vw, 0.9rem);
+}
+
+div.gabarito-container span:first-of-type {
+  margin-top: 25px;
+}
+
+div.gabarito-container span {
+  margin-bottom: 10px;
+  padding: 0px;
+  color: var(--white);
+  width: 50%;
+  text-align: center;
+}
+
+div.gabarito-container span.corretas:before {
+  content: '\25A0';
+  margin-right: 5px;
+  color: green;
+}
+
+div.gabarito-container span.incorretas:before {
+  content: '\25A0';
+  margin-right: 5px;
+  color: red;
+  margin-left: 15px;
 }
 
 
@@ -834,7 +859,8 @@ div.solarSystem-bg a {
        padding: 17px;
     }
 
-    div.students-result-bg > div.table-wrap, div.gabarito-container div.table-wrap {
+    div.students-result-bg > div.table-wrap, div.gabarito-container div.table-wrap, 
+    div.gabarito-container span {
       min-width: 85%;
       width: auto;
     }

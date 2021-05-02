@@ -64,6 +64,8 @@ export default function Gabarito() {
                   </tbody>
               </table>
             </div>
+            <span className="corretas">Respondida corretamente</span>
+            <span className="incorretas">Respondida incorretamente</span>
         </div>
       );
   } else {
