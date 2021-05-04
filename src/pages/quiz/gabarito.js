@@ -11,8 +11,10 @@ import api from '../../services/api'
 
 export default function Gabarito() {
   let [questions, setQuestions] = useState('')
+  let [acertos, setAcertos] = useState(null)
+  let [loaded, setLoaded] = useState(false)
 
-  const token = localStorage.getItem("iToken")
+  const token = sessionStorage.getItem("sToken")
   let history = useHistory();
 
   useEffect(() => {
@@ -27,6 +29,23 @@ export default function Gabarito() {
       getQuestions()   
     },[token])
 
+   useEffect(() => {
+        setAcertos(null)
+        async function getStudent() {
+            try {
+              const response = await api.get('student/find', {
+                headers: { Authorization: `Bearer ${token}` }
+              })
+              setAcertos(response.data.acertos)
+
+              //setLoaded(true)
+            } catch(err) {
+               alert(err)
+            }
+        }  
+      getStudent()   
+    },[])
+
    function goBack() {
       history.push('/quiz/result')  
    }
@@ -34,10 +53,9 @@ export default function Gabarito() {
    function showDetails(e) {
        const questionId = e.currentTarget.value
        history.push(`/quiz/answer/${questionId}`)
-   } 
-
+   }
 	
-  if(questions !== '') {
+  if(questions !== '' && acertos !== null) {
       return (
       	<div className="gabarito-container">
             <button onClick={goBack}><BsArrowLeftShort className="logout-icon" />Voltar</button>
@@ -56,7 +74,7 @@ export default function Gabarito() {
                          questions.map((question, i) => 
                             <tr key={i}>
                               <td>{i + 1}</td>
-                               <td>{question.answer}</td>
+                               <td style={ acertos.includes(question._id) ? { backgroundColor:'green'} : {backgroundColor:'red'}}>{question.answer}</td>
                               <td><button value={question._id} onClick={showDetails}>Ver detalhes</button></td>
                             </tr>
                         )

@@ -42,8 +42,8 @@ export default function QuizResult() {
       getData()
    }, [token])
 
-  function goToAnswersPage() {
-    history.push('/quiz/answers')
+  function verGabarito() {
+    history.push('/quiz/gabarito')
   }
 
   async function tryAgain() {
@@ -81,7 +81,7 @@ export default function QuizResult() {
     	      <p className="result">{result}</p>
     	      <div className="buttons-wrapper">
     		      <button onClick={tryAgain}>Tentar novamente</button>
-              <button onClick={goToAnswersPage}>Ver gabarito</button>
+              <button onClick={verGabarito}>Ver gabarito</button>
     		      <button onClick={goHome} value="goHome">Página inicial</button>
     		  </div>    
     	    </div>

@@ -25,7 +25,6 @@ export default function Quiz() {
             headers: { Authorization: `Bearer ${token}` }
           })
   	 	    await api.put(`question/tryAgain/${response.data._id}`)
-          console.log('RESETEI O QUIZ')
           setAcertos(0)
         } catch(err) {
            alert(err)

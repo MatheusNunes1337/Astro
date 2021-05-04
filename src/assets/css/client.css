@@ -388,6 +388,7 @@ article.download-content h1 {
 
 article.download-content div.form-group {
   display: flex;
+  align-items: center;
   margin: 10px 0px;
 }
 article.download-content form label {
