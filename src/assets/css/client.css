@@ -292,7 +292,7 @@ div.students-result-bg button, div.gabarito-container > button {
   align-items: center;
   margin-top: 25px;
   margin-left: 3vw;
-  padding: 15px 25px;
+  padding: 12px 19px;
   background-color: var(--main-color);
   color: var(--white);
   font-size: clamp(18px, 2.9vw, 1.1rem);
@@ -302,6 +302,14 @@ div.students-result-bg button, div.gabarito-container > button {
 div.students-result-bg button svg, div.gabarito-container > button svg, div.answer-wrapper button svg {
   margin-right: 5px;
   align-self: center;
+}
+
+div.gabarito-container > button svg {
+    font-size: 28px;
+}
+
+div.answer-wrapper button svg {
+    font-size: 24px;
 }
 
 

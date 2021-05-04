@@ -4,7 +4,7 @@ import '../../assets/css/global.css'
 import '../../assets/css/client.css'
 
 import { useHistory } from 'react-router-dom'
-import { BsBoxArrowInLeft } from "react-icons/bs";
+import { BsArrowLeftShort } from 'react-icons/bs'
 
 import api from '../../services/api'
 
@@ -40,7 +40,7 @@ export default function Gabarito() {
   if(questions !== '') {
       return (
       	<div className="gabarito-container">
-            <button onClick={goBack}><BsBoxArrowInLeft className="logout-icon" />Voltar</button>
+            <button onClick={goBack}><BsArrowLeftShort className="logout-icon" />Voltar</button>
             <h1>Gabarito</h1>
             <div className="table-wrap"> 
               <table>

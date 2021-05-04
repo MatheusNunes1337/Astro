@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 import { useHistory, useParams } from 'react-router-dom'
 
-import { BsArrowRight, BsBoxArrowInLeft  } from 'react-icons/bs';
+import { BsArrowRight, BsArrowLeftShort  } from 'react-icons/bs';
 
 import api from '../../services/api'
 
@@ -44,7 +44,7 @@ export default function Answer() {
               <p className="answer">R: {question.answer}</p>
               <p className="fullAnswer">{question.fullAnswer}</p>
             </div>
-            <button onClick={goBack}><BsBoxArrowInLeft className="logout-icon" />Voltar</button>    
+            <button onClick={goBack}><BsArrowLeftShort />Voltar</button>    
           </div>
         </div>
       );
