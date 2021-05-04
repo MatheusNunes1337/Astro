@@ -124,13 +124,13 @@ export default function Routes () {
 		     	<CustomRoute onlyStudent path="/quiz/result">
 		       		<QuizResult />
 		     	</CustomRoute>
-		     	<CustomRoute path="/quiz/gabarito">
+		     	<CustomRoute onlyStudent path="/quiz/gabarito">
 		       		<Gabarito />
 		     	</CustomRoute>
 		     	<CustomRoute onlyStudent path="/quiz/level">
 		       		<QuizLevel />
 		     	</CustomRoute>
-		     	<CustomRoute path="/quiz/answer/:id">
+		     	<CustomRoute onlyStudent path="/quiz/answer/:id">
 		       		<Answer />
 		     	</CustomRoute>
 		     	<CustomRoute onlyStudent path="/quiz">
