@@ -41,7 +41,7 @@ export default function SolarSystem() {
     <React.Fragment>
       <Header />
     	<div className="solarSystem-bg">
-          <button onClick={goToPost} id="Mercurio">mercury</button>
+          <button onClick={goToPost} id="Mercúrio">mercury</button>
           <button onClick={goToPost} id="Vênus">venus</button>
           <button onClick={goToPost} id="Terra">earth</button>
           <button onClick={goToPost} id="Marte">mars</button>
