@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import db from '../services/localbase'
+
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Card from '../components/card'
@@ -9,16 +11,24 @@ import api from '../services/api'
 import '../assets/css/global.css'
 import '../assets/css/client.css'
 
+	
+
 export default function Homepage() {
 
-  let [posts, setPosts] = useState(null)	
+  let [posts, setPosts] = useState(null)
 
   useEffect(() => {
         async function getPost() {
             try {
               const response =  await api.get('post')
               setPosts(response.data)
+              await db.collection('posts').set(response.data)
             } catch(err) {
+               if(!navigator.onLine) {
+               	  const posts = await db.collection('posts').get()
+               	  setPosts(posts)
+               	  return
+               }
                console.error(err)
             }
         }  
