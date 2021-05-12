@@ -50,8 +50,11 @@ export default function Post() {
           <article className="post-content">
               <section>
                   {ReactHtmlParser (conteudo)}
-              </section> 
-              <Link to="/solar-system"><BsArrowLeftShort />Voltar</Link>
+              </section>
+              {
+                window.screen.width > 768 ? ( <Link to="/solar-system"><BsArrowLeftShort />Voltar</Link> ) :
+                ''
+              } 
           </article>       
         ) : (
           <div className="loader_container">

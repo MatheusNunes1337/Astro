@@ -39,7 +39,7 @@ function CustomRoute(props) {
 		return <Redirect to="/quiz/auth/school/login" />
 	} else if(props.onlyRecover && !recoverPass) {
 		return <Redirect to="/quiz/auth/school/login" />
-	} else if (props.onlyLargeScreens && deviceWidth <= 768)
+	} else if (props.onlyLargeScreens && window.screen.width <= 768)
 		return <Redirect to="/home" />
 	else {
 		return <Route {...props} />
