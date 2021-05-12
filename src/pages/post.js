@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from 'react';
 
+import db from '../services/localbase'
+
 import { useParams } from 'react-router-dom'
 
 import { Link } from 'react-router-dom'
@@ -28,7 +30,12 @@ export default function Post() {
               const post =  await api.get(`post?p=${id}`)
               setConteudo(post.data.conteudo)
             } catch(err) {
-               console.error(err)
+               if(!navigator.onLine) {
+                  const post = await db.collection('posts').doc({ _id: id }).get()
+                  setConteudo(post.conteudo)
+               } else {
+                 console.error(err)
+               }
             }
         }  
 
