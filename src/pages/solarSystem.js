@@ -17,8 +17,13 @@ export default function SolarSystem() {
   useEffect(() => {
         async function getPost() {
             try {
-              const response =  await api.get('post')
-              setPosts(response.data)
+              if(navigator.onLine) {
+	               	const response =  await api.get('post')
+	              	setPosts(response.data)
+	            } else {
+	            	const posts = await db.collection('posts').get()
+	               	setPosts(posts)
+	            }
             } catch(err) {
                console.error(err)
             }
