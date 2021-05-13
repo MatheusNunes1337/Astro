@@ -6,6 +6,7 @@ import Header from '../components/header'
 import Footer from '../components/footer'
 
 import api from '../services/api'
+import db from '../services/localbase'
 
 import '../assets/css/global.css'
 import '../assets/css/client.css'
@@ -22,6 +23,7 @@ export default function SolarSystem() {
 	              	setPosts(response.data)
 	            } else {
 	            	const posts = await db.collection('posts').get()
+	            	console.log('postagens', posts)
 	               	setPosts(posts)
 	            }
             } catch(err) {
@@ -34,6 +36,7 @@ export default function SolarSystem() {
     },[])
 
   function goToPost(e) {
+  	console.log(posts)
     const planeta = e.currentTarget.id
     const post = posts.filter(post => {
          return post.planeta === planeta         

@@ -1,12 +1,11 @@
 import React, { useState, useEffect } from 'react';
 
-import db from '../services/localbase'
-
 import Header from '../components/header'
 import Footer from '../components/footer'
 import Card from '../components/card'
 
 import api from '../services/api'
+import db from '../services/localbase'
 
 import '../assets/css/global.css'
 import '../assets/css/client.css'

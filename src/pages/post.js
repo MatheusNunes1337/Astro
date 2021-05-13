@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 
-import db from '../services/localbase'
-
 import { useParams } from 'react-router-dom'
 
 import { Link } from 'react-router-dom'
@@ -11,6 +9,7 @@ import ReactHtmlParser from 'react-html-parser';
 import { BsArrowLeftShort } from 'react-icons/bs'
 
 import api from '../services/api'
+import db from '../services/localbase'
 
 import Header from '../components/header'
 import Footer from '../components/footer'
