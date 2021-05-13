@@ -27,15 +27,15 @@ export default function Post() {
    useEffect(() => {
         async function getPost() {
             try {
-              const post =  await api.get(`post?p=${id}`)
-              setConteudo(post.data.conteudo)
+                if(navigator.onLine) {
+                    const post =  await api.get(`post?p=${id}`)
+                    setConteudo(post.data.conteudo)
+                } else {
+                    const post = await db.collection('posts').doc({ _id: id }).get()
+                    setConteudo(post.conteudo)
+                }
             } catch(err) {
-               if(!navigator.onLine) {
-                  const post = await db.collection('posts').doc({ _id: id }).get()
-                  setConteudo(post.conteudo)
-               } else {
-                 console.error(err)
-               }
+                console.error(err)
             }
         }  
 

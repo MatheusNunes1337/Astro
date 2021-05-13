@@ -20,18 +20,17 @@ export default function Homepage() {
   useEffect(() => {
         async function getPost() {
             try {
-              const response =  await api.get('post')
-              setPosts(response.data)
-              await db.collection('posts').set(response.data)
-              const post = await db.collection('posts').doc({ _id: '5fbdb01e6f349c0021469e34' }).get()
-              console.log(post)
+	            if(navigator.onLine) {
+	               	const response =  await api.get('post')
+	              	setPosts(response.data)
+	              	await db.collection('posts').set(response.data)
+	            } else {
+	            	const posts = await db.collection('posts').get()
+	               	setPosts(posts)
+	            }   	  
+       
             } catch(err) {
-               if(!navigator.onLine) {
-               	  const posts = await db.collection('posts').get()
-               	  setPosts(posts)
-               } else {
-               	  console.error(err)
-               }
+               	console.error(err)
             }
         }  
       getPost()
