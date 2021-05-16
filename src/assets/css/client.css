@@ -435,9 +435,8 @@ article.post-content section img {
 
 article.post-content > a {
    color: var(--secundary-color);
-   margin-top: 20px;
+   margin-bottom: 25px;
    font-size: clamp(19px, 2vw, 1.2rem);
-   display: block;
    display: flex;
    align-items: center;
 }
