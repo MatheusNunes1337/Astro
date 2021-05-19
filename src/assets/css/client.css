@@ -20,7 +20,7 @@ div.solarSystem-bg {
   height: 100vh;
   width: 100vw;
   overflow-x: hidden;
-  background-image: url('../images/sistemasolar1880.jpg');
+  background-image: url('../images/solar_system.png');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -372,7 +372,7 @@ header a > button {
 
 
 article.about-content, article.post-content, article.download-content {
-    padding: 8rem 20vw;
+    padding: 5rem 20vw;
     height: auto;
     background-color: var(--white);
 }
@@ -608,51 +608,51 @@ div.solarSystem-bg > button {
 }
 
 #Mercúrio {
-  padding: 18px 9px;
-  margin-left: 23vw;
-  margin-top: 45vh; 
+  padding: 15px 6px;
+  margin-left: 12vw;
+  margin-top: 45.5vh; 
 }
 
 #Vênus {
-  padding: 28px 24px;
-  margin-left: 26vw;
-  margin-top: 65vh;
+  padding: 30px 28px;
+  margin-left: 16.5vw;
+  margin-top: 44vh;
 }
 
 #Terra {
-  padding: 40px 35px;
-  margin-left: 31.5vw;
-  margin-top: 17vh;
+  padding: 36px 35px;
+  margin-left: 23.5vw;
+  margin-top: 43vh;
 }
 
 #Marte {
-  padding: 27px 21px;
-  margin-left: 43vw;
-  margin-top: 32vh;
+  padding: 25px 20px;
+  margin-left: 31vw;
+  margin-top: 45vh;
 }
 
 #Júpiter {
-  padding: 70px;
-  margin-left: 51vw;
-  margin-top: 49vh;
+  padding: 85px;
+  margin-left: 38.5vw;
+  margin-top: 38vh;
 }
 
 #Saturno {
-  padding: 55px;
-  margin-left: 64vw;
-  margin-top: 73vh;
+  padding: 50px;
+  margin-left: 57vw;
+  margin-top: 42vh;
 }
 
 #Urano {
-  padding: 40px;
-  margin-left: 77vw;
-  margin-top: 46vh;
+  padding: 35px 30px;
+  margin-left: 76vw;
+  margin-top: 45vh;
 }
 
 #Netuno {
-  padding: 50px;
-  margin-left: 84vw;
-  margin-top: 18vh;
+  padding: 35px 26px;
+  margin-left: 88.5vw;
+  margin-top: 45vh;
 }
 
 div.solarSystem-bg a {
