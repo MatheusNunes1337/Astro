@@ -727,49 +727,49 @@ div.solarSystem-bg a {
       color: blue;
     }
 
-    #Mercurio {
-      padding: 13px 3px;
-      margin-left: 22vw;
+    #Mercúrio {
+      padding: 13px 1.5px;
+      margin-left: 12vw;
       margin-top: 45vh; 
     }
 
     #Vênus {
       padding: 20px 12px;
-      margin-left: 25.5vw;
-      margin-top: 63vh;
+      margin-left: 16.5vw;
+      margin-top: 44vh;
     }
 
     #Terra {
-      padding: 28px 26px;
-      margin-left: 31vw;
-      margin-top: 20vh;
+      padding: 24px 22px;
+      margin-left: 23.5vw;
+      margin-top: 43.5vh;
     }
 
     #Marte {
-      padding: 20px 15px;
-      margin-left: 43vw;
-      margin-top: 33vh;
+      padding: 17px 12px;
+      margin-left: 31vw;
+      margin-top: 45vh;
     }
 
     #Júpiter {
-        padding: 43px;
+        padding: 60px;
     }
 
     #Saturno {
-      margin-top: 70vh;
-      padding: 39px 37px;
+      margin-top: 42vh;
+      padding: 37px 30px;
     }
 
     #Urano {
-      padding: 32px 26px;
-      margin-left: 77.5vw;
-      margin-top: 46vh;
+      padding: 28px 17px;
+      margin-left: 75.5vw;
+      margin-top: 44vh;
     }
 
     #Netuno {
-      padding: 40px 34px;
-      margin-left: 84.5vw;
-      margin-top: 21vh;
+      padding: 25px 12px;
+      margin-left: 88vw;
+      margin-top: 45vh;
     }
 }
 
