@@ -429,8 +429,11 @@ article.post-content section h2, article.about-content section h2 {
 }
 
 article.post-content section img {
-    max-width: 85%;
+    max-width: 60%;
     object-fit: contain;
+    background-color: red;
+    margin-top: 35px;
+    height: auto;
 }
 
 article.post-content > a {
@@ -901,6 +904,10 @@ div.solarSystem-bg a {
       padding: 4rem 2.5rem;
     }
 
+    article.post-content section img {
+      max-width: 70%;
+    }
+
     footer div.footer {
        background-color: var(--secundary-color);
      }
@@ -967,6 +974,10 @@ div.solarSystem-bg a {
 
     article.about-content, article.post-content, article.download-content {
         padding: 4rem 1.4rem;
+    }
+
+    article.post-content section img {
+      max-width: 80%;
     }
 
     header {
