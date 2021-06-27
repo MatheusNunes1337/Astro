@@ -22,6 +22,7 @@ export default function Post() {
    let { id } = useParams();
 
    let [conteudo, setConteudo] = useState('')
+   let previous_page = localStorage.getItem("previous_page")
    
    useEffect(() => {
         async function getPost() {
@@ -48,10 +49,7 @@ export default function Post() {
 	    <Header />
 				{conteudo ? (
           <article className="post-content">
-              {
-                window.screen.width > 768 ? ( <Link to="/solar-system"><BsArrowLeftShort />Voltar</Link> ) :
-                ''
-              }
+              <Link to={previous_page}><BsArrowLeftShort />Voltar</Link>
               <section>
                   {ReactHtmlParser (conteudo)}
               </section> 

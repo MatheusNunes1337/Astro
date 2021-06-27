@@ -431,7 +431,6 @@ article.post-content section h2, article.about-content section h2 {
 article.post-content section img {
     max-width: 60%;
     object-fit: contain;
-    background-color: red;
     margin-top: 35px;
     height: auto;
 }
@@ -716,6 +715,11 @@ div.solarSystem-bg a {
 
     article.about-content, article.post-content, article.download-content {
         padding: 4rem 15vw;
+    }
+
+    article.post-content section img {
+      margin-top: 20px;
+      width: 50%;
     }
 
     footer div.logo {

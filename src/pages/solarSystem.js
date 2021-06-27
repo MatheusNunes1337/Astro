@@ -36,7 +36,7 @@ export default function SolarSystem() {
     },[])
 
   function goToPost(e) {
-  	console.log(posts)
+  	localStorage.setItem("previous_page", "/solar-system")
     const planeta = e.currentTarget.id
     const post = posts.filter(post => {
          return post.planeta === planeta         
